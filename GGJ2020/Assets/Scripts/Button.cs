@@ -7,6 +7,7 @@ public class Button : MonoBehaviour
     public Material default_mat;
     public Material mat_on = null;
     public Material mat_off = null;
+    CharacterCtrl player;
 
     public enum ButtonState
     {
@@ -19,8 +20,10 @@ public class Button : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterCtrl>();
         state = ButtonState.OFF;
 
+        
         // Uncomment this to cycle through materials (debug)
         //StartCoroutine(debugFlicker());
     }
@@ -46,11 +49,32 @@ public class Button : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (gameObject == player.GetInteractable())
+        {
+            state = ButtonState.ON;
+        }
+        else
+        {
+            state = ButtonState.OFF;
+        }
+
         switch (state)
         {
-            case (Button.ButtonState.ON): { GetComponent<MeshRenderer>().sharedMaterial = mat_on; break; }
-            case (Button.ButtonState.OFF): { GetComponent<MeshRenderer>().sharedMaterial = mat_off; break; }
+            case (Button.ButtonState.ON): { Activated(); break; }
+            case (Button.ButtonState.OFF): { Deactivated(); break; }
             default: { GetComponent<MeshRenderer>().sharedMaterial = default_mat; Debug.LogError("Something is VERY WRONG"); break; }
         }
+    }
+
+    void Activated()
+    {
+        GetComponent<MeshRenderer>().sharedMaterial = mat_on;
+        // do something when activated
+    }
+
+    void Deactivated()
+    {
+        GetComponent<MeshRenderer>().sharedMaterial = mat_off;
+        // do something when deactivated
     }
 }
