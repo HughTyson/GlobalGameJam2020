@@ -23,15 +23,7 @@ public class Button : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterCtrl>();
         state = ButtonState.OFF;
 
-        if (player.GetInteractable() == this.gameObject)
-        {
-            state = ButtonState.ON;
-        }
-        else if (player.GetInteractable() != this.gameObject)
-        {
-            state = ButtonState.OFF;
-        }
-
+        
         // Uncomment this to cycle through materials (debug)
         //StartCoroutine(debugFlicker());
     }
@@ -57,6 +49,15 @@ public class Button : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (gameObject == player.GetInteractable())
+        {
+            state = ButtonState.ON;
+        }
+        else
+        {
+            state = ButtonState.OFF;
+        }
+
         switch (state)
         {
             case (Button.ButtonState.ON): { Activated(); break; }
