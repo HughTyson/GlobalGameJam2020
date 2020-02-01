@@ -15,9 +15,13 @@ public class robotOrders : MonoBehaviour
 
     AudioSource source;
     public AudioClip typing;
+
+    int length = 0;
+
     void Start()
     {
         objectiveText.text = "";
+        length = objective.Length;
 
         source = GetComponent<AudioSource>();
         source.clip = typing;
@@ -35,7 +39,7 @@ public class robotOrders : MonoBehaviour
     public void showMessage()
     {
         displayNextLetter();
-        source.Play();
+        startEffect();
     }
     void displayNextLetter()
     {
@@ -48,9 +52,34 @@ public class robotOrders : MonoBehaviour
         }
         else
         {
+            source.Stop();
+            Invoke("clearText", 1);
+            Invoke("startEffect", 1);
+        }
+
+    }
+
+    void clearText()
+    {
+        string newString = objective.Substring(0, length -1);
+        objectiveText.text = newString;
+        length--;
+
+
+        if (length != 0)
+        {
+            Invoke("clearText", 0.1f);
+        }
+        else
+        {
             CancelInvoke();
             source.Stop();
         }
 
+    }
+
+    void startEffect()
+    {
+        source.Play();
     }
 }

@@ -60,9 +60,6 @@ public class CharacterCtrl : MonoBehaviour
     {
         if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out interactable, 20.0f, interactableMask))
         {
-
-            
-
             return interactable.transform.gameObject;
         }
         else
@@ -125,11 +122,14 @@ public class CharacterCtrl : MonoBehaviour
             {
                 moveSpeed = 5.0f;
                 bobSpeed = 20.0f;
+                GetComponent<PlayerSteps>().setRunning(true);
             }
             else
             {
                 moveSpeed = 2.5f;
                 bobSpeed = 10.0f;
+                GetComponent<PlayerSteps>().setRunning(false);
+
             }
         }
     }
@@ -167,6 +167,7 @@ public class CharacterCtrl : MonoBehaviour
     {
         if(collision.gameObject.name == "win")
         {
+            transform.position = new Vector3(0, 0, 0);
             changeScene.LoadEndScene();
         }
     }
