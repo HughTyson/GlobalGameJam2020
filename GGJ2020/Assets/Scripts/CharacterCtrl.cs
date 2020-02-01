@@ -37,6 +37,11 @@ public class CharacterCtrl : MonoBehaviour
 
     private GameObject prevLookAt;
 
+    public bool imAwake = false;
+    // Change scene
+    public ChangeScene changeScene;
+
+
     bool playingSteps = false;
     void Start()
     {
@@ -82,20 +87,21 @@ public class CharacterCtrl : MonoBehaviour
     //This function handles physics calculations every cycle such as player movement
     private void FixedUpdate()
     {
-       
-           //Apply a headbob to the camera if the player is moving 
+        if (imAwake)
+        {
+            //Apply a headbob to the camera if the player is moving 
             if (Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0)
             {
                 timer += bobSpeed * Time.deltaTime;
                 Vector3 newPos = new Vector3(Mathf.Cos(timer) * bobAmount, restPos.y + Mathf.Abs(Mathf.Sin(timer) * bobAmount), restPos.z);
                 Camera.main.transform.localPosition = newPos;
 
-            //Check for if steps are currently playing
-            if (Camera.main.transform.localPosition.y <= 0.51 && !playingSteps)
-            { 
-                GetComponent<PlayerSteps>().playStep();
-                playingSteps = true;
-            }
+                //Check for if steps are currently playing
+                if (Camera.main.transform.localPosition.y <= 0.51 && !playingSteps)
+                {
+                    GetComponent<PlayerSteps>().playStep();
+                    playingSteps = true;
+                }
             }
             else
             {
@@ -114,7 +120,19 @@ public class CharacterCtrl : MonoBehaviour
             //Turn and move the player if applicable
             Turn();
             Move(-Input.GetAxisRaw("Vertical"), Input.GetAxisRaw("Horizontal"));
+
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                moveSpeed = 7.5f;
+                bobSpeed = 5.8f;
+            }
+            else
+            {
+                moveSpeed = 5;
+                bobSpeed = 4.8f;
+            }
         }
+    }
     
 
     //This function handles the rotation of the camera based on the mouse position for a first person controller
@@ -144,5 +162,13 @@ public class CharacterCtrl : MonoBehaviour
         GetComponent<Rigidbody>().MovePosition(transform.position + movement);
     }
 
+    // Go to the end scene once collision occurs
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.name == "win")
+        {
+            changeScene.LoadEndScene();
+        }
+    }
 
 }
