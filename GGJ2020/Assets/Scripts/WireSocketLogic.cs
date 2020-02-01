@@ -29,6 +29,14 @@ public class WireSocketLogic : MonoBehaviour
     }
 
 
+    public void BeingLookedAt()
+    {
+        GetComponentInParent<MeshRenderer>().material.color = Color.green;
+    }
+    public void StoppedBeingLookedAt()
+    {
+        GetComponentInParent<MeshRenderer>().material.color = Color.red;
+    }
     // Update is called once per frame
     void Update()
     {

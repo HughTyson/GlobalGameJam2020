@@ -9,6 +9,9 @@ public class Button : MonoBehaviour
     public Material mat_off = null;
     CharacterCtrl player;
 
+    public int buttonValue;
+    public bool clicked = false;
+
     public enum ButtonState
     {
         ON,
@@ -49,32 +52,59 @@ public class Button : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (gameObject == player.GetInteractable())
+        if (GetComponentInParent<SimonSays>().complete == false)
         {
-            state = ButtonState.ON;
-        }
-        else
-        {
-            state = ButtonState.OFF;
-        }
+            if (gameObject == player.GetInteractable())
+            {
+                state = ButtonState.ON;
+            }
+            else
+            {
+                state = ButtonState.OFF;
+            }
 
-        switch (state)
-        {
-            case (Button.ButtonState.ON): { Activated(); break; }
-            case (Button.ButtonState.OFF): { Deactivated(); break; }
-            default: { GetComponent<MeshRenderer>().sharedMaterial = default_mat; Debug.LogError("Something is VERY WRONG"); break; }
+            switch (state)
+            {
+                case (Button.ButtonState.ON): { lookedAt(); break; }
+                case (Button.ButtonState.OFF): { notLookedAt(); break; }
+                default: { GetComponent<MeshRenderer>().sharedMaterial = default_mat; Debug.LogError("Something is VERY WRONG"); break; }
+            }
         }
     }
 
-    void Activated()
+    public void lookedAt()
     {
         GetComponent<MeshRenderer>().sharedMaterial = mat_on;
-        // do something when activated
+
     }
 
-    void Deactivated()
+    public void notLookedAt()
     {
         GetComponent<MeshRenderer>().sharedMaterial = mat_off;
-        // do something when deactivated
+
+    }
+
+    public void isClicked()
+    {
+        clicked = true;
+        Debug.Log("Detected");
+    }
+
+    public void itsOver()
+    {
+        StartCoroutine(flash());
+    }
+
+    IEnumerator flash()
+    {
+        for (int i = 0; i < 4; i++)
+        {
+            GetComponent<MeshRenderer>().sharedMaterial = mat_off;
+            yield return new WaitForSeconds(0.5f);
+
+            GetComponent<MeshRenderer>().sharedMaterial = mat_on;
+            yield return new WaitForSeconds(0.5f);
+        }
+        GetComponent<MeshRenderer>().sharedMaterial = default_mat;
     }
 }
