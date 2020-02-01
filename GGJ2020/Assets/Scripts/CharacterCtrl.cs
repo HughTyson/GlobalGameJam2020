@@ -182,7 +182,6 @@ public class CharacterCtrl : MonoBehaviour
     //This function handles the player movement foward/back, and left/right based on input
     void Move(float h, float v)
     {
-        Debug.Log("Im moving. Yay!");
         Vector3 movement = new Vector3(h, 0.0f, v);
         movement = Camera.main.transform.forward * (-movement.x) + Camera.main.transform.right * movement.z;
         movement.y = 0.0f;
