@@ -125,11 +125,13 @@ public class CharacterCtrl : MonoBehaviour
             {
                 moveSpeed = 7.5f;
                 bobSpeed = 5.8f;
+                GetComponent<PlayerSteps>().setRunning(true);
             }
             else
             {
                 moveSpeed = 5;
                 bobSpeed = 4.8f;
+                GetComponent<PlayerSteps>().setRunning(false);
             }
         }
     }
