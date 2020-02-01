@@ -35,9 +35,11 @@ public class robotOrders : MonoBehaviour
 
     public void showMessage()
     {
+
         displayNextLetter();
         startEffect();
     }
+
     void displayNextLetter()
     {
         objectiveText.text += objective[position];
@@ -77,6 +79,13 @@ public class robotOrders : MonoBehaviour
 
     void startEffect()
     {
+
+        objectiveText.text = "";
+        length = objective.Length;
+
+        source = GetComponent<AudioSource>();
+        source.clip = typing;
+
         source.Play();
     }
 }

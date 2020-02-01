@@ -78,6 +78,7 @@ MonoBehaviour:
   accuracyItirations: 10
   WirePlugAttachementPoint: {fileID: 7791250000704397375}
   StaticWireSide: {fileID: 7791250002415942284}
+  colourMaterials: []
 --- !u!120 &7791250000779180750
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -389,6 +390,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   physicsCollider: {fileID: 558631920727557298}
   myPlugProngs: {fileID: 4791370136142132313}
+  colourMaterials:
+  - {fileID: 2100000, guid: 2a28283a76f66e344b9af37778509bea, type: 2}
+  - {fileID: 2100000, guid: c7a64720ad7d0a24bbccf460019db3ce, type: 2}
+  - {fileID: 2100000, guid: 6710cc0da11d3e048b566f1611743b28, type: 2}
+  - {fileID: 2100000, guid: 298cf416699f218459f609ed499adfa1, type: 2}
+  wireObject: {fileID: 7791250000779180748}
 --- !u!1 &7791250002415942283
 GameObject:
   m_ObjectHideFlags: 0

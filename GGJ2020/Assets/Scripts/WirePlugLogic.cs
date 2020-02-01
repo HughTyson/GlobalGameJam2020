@@ -12,6 +12,10 @@ public class WirePlugLogic : MonoBehaviour
 
     [SerializeField] Collider physicsCollider;
     [SerializeField] Collider myPlugProngs;
+    [SerializeField] List<Material> colourMaterials;
+
+    [SerializeField] GameObject wireObject;
+    Color initial_colour;
     enum STATE
     { 
     IN_HAND,
@@ -21,9 +25,12 @@ public class WirePlugLogic : MonoBehaviour
     STATE current_state = STATE.FREE;
 
     WireGameScript.COLOUR_ENUM myColour;
+
+
+    
     void Start()
     {
-        
+        initial_colour = GetComponent<MeshRenderer>().material.color;
     }
 
     public void PlugIntoSocket(GameObject socketReference, Transform connectedTransform)
@@ -133,30 +140,9 @@ public class WirePlugLogic : MonoBehaviour
     {
         myColour = colour;
 
-        switch (colour)
-        {
-            case WireGameScript.COLOUR_ENUM.BLUE:
-                {
-                    myPlugProngs.GetComponent<MeshRenderer>().material.color = new Color(0, 0, 1);
-                    break;
-                }
-            case WireGameScript.COLOUR_ENUM.ORANGE:
-                {
-                    myPlugProngs.GetComponent<MeshRenderer>().material.color = new Color(1.0f,0.64f,0);
-                    break;
-                }
-            case WireGameScript.COLOUR_ENUM.CYAN:
-                {
-                    myPlugProngs.GetComponent<MeshRenderer>().material.color = new Color(0, 1, 1);
-                    break;
-                }
-            case WireGameScript.COLOUR_ENUM.PURPLE:
-                {
-                    myPlugProngs.GetComponent<MeshRenderer>().material.color = new Color(0.5f, 0 ,0.5f);
-                    break;
-                }
+        myPlugProngs.GetComponent<MeshRenderer>().material = colourMaterials[(int)colour];
+        wireObject.GetComponent<WirePhysics>().GetComponent<LineRenderer>().material = colourMaterials[(int)colour];
 
-        }
 
     }
 
@@ -172,9 +158,8 @@ public class WirePlugLogic : MonoBehaviour
         }
         else
         {
-            GetComponent<MeshRenderer>().material.color = Color.white;
+            GetComponent<MeshRenderer>().material.color = initial_colour;
         }
-
     }
 
 }
