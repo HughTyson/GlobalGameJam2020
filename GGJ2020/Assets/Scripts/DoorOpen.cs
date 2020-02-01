@@ -41,4 +41,33 @@ public class DoorOpen : MonoBehaviour
         }
 
     }
+
+    public void CloseDoor()
+    {
+        StartCoroutine(Close());
+    }
+
+
+    IEnumerator Close()
+    {
+        if (Door1 != null)
+        {
+            Door1.GetComponent<Animator>().enabled = true;
+            Door1.GetComponent<Animator>().Play("CloseDoor");
+            GetComponent<AudioSource>().Play();
+        }
+        else
+        {
+            Debug.LogError("Invalid Door 1");
+        }
+
+        yield return new WaitForSeconds(2);
+
+        if (Door2 != null)
+        {
+            Door2.GetComponent<Animator>().enabled = true;
+            Door2.GetComponent<Animator>().Play("CloseDoor");
+        }
+
+    }
 }
