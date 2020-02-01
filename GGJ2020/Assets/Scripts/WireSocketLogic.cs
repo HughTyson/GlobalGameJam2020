@@ -14,7 +14,7 @@ public class WireSocketLogic : MonoBehaviour
     {
         if (ConnectedPlug != null)
         {
-            SetConnectedPlug(ConnectedPlug);
+      //      SetConnectedPlug(ConnectedPlug);
         }
     }
 
@@ -23,14 +23,22 @@ public class WireSocketLogic : MonoBehaviour
     {
         return (ConnectedPlug != null);
     }
-    public void SetConnectedPlug(GameObject connected)
-    {
-            ConnectedPlug = connected;
-            ConnectedPlug.transform.position = ConnectionTransform.position;
-            ConnectedPlug.transform.rotation = ConnectionTransform.rotation;
-            ConnectedPlug.GetComponent<Rigidbody>().isKinematic = true;
-    }
 
+    public GameObject GetPlugObject()
+    {
+        return ConnectedPlug;
+    }
+    public void ConnectPlug(GameObject connected)
+    {
+        ConnectedPlug = connected;
+        ConnectedPlug.transform.position = ConnectionTransform.position;
+        ConnectedPlug.transform.rotation = ConnectionTransform.rotation;
+        ConnectedPlug.GetComponent<Rigidbody>().isKinematic = true;
+    }
+    public void DisconnectPlug()
+    {
+
+    }
 
     public void BeingLookedAt()
     {

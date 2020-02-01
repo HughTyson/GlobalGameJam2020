@@ -12,6 +12,10 @@ public class Button : MonoBehaviour
     public int buttonValue;
     public bool clicked = false;
 
+    public float offsetPos1;
+    public float offsetPos2;
+    public float originalPos;
+
     public enum ButtonState
     {
         ON,
@@ -27,7 +31,9 @@ public class Button : MonoBehaviour
         state = ButtonState.OFF;
         GetComponent<MeshRenderer>().sharedMaterial = mat_off;
 
-
+        originalPos = transform.position.x;
+        offsetPos1 = transform.position.x - 5;
+        offsetPos2 = transform.position.x + 5;
         // Uncomment this to cycle through materials (debug)
         //StartCoroutine(debugFlicker());
     }
@@ -93,6 +99,7 @@ public class Button : MonoBehaviour
     {
         clicked = true;
         Debug.Log("Detected");
+        transform.position = new Vector3(Mathf.Lerp(transform.position.x, offsetPos1, 0.5f), transform.position.y, transform.position.z);
     }
 
     public void itsOver(bool good)

@@ -68,7 +68,7 @@ public class CharacterInteractivity : MonoBehaviour
         }
 
 
-        if (currentlyHolding.reference != null)
+        if (currentlyHolding.reference == null)
         {
             if (Input.GetButtonDown("Fire1"))
             {
@@ -223,12 +223,23 @@ public class CharacterInteractivity : MonoBehaviour
             {
                 case InteractiveObject.TYPE.SOCKET:
                     {
-                      
+                        if (currentlyLookingAt.reference.GetComponent<WireSocketLogic>().IsPlugBeingUsed())
+                        {
+                            currentlyLookingAt.reference = currentlyLookingAt.reference.GetComponent<WireSocketLogic>().GetPlugObject();
+                            currentlyLookingAt.myType = InteractiveObject.TYPE.PLUG;
+                        }
                         break;
                     }
                 case InteractiveObject.TYPE.PLUG:
                     {
+                        if (currentlyLookingAt.reference.GetComponent<WirePlugLogic>().IsInSocket())
+                        {
+          //                  currentlyLookingAt.reference.GetComponent<>
+                        }
+                        else
+                        {
 
+                        }
                         break;
                     }
                 case InteractiveObject.TYPE.HUGH_BUTTON:
