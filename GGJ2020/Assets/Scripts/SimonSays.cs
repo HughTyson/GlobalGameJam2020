@@ -14,14 +14,14 @@ public class SimonSays : MonoBehaviour
     void Start()
     {
         Minigame_SS();   
-        int offset = 0;
+        int offset = -5;
         for (int i = 0; i < 5; i++)
         {
             buttons[i] = Instantiate(button, this.transform);
             buttons[i].buttonValue = i;
             buttons[i].transform.position = new Vector3(0,0,offset);
 
-            offset += 5;
+            offset += 2;
         }
     }
 
@@ -40,6 +40,7 @@ public class SimonSays : MonoBehaviour
                 else
                 {
                     Debug.Log("BIG BAD >:(");
+                    onReset();
                 }
                 buttons[i].clicked = false;
             }
@@ -48,10 +49,20 @@ public class SimonSays : MonoBehaviour
         {
             complete = true;
             for (int i = 0; i < 5; i++) {
-                buttons[i].itsOver();
+                buttons[i].itsOver(true);
             }
             Debug.Log("Oh lawd you got it!");
         }
+    }
+
+    private void onReset()
+    {
+        number = 0;
+        for (int i = 0; i < 5; i++)
+        {
+            buttons[i].itsOver(false);
+        }
+        Debug.Log("Reset, you messed it up ;(");
     }
 
     void Minigame_SS()
