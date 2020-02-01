@@ -37,7 +37,7 @@ public class CharacterCtrl : MonoBehaviour
 
     private GameObject prevLookAt;
 
-
+    bool playingSteps = false;
     void Start()
     {
         //Initialise the camera bob positions
@@ -89,12 +89,21 @@ public class CharacterCtrl : MonoBehaviour
                 timer += bobSpeed * Time.deltaTime;
                 Vector3 newPos = new Vector3(Mathf.Cos(timer) * bobAmount, restPos.y + Mathf.Abs(Mathf.Sin(timer) * bobAmount), restPos.z);
                 Camera.main.transform.localPosition = newPos;
+
+            //Check for if steps are currently playing
+            if (Camera.main.transform.localPosition.y <= 0.51 && !playingSteps)
+            { 
+                GetComponent<PlayerSteps>().playStep();
+                playingSteps = true;
+            }
             }
             else
             {
                 timer = Mathf.PI / 2;
                 Vector3 newPos = new Vector3(Mathf.Lerp(camPos.x, restPos.x, transitionSpeed * Time.deltaTime), Mathf.Lerp(camPos.y, restPos.y, transitionSpeed * Time.deltaTime), Mathf.Lerp(camPos.z, restPos.z, transitionSpeed * Time.deltaTime));
                 Camera.main.transform.localPosition = newPos;
+                playingSteps = false;
+                GetComponent<PlayerSteps>().stopSteps();
             }
 
             if (timer > Mathf.PI * 2)
