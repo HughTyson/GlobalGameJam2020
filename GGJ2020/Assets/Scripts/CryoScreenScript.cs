@@ -40,4 +40,10 @@ public class CryoScreenScript : MonoBehaviour
             GetComponent<MeshRenderer>().material = deadMat;
         }
     }
+
+
+    public void Reset()
+    {
+        alive = true;
+    }
 }

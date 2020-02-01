@@ -147,6 +147,7 @@ GameObject:
   - component: {fileID: 6989181787556826098}
   - component: {fileID: 3729550749189781259}
   - component: {fileID: 7947291694227075221}
+  - component: {fileID: 7039466006479337746}
   m_Layer: 0
   m_Name: EngineRoom
   m_TagString: Untagged
@@ -242,6 +243,24 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: 2212009239438826721, guid: d065d7fd430dc20449b94a6f8e72c4aa, type: 3}
+--- !u!114 &7039466006479337746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3170200615417381847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52b807897c4c84e43816ee11bc192bd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CryoChambers:
+  - {fileID: 8264708957266490206}
+  - {fileID: 1519673881196830066}
+  - {fileID: 48062658218631497}
+  - {fileID: 1152480764342140054}
+  Door: {fileID: 0}
 --- !u!1 &4175886208787851982
 GameObject:
   m_ObjectHideFlags: 0
@@ -569,6 +588,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2136264717272576452}
     m_Modifications:
+    - target: {fileID: 7306471760785989096, guid: 93ff153986a96ca4b8fc840fdec2fa5b,
+        type: 3}
+      propertyPath: m_Name
+      value: WireDeco
+      objectReference: {fileID: 0}
     - target: {fileID: 3499210322708658056, guid: 93ff153986a96ca4b8fc840fdec2fa5b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -629,11 +653,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.5268703
       objectReference: {fileID: 0}
-    - target: {fileID: 7306471760785989096, guid: 93ff153986a96ca4b8fc840fdec2fa5b,
-        type: 3}
-      propertyPath: m_Name
-      value: WireDeco
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 93ff153986a96ca4b8fc840fdec2fa5b, type: 3}
 --- !u!4 &1603835870908697104 stripped
@@ -649,6 +668,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2136264717272576452}
     m_Modifications:
+    - target: {fileID: 4284300763873293474, guid: 6d36e8364f77fd94dabe0f02c62e5c39,
+        type: 3}
+      propertyPath: m_Name
+      value: CryoChamber (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 992490555890291324, guid: 6d36e8364f77fd94dabe0f02c62e5c39,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -704,13 +728,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4284300763873293474, guid: 6d36e8364f77fd94dabe0f02c62e5c39,
-        type: 3}
-      propertyPath: m_Name
-      value: CryoChamber (1)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d36e8364f77fd94dabe0f02c62e5c39, type: 3}
+--- !u!1 &1519673881196830066 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4284300763873293474, guid: 6d36e8364f77fd94dabe0f02c62e5c39,
+    type: 3}
+  m_PrefabInstance: {fileID: 3342255380825057744}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2568207826911656876 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 992490555890291324, guid: 6d36e8364f77fd94dabe0f02c62e5c39,
@@ -736,6 +761,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2136264717272576452}
     m_Modifications:
+    - target: {fileID: 4284300763873293474, guid: 6d36e8364f77fd94dabe0f02c62e5c39,
+        type: 3}
+      propertyPath: m_Name
+      value: CryoChamber (3)
+      objectReference: {fileID: 0}
     - target: {fileID: 992490555890291324, guid: 6d36e8364f77fd94dabe0f02c62e5c39,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -791,28 +821,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4284300763873293474, guid: 6d36e8364f77fd94dabe0f02c62e5c39,
-        type: 3}
-      propertyPath: m_Name
-      value: CryoChamber (3)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d36e8364f77fd94dabe0f02c62e5c39, type: 3}
+--- !u!1 &4005287022613547974 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 224943230470554610, guid: 6d36e8364f77fd94dabe0f02c62e5c39,
+    type: 3}
+  m_PrefabInstance: {fileID: 3785992361349171252}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &3189000798561699170 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1786540003107163478, guid: 6d36e8364f77fd94dabe0f02c62e5c39,
     type: 3}
   m_PrefabInstance: {fileID: 3785992361349171252}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &4128819100418447944 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 992490555890291324, guid: 6d36e8364f77fd94dabe0f02c62e5c39,
+--- !u!1 &1152480764342140054 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4284300763873293474, guid: 6d36e8364f77fd94dabe0f02c62e5c39,
     type: 3}
   m_PrefabInstance: {fileID: 3785992361349171252}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &4005287022613547974 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 224943230470554610, guid: 6d36e8364f77fd94dabe0f02c62e5c39,
+--- !u!4 &4128819100418447944 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 992490555890291324, guid: 6d36e8364f77fd94dabe0f02c62e5c39,
     type: 3}
   m_PrefabInstance: {fileID: 3785992361349171252}
   m_PrefabAsset: {fileID: 0}
@@ -823,6 +854,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2136264717272576452}
     m_Modifications:
+    - target: {fileID: 4284300763873293474, guid: 6d36e8364f77fd94dabe0f02c62e5c39,
+        type: 3}
+      propertyPath: m_Name
+      value: CryoChamber (2)
+      objectReference: {fileID: 0}
     - target: {fileID: 992490555890291324, guid: 6d36e8364f77fd94dabe0f02c62e5c39,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -878,11 +914,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4284300763873293474, guid: 6d36e8364f77fd94dabe0f02c62e5c39,
-        type: 3}
-      propertyPath: m_Name
-      value: CryoChamber (2)
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d36e8364f77fd94dabe0f02c62e5c39, type: 3}
 --- !u!1 &2527984803827243197 stripped
@@ -894,6 +925,12 @@ GameObject:
 --- !u!1 &4089564019581294105 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 224943230470554610, guid: 6d36e8364f77fd94dabe0f02c62e5c39,
+    type: 3}
+  m_PrefabInstance: {fileID: 4313925504237245931}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &48062658218631497 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4284300763873293474, guid: 6d36e8364f77fd94dabe0f02c62e5c39,
     type: 3}
   m_PrefabInstance: {fileID: 4313925504237245931}
   m_PrefabAsset: {fileID: 0}
@@ -910,6 +947,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2136264717272576452}
     m_Modifications:
+    - target: {fileID: 7219764769658050187, guid: d2ae4b9e036f16d4d9b4a9ef9207f6a8,
+        type: 3}
+      propertyPath: m_Name
+      value: DoorWireBox
+      objectReference: {fileID: 0}
     - target: {fileID: 5485331309742265598, guid: d2ae4b9e036f16d4d9b4a9ef9207f6a8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -965,19 +1007,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7219764769658050187, guid: d2ae4b9e036f16d4d9b4a9ef9207f6a8,
-        type: 3}
-      propertyPath: m_Name
-      value: DoorWireBox
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2ae4b9e036f16d4d9b4a9ef9207f6a8, type: 3}
---- !u!1 &5779592910017940425 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1483491804623846709, guid: d2ae4b9e036f16d4d9b4a9ef9207f6a8,
-    type: 3}
-  m_PrefabInstance: {fileID: 4945892262609614588}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &629546330963239426 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5485331309742265598, guid: d2ae4b9e036f16d4d9b4a9ef9207f6a8,
@@ -999,6 +1030,12 @@ GameObject:
 --- !u!1 &4883819428584680076 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 533000545066163312, guid: d2ae4b9e036f16d4d9b4a9ef9207f6a8,
+    type: 3}
+  m_PrefabInstance: {fileID: 4945892262609614588}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5779592910017940425 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1483491804623846709, guid: d2ae4b9e036f16d4d9b4a9ef9207f6a8,
     type: 3}
   m_PrefabInstance: {fileID: 4945892262609614588}
   m_PrefabAsset: {fileID: 0}
@@ -1144,6 +1181,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2136264717272576452}
     m_Modifications:
+    - target: {fileID: 4284300763873293474, guid: 6d36e8364f77fd94dabe0f02c62e5c39,
+        type: 3}
+      propertyPath: m_Name
+      value: CryoChamber
+      objectReference: {fileID: 0}
     - target: {fileID: 992490555890291324, guid: 6d36e8364f77fd94dabe0f02c62e5c39,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1204,11 +1246,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: 4284300763873293474, guid: 6d36e8364f77fd94dabe0f02c62e5c39,
-        type: 3}
-      propertyPath: m_Name
-      value: CryoChamber
-      objectReference: {fileID: 0}
     - target: {fileID: 2030368874717086790, guid: 6d36e8364f77fd94dabe0f02c62e5c39,
         type: 3}
       propertyPath: m_Layer
@@ -1236,6 +1273,12 @@ GameObject:
 --- !u!4 &4900137656908043648 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 992490555890291324, guid: 6d36e8364f77fd94dabe0f02c62e5c39,
+    type: 3}
+  m_PrefabInstance: {fileID: 5316149553618061308}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8264708957266490206 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4284300763873293474, guid: 6d36e8364f77fd94dabe0f02c62e5c39,
     type: 3}
   m_PrefabInstance: {fileID: 5316149553618061308}
   m_PrefabAsset: {fileID: 0}
