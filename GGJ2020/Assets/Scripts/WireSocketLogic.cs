@@ -14,12 +14,12 @@ public class WireSocketLogic : MonoBehaviour
     {
         if (ConnectedPlug != null)
         {
-      //      SetConnectedPlug(ConnectedPlug);
+            ConnectPlug(ConnectedPlug);
         }
     }
 
 
-    public bool IsPlugBeingUsed()
+    public bool IsSocketBeingUsed()
     {
         return (ConnectedPlug != null);
     }
@@ -31,12 +31,19 @@ public class WireSocketLogic : MonoBehaviour
     public void ConnectPlug(GameObject connected)
     {
         ConnectedPlug = connected;
-        ConnectedPlug.transform.position = ConnectionTransform.position;
-        ConnectedPlug.transform.rotation = ConnectionTransform.rotation;
-        ConnectedPlug.GetComponent<Rigidbody>().isKinematic = true;
+
+        ConnectedPlug.GetComponent<WirePlugLogic>().PlugIntoSocket(gameObject,ConnectionTransform);
+
+
+
     }
     public void DisconnectPlug()
     {
+        if (ConnectedPlug != null)
+        {
+            ConnectedPlug = null;
+
+        }
 
     }
 

@@ -5,52 +5,47 @@ using UnityEngine;
 public class AmbientAudio : MonoBehaviour
 {
   
-    IEnumerator playAudioSequentially()
+ 
+    IEnumerator playEffectsSequentially(List<AudioClip> effects, AudioSource source)
     {
-        yield return null;
-
-       
-            //2.Assign current AudioClip to audiosource
-            adSource[0].clip = adClips[Random.Range(0, adClips.Count)];
-
-            //3.Play Audio
-            adSource[0].Play();
-
-            //4.Wait for it to finish playing
-            while (adSource[0].isPlaying)
-            {
-                yield return null;
-            }
-
-    }
-
-    IEnumerator playEffectsSequentially()
-    {
-        yield return null;
-
-        //1.Loop through each AudioClip
-        for (int i = 0; i < effects.Count; i++)
+        while (true)
         {
             //Pick a random sound effect
-            adSource[1].clip = effects[Random.Range(0, effects.Count)];
+            source.clip = effects[Random.Range(0, effects.Count - 1)];
 
-            adSource[1].Play();
+            source.Play();
 
             //Rnadomly wait for a new one
-            yield return new WaitForSeconds(Random.Range(10, 20));
-
+            yield return new WaitForSeconds(Random.Range(10, 10));
         }
+
+        
     }
 
-    public List<AudioClip> adClips = new List<AudioClip>();
-    public List<AudioClip> effects = new List<AudioClip>();
     public List<AudioSource> adSource = new List<AudioSource>();
+
+    public List<AudioClip> metalEffects = new List<AudioClip>();
+
+    public AudioClip softAlarm;
+    public AudioClip lowRumble;
 
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(playAudioSequentially());
-        StartCoroutine(playEffectsSequentially());
+        //Play ambient sounds
+        StartCoroutine(playEffectsSequentially(metalEffects, adSource[1]));
+
+
+        //Low rumble constantly in the background
+        adSource[0].clip = lowRumble;
+        adSource[0].loop = true;
+        adSource[0].Play();
+
+
+        //Soft alarm in the background, constantly plays
+        adSource[2].clip = softAlarm;
+        adSource[2].loop = true;
+        adSource[2].Play();
     }
 
     // Update is called once per frame
