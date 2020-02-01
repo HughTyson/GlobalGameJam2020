@@ -8,7 +8,7 @@ public class CharacterInteractivity : MonoBehaviour
 
 
     [SerializeField] Camera theCamera;
-
+    [SerializeField] Transform handTransform;
     [SerializeField] float viewingDistance;
 
 
@@ -68,9 +68,19 @@ public class CharacterInteractivity : MonoBehaviour
         }
 
 
-        if (Input.GetButtonDown("Fire1"))
+        if (currentlyHolding.reference != null)
         {
-            ClickedWhileLookingAtCurrent();
+            if (Input.GetButtonDown("Fire1"))
+            {
+                ClickedWhileLookingAtCurrent();
+            }
+        }
+        else
+        {
+            if (Input.GetButtonUp("Fire1"))
+            {
+                LetGoOfHeldItem();
+            }
         }
     }
 
@@ -142,7 +152,7 @@ public class CharacterInteractivity : MonoBehaviour
                 }
             case InteractiveObject.TYPE.PLUG:
                 {
-
+                    currentlyLookingAt.reference.GetComponent<WirePlugLogic>().BeingLookedAt();
                     break;
                 }
             case InteractiveObject.TYPE.HUGH_BUTTON:
@@ -179,7 +189,7 @@ public class CharacterInteractivity : MonoBehaviour
                     }
                 case InteractiveObject.TYPE.PLUG:
                     {
-
+                        currentlyLookingAt.reference.GetComponent<WirePlugLogic>().StoppedBeingLookedAt();
                         break;
                     }
                 case InteractiveObject.TYPE.HUGH_BUTTON:
@@ -241,5 +251,11 @@ public class CharacterInteractivity : MonoBehaviour
 
             }
         }
+    }
+
+
+    private void LetGoOfHeldItem()
+    {
+
     }
 }
