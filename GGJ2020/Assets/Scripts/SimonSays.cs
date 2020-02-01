@@ -19,13 +19,13 @@ public class SimonSays : MonoBehaviour
         {
             buttons[i] = Instantiate(button, this.transform);
             buttons[i].buttonValue = i;
-            buttons[i].transform.position = new Vector3(-2.3f,2,offset);
+            buttons[i].transform.position = new Vector3(-2.3f, 2, offset) + transform.position;
 
             offset += 1;
         }
         buttons[5] = Instantiate(button, this.transform);
         buttons[5].buttonValue = -1;
-        buttons[5].transform.position = new Vector3(-2.3f, 1, 0);
+        buttons[5].transform.position = new Vector3(-2.3f, 1, 0) + transform.position;
         //buttons[5].transform.localScale = new Vector3(0.5f,0.5f,0.5f);
 
     }
@@ -57,8 +57,8 @@ public class SimonSays : MonoBehaviour
             {
                 for (int i = 0; i < 5; i++)
                 {
+                    buttons[i].flashingSeq = true;
                     StartCoroutine(buttons[i].ShowSequence());
-                    buttons[i].flashing = true;
                 }
                 buttons[5].clicked = false;
             }
