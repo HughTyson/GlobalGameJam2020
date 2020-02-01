@@ -25,8 +25,7 @@ public class MainGameLoop : MonoBehaviour
         if (GetComponent<GameLoop>().GetFinishedFadeOut())
             UpdateTimer();
 
-        // Do something at the end of the timer
-        //  Reload the scene at the end of the timer
+        //  Reset everything at the end of the timer
         if (timerFloat <= 0.0f)
         {
             if(playFadeIn)
@@ -38,7 +37,6 @@ public class MainGameLoop : MonoBehaviour
 
             if(GetComponent<GameLoop>().GetFinishedFadeIn())
             {
-                //GetComponent<GameLoop>().SetFinishedFadeIn(false);
                 ResetFade();
 
                 if(playFadeOut)
@@ -52,28 +50,6 @@ public class MainGameLoop : MonoBehaviour
 
                 playFadeIn = true;
             }
-
-
-            //if (playFadeIn)
-            //{
-            //    gameObject.GetComponent<GameLoop>().PlayFadeIn();
-            //    playFadeIn = false;
-            //    playFadeOut = true;
-            //}
-
-            //if (GetComponent<GameLoop>().GetFinishedFadeIn())
-            //{
-            //    if(playFadeOut)
-            //    {
-            //        gameObject.GetComponent<GameLoop>().PlayFadeOut();
-            //        playFadeOut = false;
-            //    }
-            //    ResetCharacter();
-            //    ResetTimer();
-            //}
-                
-            
-            //gameObject.GetComponent<ChangeScene>().ReloadGameScene();
         }
     }
 
