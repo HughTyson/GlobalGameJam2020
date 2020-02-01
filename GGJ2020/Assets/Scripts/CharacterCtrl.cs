@@ -35,6 +35,9 @@ public class CharacterCtrl : MonoBehaviour
     public LayerMask interactableMask;
     private RaycastHit interactable;
 
+    private GameObject prevLookAt;
+
+
     void Start()
     {
         //Initialise the camera bob positions
@@ -52,6 +55,7 @@ public class CharacterCtrl : MonoBehaviour
     {
         if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out interactable, 20.0f, interactableMask))
         {
+
             Debug.Log("Looking at interactable object");
             return interactable.transform.gameObject;
         }
