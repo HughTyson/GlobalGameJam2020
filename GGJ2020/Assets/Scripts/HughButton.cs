@@ -100,4 +100,16 @@ public class HughButton : MonoBehaviour
     {
         opener = op;
     }
+
+    public void resetButton()
+    {
+        clicked = false;
+        show_button = false;
+
+        if(socket.GetComponent<WireSocketLogic>().IsSocketBeingUsed())
+        {
+            socket.GetComponent<WireSocketLogic>().GetPlugObject().GetComponent<WirePlugLogic>().UnplugFromSocket();
+        }
+        
+    }
 }
