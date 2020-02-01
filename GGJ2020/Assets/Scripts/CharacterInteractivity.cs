@@ -52,7 +52,7 @@ public class CharacterInteractivity : MonoBehaviour
         {
             if (raycastObjectHit.transform.gameObject.GetComponent<CustomTagSystem>() != null)
             {
-                if (raycastObjectHit.transform.gameObject != currentlyLookingAt.reference) // looked at new thing
+                if (raycastObjectHit.transform.gameObject != currentlyLookingAt.reference && raycastObjectHit.transform.gameObject != currentlyHolding.reference) // looked at new thing
                 {
                     LookedAwayFromCurrent();
                     SetupNewLookAt();
