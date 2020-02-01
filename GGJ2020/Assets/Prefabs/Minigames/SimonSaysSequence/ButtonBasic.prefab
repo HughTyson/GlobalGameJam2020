@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 8765832425617996406}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 20}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -52,6 +52,10 @@ MonoBehaviour:
   mat_off: {fileID: 2100000, guid: 2e7fde5a360d1c04486fc6257be6d7a7, type: 2}
   buttonValue: 4
   clicked: 0
+  offsetPos1: 0
+  offsetPos2: 0
+  originalPos: 0
+  flashing: 0
 --- !u!23 &8765832425617996404
 MeshRenderer:
   m_ObjectHideFlags: 0

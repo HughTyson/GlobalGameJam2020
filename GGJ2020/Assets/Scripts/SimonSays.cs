@@ -5,53 +5,73 @@ using UnityEngine;
 public class SimonSays : MonoBehaviour
 {
     public Button button;
-    private Button[] buttons = new Button[5];
+    private Button[] buttons = new Button[6];
 
     private int number = 0;
-    private List<int> sequence = new List<int>();
+    public List<int> sequence = new List<int>();
     public bool complete = false;
     // Start is called before the first frame update
     void Start()
     {
         Minigame_SS();   
-        int offset = -5;
+        int offset = -2;
         for (int i = 0; i < 5; i++)
         {
             buttons[i] = Instantiate(button, this.transform);
             buttons[i].buttonValue = i;
-            buttons[i].transform.position = new Vector3(0,0,offset);
+            buttons[i].transform.position = new Vector3(-2.3f,2,offset);
 
-            offset += 2;
+            offset += 1;
         }
+        buttons[5] = Instantiate(button, this.transform);
+        buttons[5].buttonValue = -1;
+        buttons[5].transform.position = new Vector3(-2.3f, 1, 0);
+        //buttons[5].transform.localScale = new Vector3(0.5f,0.5f,0.5f);
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        for (int i = 0; i < 5; i++)
+        if (complete == false)
         {
-            if (buttons[i].clicked)
+            for (int i = 0; i < 5; i++)
             {
-                if (sequence[number] == buttons[i].buttonValue)
+                if (buttons[i].clicked)
                 {
-                    Debug.Log("CORRECTAMUNDO");
-                    number++;
+                    if (sequence[number] == buttons[i].buttonValue)
+                    {
+                        //Debug.Log("CORRECTAMUNDO");
+                        number++;
+                    }
+                    else
+                    {
+                        //Debug.Log("BIG BAD >:(");
+                        onReset();
+                    }
+                    buttons[i].clicked = false;
                 }
-                else
+            }
+
+            if (buttons[5].clicked)
+            {
+                for (int i = 0; i < 5; i++)
                 {
-                    Debug.Log("BIG BAD >:(");
-                    onReset();
+                    StartCoroutine(buttons[i].ShowSequence());
+                    buttons[i].flashing = true;
                 }
-                buttons[i].clicked = false;
+                buttons[5].clicked = false;
             }
-        }
-        if (number > 3 && complete == false)
-        {
-            complete = true;
-            for (int i = 0; i < 5; i++) {
-                buttons[i].itsOver(true);
+
+            if (number > 3)
+            {
+                complete = true;
+                for (int i = 0; i < 5; i++)
+                {
+                    buttons[i].itsOver(true);
+                }
+                //Debug.Log("Oh lawd you got it!");
             }
-            Debug.Log("Oh lawd you got it!");
         }
     }
 
@@ -62,7 +82,7 @@ public class SimonSays : MonoBehaviour
         {
             buttons[i].itsOver(false);
         }
-        Debug.Log("Reset, you messed it up ;(");
+       // Debug.Log("Reset, you messed it up ;(");
     }
 
     void Minigame_SS()
@@ -76,6 +96,6 @@ public class SimonSays : MonoBehaviour
         {
             res += sequence[i];
         }
-        Debug.Log(res);
+        //Debug.Log(res);
     }
 }
