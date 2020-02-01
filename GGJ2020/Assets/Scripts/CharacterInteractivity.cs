@@ -23,7 +23,8 @@ public class CharacterInteractivity : MonoBehaviour
             NONE,
             SOCKET,
             PLUG,
-            BUTTON,
+            DAN_BUTTON,
+            HUGH_BUTTON,
             LEVER
         }
 
@@ -97,9 +98,15 @@ public class CharacterInteractivity : MonoBehaviour
                         currentlyLookingAt.myType = InteractiveObject.TYPE.LEVER;
                         break;
                     }
-                case CustomTagSystem.TAG.BUTTON:
+                case CustomTagSystem.TAG.DAN_BUTTON:
                     {
-                        currentlyLookingAt.myType = InteractiveObject.TYPE.BUTTON;
+                        currentlyLookingAt.myType = InteractiveObject.TYPE.DAN_BUTTON;
+
+                        break;
+                    }
+                case CustomTagSystem.TAG.HUGH_BUTTON:
+                    {
+                        currentlyLookingAt.myType = InteractiveObject.TYPE.HUGH_BUTTON;
 
                         break;
                     }
@@ -132,7 +139,12 @@ public class CharacterInteractivity : MonoBehaviour
 
                     break;
                 }
-            case InteractiveObject.TYPE.BUTTON:
+            case InteractiveObject.TYPE.HUGH_BUTTON:
+                {
+
+                    break;
+                }
+            case InteractiveObject.TYPE.DAN_BUTTON:
                 {
 
                     break;
@@ -164,7 +176,12 @@ public class CharacterInteractivity : MonoBehaviour
 
                         break;
                     }
-                case InteractiveObject.TYPE.BUTTON:
+                case InteractiveObject.TYPE.HUGH_BUTTON:
+                    {
+
+                        break;
+                    }
+                case InteractiveObject.TYPE.DAN_BUTTON:
                     {
 
                         break;

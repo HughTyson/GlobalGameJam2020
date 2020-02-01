@@ -12,7 +12,8 @@ public class CustomTagSystem : MonoBehaviour
         WIRE_SOCKET,
         WIRE_PLUG,
         INTERACTIVE,
-        BUTTON,
+        HUGH_BUTTON,
+        DAN_BUTTON,
         LEVER
     }
 
