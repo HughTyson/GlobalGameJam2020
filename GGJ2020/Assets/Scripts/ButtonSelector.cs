@@ -10,6 +10,7 @@ public class ButtonSelector : MonoBehaviour
 
     
     [SerializeField] GameObject door;
+    
     int identifier = 0;
     int prev_ident;
    
@@ -21,6 +22,8 @@ public class ButtonSelector : MonoBehaviour
         buttons = GameObject.FindGameObjectsWithTag("MultipleButtons");
         buttons[identifier].GetComponent<HughButton>().setOpener(false);
 
+       
+
         //get a new random button that is not the same as the last button
 
         identifier = Random.Range(0, buttons.Length);
@@ -28,6 +31,8 @@ public class ButtonSelector : MonoBehaviour
 
         buttons[identifier].GetComponent<HughButton>().setOpener(true);
         buttons[identifier].GetComponent<HughButton>().door = door;
+
+        
 
         Debug.Log(identifier);
         Initilise();
@@ -55,4 +60,5 @@ public class ButtonSelector : MonoBehaviour
         Debug.Log(identifier);
 
     }
+    
 }

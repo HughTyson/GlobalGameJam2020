@@ -12,8 +12,12 @@ public class HughButton : MonoBehaviour
     public Material default_mat;
     public Material mat_on = null;
     public Material mat_off = null;
+    public Material mat_its_here = null;
     CharacterCtrl player;
     public GameObject door;
+    [SerializeField] GameObject socket;
+
+    bool show_button = false;
 
     Vector3 offset;
     Vector3 basePos;
@@ -27,6 +31,8 @@ public class HughButton : MonoBehaviour
 
         offset.y = transform.position.y - .1f;
         basePos = transform.position;
+
+        socket.GetComponent<WireSocketLogic>().SetColour((WireGameScript.COLOUR_ENUM)Random.Range(0, 3));
     }
 
     private void Update()
@@ -42,6 +48,16 @@ public class HughButton : MonoBehaviour
             {
                 clicked = false;
             }
+        }
+
+        if(opener)
+        {
+           show_button = socket.GetComponent<WireSocketLogic>().IsColourMatched();
+        }
+
+        if(show_button && opener)
+        {
+            GetComponent<MeshRenderer>().sharedMaterial = mat_its_here;
         }
     }
 
