@@ -13,7 +13,7 @@ public class WakeUp : MonoBehaviour
     {
         cam = GetComponent<Camera>();
 
-        cam.transform.rotation = new Vector3(,cam.transform.rotation.y,cam.transform.rotation.z)
+       // cam.transform.rotation = new Vector3(,cam.transform.rotation.y,cam.transform.rotation.z)
     }
 
     // Update is called once per frame
@@ -21,7 +21,7 @@ public class WakeUp : MonoBehaviour
     {
         if (!completed)
         {
-            cam.
+           // cam.
         }
     }
 }
