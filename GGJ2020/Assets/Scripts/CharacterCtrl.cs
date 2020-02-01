@@ -120,6 +120,17 @@ public class CharacterCtrl : MonoBehaviour
             //Turn and move the player if applicable
             Turn();
             Move(-Input.GetAxisRaw("Vertical"), Input.GetAxisRaw("Horizontal"));
+
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                moveSpeed = 7.5f;
+                bobSpeed = 5.8f;
+            }
+            else
+            {
+                moveSpeed = 5;
+                bobSpeed = 4.8f;
+            }
         }
     }
     

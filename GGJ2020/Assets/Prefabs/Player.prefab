@@ -48,6 +48,7 @@ GameObject:
   - component: {fileID: 308277177}
   - component: {fileID: 308277178}
   - component: {fileID: 308277176}
+  - component: {fileID: 1489812693}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -149,7 +150,9 @@ MonoBehaviour:
   InitialRotation: 0
   interactableMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
+  imAwake: 0
+  changeScene: {fileID: 0}
 --- !u!54 &8702584034532693048
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -165,7 +168,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 84
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &5551057798102710403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -288,7 +291,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8702584034532693030}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 0}
   m_CullingMode: 0
@@ -319,6 +322,18 @@ MonoBehaviour:
   - {fileID: 8300000, guid: fb80e36f5a8606b47bfd1939c5b3b417, type: 3}
   - {fileID: 8300000, guid: d0b50286817978a41a2ab8076f17c5ae, type: 3}
   - {fileID: 8300000, guid: b5b09aeabb6c7704e97b86f2b01a7e33, type: 3}
+--- !u!114 &1489812693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8702584034532693030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a66c49271ce57b5458b3b8630b2e9f23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8702584035115287211
 GameObject:
   m_ObjectHideFlags: 0
@@ -330,6 +345,7 @@ GameObject:
   - component: {fileID: 8702584035115287214}
   - component: {fileID: 8702584035115287209}
   - component: {fileID: 8702584035115287208}
+  - component: {fileID: 1510704132}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -344,7 +360,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8702584035115287211}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.5, z: 0.41}
   m_LocalScale: {x: 1, y: 0.5, z: 1}
   m_Children: []
@@ -402,3 +418,22 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8702584035115287211}
   m_Enabled: 1
+--- !u!95 &1510704132
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8702584035115287211}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a197aa092f6abc94a83f28d1acbafeed, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
