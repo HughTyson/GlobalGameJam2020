@@ -14,7 +14,7 @@ public class ChangeScene : MonoBehaviour
         SceneManager.UnloadSceneAsync(currentScene);
 
         ResetGameScene();
-        SceneManager.LoadSceneAsync("Scene 1 - Menu");
+        SceneManager.LoadSceneAsync("Main Menu");
     }
 
     public void LoadGameScene()
@@ -22,7 +22,7 @@ public class ChangeScene : MonoBehaviour
         Scene currentScene = SceneManager.GetActiveScene();
         SceneManager.UnloadSceneAsync(currentScene);
 
-        SceneManager.LoadSceneAsync("Scene 2 - Game");
+        SceneManager.LoadSceneAsync("Level");
     }
 
     public void LoadEndScene()
@@ -32,7 +32,7 @@ public class ChangeScene : MonoBehaviour
         ResetGameScene();
         Cursor.lockState = CursorLockMode.None;
 
-        SceneManager.LoadSceneAsync("Scene 3 - End");
+        SceneManager.LoadSceneAsync("End Screen");
     }
 
     public void QuitGame()
@@ -45,7 +45,7 @@ public class ChangeScene : MonoBehaviour
 
     public void ReloadGameScene()
     {
-        SceneManager.UnloadSceneAsync("Scene 2 - Game");
+        SceneManager.UnloadSceneAsync("Level");
         LoadGameScene();
     }
 
@@ -54,7 +54,7 @@ public class ChangeScene : MonoBehaviour
     {
         string currentScene = SceneManager.GetActiveScene().name;
 
-        if(currentScene == "Scene 2 - Game")
+        if(currentScene == "Level")
         {
             gameObject.GetComponent<Pause>().ResumeGame();
         }

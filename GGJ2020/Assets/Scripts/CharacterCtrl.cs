@@ -45,7 +45,7 @@ public class CharacterCtrl : MonoBehaviour
     bool playingSteps = false;
 
     //Robot commmands
-    public robotOrders robot;
+    robotOrders robot;
     void Start()
     {
 
@@ -59,7 +59,27 @@ public class CharacterCtrl : MonoBehaviour
         //Init mouse lookat rotation to determine starting rotation of player
         mouseLook.x = InitialRotation;
 
+        robot = GetComponent<robotOrders>();
         robot.showMessage();
+    }
+
+    public void ResetChar()
+    {
+        //Initialise the camera bob positions
+        restPos = Camera.main.transform.localPosition;
+        camPos = Camera.main.transform.localPosition;
+
+        //Lock the cursor in the middle of the screen
+        Cursor.lockState = CursorLockMode.Locked;
+
+        //Init mouse lookat rotation to determine starting rotation of player
+        mouseLook.x = InitialRotation;
+        playingSteps = false;
+
+        Quaternion rote = new Quaternion();
+        rote.eulerAngles = new Vector3(0, 0, 0);
+        transform.SetPositionAndRotation(new Vector3(0, 1.512f, 0), rote);
+
     }
 
     public GameObject GetInteractable()
@@ -90,6 +110,7 @@ public class CharacterCtrl : MonoBehaviour
     //This function handles physics calculations every cycle such as player movement
     private void FixedUpdate()
     {
+
         if (imAwake)
         {
             //Apply a headbob to the camera if the player is moving 
@@ -161,6 +182,7 @@ public class CharacterCtrl : MonoBehaviour
     //This function handles the player movement foward/back, and left/right based on input
     void Move(float h, float v)
     {
+        Debug.Log("Im moving. Yay!");
         Vector3 movement = new Vector3(h, 0.0f, v);
         movement = Camera.main.transform.forward * (-movement.x) + Camera.main.transform.right * movement.z;
         movement.y = 0.0f;
