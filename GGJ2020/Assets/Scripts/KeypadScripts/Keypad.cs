@@ -79,30 +79,32 @@ public class Keypad : MonoBehaviour
 
     //Returns true or false regarding whether the right code was inputted
     public void checkCode()
-    {
-        //Check each position in the lists 
-        for(int i =0; i < code.Count; i++)
+    {if (code.Count == input.Count)
         {
-            //If the positions contents don't add up add one to the error log
-            if(code[i] != input[i])
+            //Check each position in the lists 
+            for (int i = 0; i < code.Count; i++)
             {
-                errorsMade++;
+                //If the positions contents don't add up add one to the error log
+                if (code[i] != input[i])
+                {
+                    errorsMade++;
+                }
             }
-        }
 
-        //If errors, return false, reset the counter
-        if(errorsMade > 0)
-        {
-            errorsMade = 0;
-            Debug.Log("Wrong code");
-            //Clear the inputted numbers
-            clearInput();
-        }
-        else
-        {
-            Debug.Log("Right code");
-            clearInput();
-            errorsMade = 0;
+            //If errors, return false, reset the counter
+            if (errorsMade > 0)
+            {
+                errorsMade = 0;
+                Debug.Log("Wrong code");
+                //Clear the inputted numbers
+                clearInput();
+            }
+            else
+            {
+                Debug.Log("Right code");
+                clearInput();
+                errorsMade = 0;
+            }
         }
     }
 
