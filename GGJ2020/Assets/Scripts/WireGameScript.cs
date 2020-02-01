@@ -6,6 +6,7 @@ public class WireGameScript : MonoBehaviour
 {
     // Start is called before the first frame update
 
+
     public enum COLOUR_ENUM
     { 
     PURPLE,
@@ -13,6 +14,8 @@ public class WireGameScript : MonoBehaviour
     ORANGE,
     CYAN    
     };
+
+    [SerializeField] GameObject DoorObject;
 
     [SerializeField] List<GameObject> WireBoardSockets;
 
@@ -88,8 +91,8 @@ public class WireGameScript : MonoBehaviour
                 if (allTrue)
                 {
                         current_state = STATE.COMPLETE;
+                        DoorObject.GetComponent<DoorOpen>().OpenDoors();
 
-                        Debug.Log("CORRECT!");
                 }
                 break;
             }        
