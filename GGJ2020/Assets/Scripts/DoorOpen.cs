@@ -26,6 +26,7 @@ public class DoorOpen : MonoBehaviour
         {
             Door1.GetComponent<Animator>().enabled = true;
             Door1.GetComponent<Animator>().Play("DoorAnim");
+            GetComponent<AudioSource>().Play();
         }
         else
         {Debug.LogError("Invalid Door 1");
