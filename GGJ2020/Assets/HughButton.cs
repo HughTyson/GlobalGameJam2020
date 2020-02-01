@@ -45,7 +45,6 @@ public class HughButton : MonoBehaviour
         }
     }
 
-
     public void LookedAt()
     {
         //turn green
@@ -53,6 +52,7 @@ public class HughButton : MonoBehaviour
         //found
         if (opener == true)
         {
+            
             Debug.Log("Found you");
         }
     }
@@ -71,8 +71,7 @@ public class HughButton : MonoBehaviour
         //check if this is the correct button
         if (opener == true)
         {
-                Debug.Log("clicked");
-                door.SetActive(false);
+            door.GetComponent<DoorOpen>().OpenDoors();
         }
     }
 

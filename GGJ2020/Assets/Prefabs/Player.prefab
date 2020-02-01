@@ -179,8 +179,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   theCamera: {fileID: 8702584035115287209}
-  handTransform: {fileID: 0}
+  handTransform: {fileID: 5051344821250508591}
   viewingDistance: 5
+  layermask:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!82 &308277177
 AudioSource:
   m_ObjectHideFlags: 0
@@ -287,7 +290,7 @@ Animator:
   m_GameObject: {fileID: 8702584034532693030}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a39d76e0a7a566d48a5f569eb2ead299, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
