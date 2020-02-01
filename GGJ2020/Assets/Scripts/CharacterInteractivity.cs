@@ -25,7 +25,8 @@ public class CharacterInteractivity : MonoBehaviour
             PLUG,
             DAN_BUTTON,
             HUGH_BUTTON,
-            LEVER
+            LEVER,
+            FINAL_BUTTON
         }
 
         public TYPE myType;
@@ -52,7 +53,7 @@ public class CharacterInteractivity : MonoBehaviour
         {
             if (raycastObjectHit.transform.gameObject.GetComponent<CustomTagSystem>() != null)
             {
-                if (raycastObjectHit.transform.gameObject != currentlyLookingAt.reference) // looked at new thing
+                if (raycastObjectHit.transform.gameObject != currentlyLookingAt.reference && raycastObjectHit.transform.gameObject != currentlyHolding.reference) // looked at new thing
                 {
                     LookedAwayFromCurrent();
                     SetupNewLookAt();
@@ -126,6 +127,11 @@ public class CharacterInteractivity : MonoBehaviour
 
                         break;
                     }
+                case CustomTagSystem.TAG.FINAL_BUTTON:
+                    {
+                        currentlyLookingAt.myType = InteractiveObject.TYPE.FINAL_BUTTON;
+                        break;
+                    }
             }
 
             if (found)
@@ -172,6 +178,11 @@ public class CharacterInteractivity : MonoBehaviour
 
                     break;
                 }
+            case InteractiveObject.TYPE.FINAL_BUTTON:
+                {
+                    currentlyLookingAt.reference.GetComponent<FinalButton>().lookedAt();
+                    break;
+                }
 
 
 
@@ -211,6 +222,12 @@ public class CharacterInteractivity : MonoBehaviour
 
                         break;
                     }
+                case InteractiveObject.TYPE.FINAL_BUTTON:
+                    {
+                        currentlyLookingAt.reference.GetComponent<FinalButton>().notLookedAt();
+                        break;
+                    }
+
             }
 
         }
@@ -264,7 +281,11 @@ public class CharacterInteractivity : MonoBehaviour
 
                         break;
                     }
-
+                case InteractiveObject.TYPE.FINAL_BUTTON:
+                    {
+                        currentlyLookingAt.reference.GetComponent<FinalButton>().isClicked();
+                        break;
+                    }
 
 
             }
