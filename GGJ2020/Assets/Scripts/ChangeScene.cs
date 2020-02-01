@@ -5,8 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class ChangeScene : MonoBehaviour
 {
+
     public void Scene1()
     {
+        ResetGameScene();
         SceneManager.LoadScene("Scene 1 - Menu");
     }
 
@@ -17,18 +19,19 @@ public class ChangeScene : MonoBehaviour
 
     public void Scene3()
     {
+        ResetGameScene();
         SceneManager.LoadScene("Scene 3 - End");
     }
 
-    //// Start is called before the first frame update
-    //void Start()
-    //{
-        
-    //}
+    // Resets the pause menu so that when the game restarts it is not paused.
+    public void ResetGameScene()
+    {
+        string currentScene = SceneManager.GetActiveScene().name;
 
-    //// Update is called once per frame
-    //void Update()
-    //{
-        
-    //}
+        if(currentScene == "Scene 2 - Game")
+        {
+            gameObject.GetComponent<Pause>().ResumeGame();
+            //this.GetComponent<Pause>().ResumeGame();
+        }
+    }
 }

@@ -4,5 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Dom's Test Scenes/Scene 3 - End.unity
+    guid: 5653d9cee74dc5346b4c2238f0a258b2
+  - enabled: 1
+    path: Assets/Scenes/Dom's Test Scenes/Scene 2 - Game.unity
+    guid: c4aab1bf29dd9ed48822f3cb8f7d9d41
+  - enabled: 1
+    path: Assets/Scenes/Dom's Test Scenes/Scene 1 - Menu.unity
+    guid: 83c2948912ff2ee46813976a14cbbafd
   m_configObjects: {}
