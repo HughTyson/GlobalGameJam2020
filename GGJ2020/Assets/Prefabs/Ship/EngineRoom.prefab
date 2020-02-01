@@ -263,7 +263,7 @@ MonoBehaviour:
   - {fileID: 48062658218631497}
   - {fileID: 1152480764342140054}
   Door: {fileID: 0}
-  WireGame: {fileID: 0}
+  WireGame: {fileID: 5819658032226710804}
 --- !u!1 &4175886208787851982
 GameObject:
   m_ObjectHideFlags: 0
@@ -988,17 +988,17 @@ PrefabInstance:
     - target: {fileID: 4659014163533130050, guid: ba0e090694b48dd429f8ed354cb7d069,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.7399756
+      value: 5.445
       objectReference: {fileID: 0}
     - target: {fileID: 4659014163533130050, guid: ba0e090694b48dd429f8ed354cb7d069,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.55
+      value: 0.308
       objectReference: {fileID: 0}
     - target: {fileID: 4659014163533130050, guid: ba0e090694b48dd429f8ed354cb7d069,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.92
+      value: -4.32
       objectReference: {fileID: 0}
     - target: {fileID: 4659014163533130050, guid: ba0e090694b48dd429f8ed354cb7d069,
         type: 3}
