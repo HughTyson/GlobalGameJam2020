@@ -3,21 +3,29 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+// Load scene unloads the current scene and loads the new one.
+
 public class ChangeScene : MonoBehaviour
 {
 
-    public void Scene1()
+    public void LoadMenuScene()
     {
         ResetGameScene();
         SceneManager.LoadScene("Scene 1 - Menu");
     }
 
-    public void Scene2()
+    public void LoadGameScene()
     {
         SceneManager.LoadScene("Scene 2 - Game");
     }
 
-    public void Scene3()
+    public void ReloadGameScene()
+    {
+        SceneManager.UnloadSceneAsync("Scene 2 - Game");
+        LoadGameScene();
+    }
+
+    public void LoadEndScene()
     {
         ResetGameScene();
         SceneManager.LoadScene("Scene 3 - End");
