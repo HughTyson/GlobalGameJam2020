@@ -53,9 +53,19 @@ public class GameLoop : MonoBehaviour
         return finishedFadeOut;
     }
 
+    public void SetFinishedFadeOut(bool b)
+    {
+        finishedFadeOut = b;
+    }
+
     public bool GetFinishedFadeIn()
     {
         return finishedFadeIn;
+    }
+
+    public void SetFinishedFadeIn(bool b)
+    {
+        finishedFadeIn = b;
     }
 
     // Play the specific animation
