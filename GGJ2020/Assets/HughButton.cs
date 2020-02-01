@@ -11,13 +11,14 @@ public class HughButton : MonoBehaviour
     public Material mat_on = null;
     public Material mat_off = null;
     CharacterCtrl player;
-
+    public GameObject door;
     
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterCtrl>();
-        
+        GetComponent<MeshRenderer>().sharedMaterial = mat_off;
 
+        
     }
 
     // Update is called once per frame
@@ -30,6 +31,10 @@ public class HughButton : MonoBehaviour
         //turn green
         GetComponent<MeshRenderer>().sharedMaterial = mat_on;
         //found
+        if (opener == true)
+        {
+            Debug.Log("Found you");
+        }
     }
 
     public void NotBeingLookedAt()
@@ -43,10 +48,8 @@ public class HughButton : MonoBehaviour
         //check if this is the correct button
         if (opener == true)
         {
-            if (gameObject == player.GetInteractable()) //if it is being interacted with
-            {
-                Debug.Log("Found you bitch");
-            }
+                Debug.Log("clicked");
+                door.SetActive(false);
         }
     }
 
