@@ -7,7 +7,7 @@ public class GameLoop : MonoBehaviour
     [SerializeField] private GameObject _crossFade;
 
     // Start is called before the first frame update
-    private void Start()
+    private void Awake()
     {
         StartCoroutine(FadeOut());
     }
@@ -35,11 +35,8 @@ public class GameLoop : MonoBehaviour
         _crossFade.GetComponent<Animator>().enabled = true;
         _crossFade.GetComponent<Animator>().Play("FadeOut", 0,0);
 
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(2f);
         _crossFade.GetComponent<Animator>().enabled = false;
-
-        // Disable the Fade object so it stops appearing
-        _crossFade.SetActive(false);
     }
 
     // Update is called once per frame
