@@ -60,5 +60,15 @@ public class ButtonSelector : MonoBehaviour
         Debug.Log(identifier);
 
     }
+
+    public void resetMiniGame()
+    {
+        for(int i = 0; i < buttons.Length; i++)
+        {
+            buttons[i].GetComponent<HughButton>().resetButton();
+        }
+
+        door.GetComponent<DoorOpen>().CloseDoor();
+    }
     
 }
