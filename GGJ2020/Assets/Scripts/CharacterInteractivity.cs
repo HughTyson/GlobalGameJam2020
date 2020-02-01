@@ -180,7 +180,7 @@ public class CharacterInteractivity : MonoBehaviour
                 }
             case InteractiveObject.TYPE.LEVER:
                 {
-
+                    currentlyLookingAt.reference.GetComponent<LeverLogic>().BeingLookedAt();
                     break;
                 }
             case InteractiveObject.TYPE.FINAL_BUTTON:
@@ -224,7 +224,7 @@ public class CharacterInteractivity : MonoBehaviour
                     }
                 case InteractiveObject.TYPE.LEVER:
                     {
-
+                        currentlyLookingAt.reference.GetComponent<LeverLogic>().StoppedBeingLookedAt();
                         break;
                     }
                 case InteractiveObject.TYPE.FINAL_BUTTON:
@@ -283,7 +283,7 @@ public class CharacterInteractivity : MonoBehaviour
                     }
                 case InteractiveObject.TYPE.LEVER:
                     {
-
+                        currentlyLookingAt.reference.GetComponent<LeverLogic>().WasClicked();
                         break;
                     }
                 case InteractiveObject.TYPE.FINAL_BUTTON:
@@ -332,6 +332,11 @@ public class CharacterInteractivity : MonoBehaviour
             }
         }
       
+    }
+
+    private void ResetCharacterInteractivity()
+    {
+        LetGoOfHeldItem();
     }
 
 }

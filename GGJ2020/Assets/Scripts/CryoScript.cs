@@ -12,7 +12,7 @@ public class CryoScript : MonoBehaviour
 
     public void Reset()
     {
-        Screen.GetComponent<CryoScript>().Reset();
+        Screen.GetComponent<CryoScreenScript>().Reset();
 
         if (Plug.GetComponent<WirePlugLogic>().IsInSocket())
         {

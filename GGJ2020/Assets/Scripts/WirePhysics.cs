@@ -12,7 +12,7 @@ public class WirePhysics : MonoBehaviour
     [SerializeField] Transform WirePlugAttachementPoint;
     [SerializeField]  Transform StaticWireSide;
 
-
+    [SerializeField] List<Material> colourMaterials;
 
     int particleAmmount;
   
@@ -39,7 +39,10 @@ public class WirePhysics : MonoBehaviour
 
         LineParticles[1].dragPercentage = 0.9f;
         LineParticles[LineParticles.Count - 2].dragPercentage = 0.9f;
+
+   
     }
+
 
     // Update is called once per frame
     void FixedUpdate()
@@ -63,6 +66,7 @@ public class WirePhysics : MonoBehaviour
                 PoleConstraint(LineParticles[i], LineParticles[i + 1], lineLength / (float)LineParticles.Count);
             }
         }
+
 
 
         if (!WirePlugAttachementPoint.GetComponentInParent<Rigidbody>().isKinematic)

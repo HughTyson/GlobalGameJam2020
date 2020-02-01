@@ -73,6 +73,7 @@ public class WireGameScript : MonoBehaviour
         }
     }
 
+ 
     // Update is called once per frame
     void Update()
     {
@@ -99,5 +100,10 @@ public class WireGameScript : MonoBehaviour
         }
 
 
+    }
+
+    public void Reset()
+    {
+        current_state = STATE.INCOMPLETE;
     }
 }

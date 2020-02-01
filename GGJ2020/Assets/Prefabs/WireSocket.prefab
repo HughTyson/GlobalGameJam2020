@@ -109,6 +109,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ConnectedPlug: {fileID: 0}
   ConnectionTransform: {fileID: 4409390412520814365}
+  colourMaterials:
+  - {fileID: 2100000, guid: 2a28283a76f66e344b9af37778509bea, type: 2}
+  - {fileID: 2100000, guid: c7a64720ad7d0a24bbccf460019db3ce, type: 2}
+  - {fileID: 2100000, guid: 6710cc0da11d3e048b566f1611743b28, type: 2}
+  - {fileID: 2100000, guid: 298cf416699f218459f609ed499adfa1, type: 2}
 --- !u!65 &8972792940907588904
 BoxCollider:
   m_ObjectHideFlags: 0
