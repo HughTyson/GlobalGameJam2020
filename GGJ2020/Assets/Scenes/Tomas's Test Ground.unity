@@ -140,7 +140,7 @@ PrefabInstance:
     - target: {fileID: 8702584034532693051, guid: 09b86f32ca09f9645af3013179f632b3,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: -0.41
       objectReference: {fileID: 0}
     - target: {fileID: 8702584034532693051, guid: 09b86f32ca09f9645af3013179f632b3,
         type: 3}
@@ -489,7 +489,13 @@ PrefabInstance:
       propertyPath: tags.Array.data[1]
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 367607264516188073, guid: 60d7aedff2809ee44995db2f161ecca0,
+        type: 3}
+      propertyPath: ConnectedPlug
+      value: 
+      objectReference: {fileID: 1868476413}
+    m_RemovedComponents:
+    - {fileID: 22610261984785633, guid: 60d7aedff2809ee44995db2f161ecca0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 60d7aedff2809ee44995db2f161ecca0, type: 3}
 --- !u!1001 &7791250002020855968
 PrefabInstance:
