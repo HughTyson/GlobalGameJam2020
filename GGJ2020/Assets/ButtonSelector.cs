@@ -10,28 +10,49 @@ public class ButtonSelector : MonoBehaviour
 
     
     [SerializeField] GameObject door;
-    int identifier;
+    int identifier = 0;
+    int prev_ident;
+   
+    bool same = false;
 
     // Start is called before the first frame update
     void Start()
     {
-
         buttons = GameObject.FindGameObjectsWithTag("MultipleButtons");
+        buttons[identifier].GetComponent<HughButton>().setOpener(false);
+
+        //get a new random button that is not the same as the last button
+
         identifier = Random.Range(0, buttons.Length);
         opener = buttons[identifier];
 
         buttons[identifier].GetComponent<HughButton>().setOpener(true);
         buttons[identifier].GetComponent<HughButton>().door = door;
+
         Debug.Log(identifier);
+        Initilise();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Initilise()
     {
+        prev_ident = identifier;
+        buttons[prev_ident].GetComponent<HughButton>().setOpener(false);
 
+        //get a new random button that is not the same as the last button
+        do
+        {
+            identifier = Random.Range(0, buttons.Length);
 
+        } while (identifier == prev_ident);
 
+        
+        
+        opener = buttons[identifier];
 
+        buttons[identifier].GetComponent<HughButton>().setOpener(true);
+        buttons[identifier].GetComponent<HughButton>().door = door;
+
+        Debug.Log(identifier);
 
     }
 }
