@@ -49,6 +49,8 @@ MonoBehaviour:
   default_mat: {fileID: 2100000, guid: a128160c5957f0b4b92c5ceb36ab8025, type: 2}
   mat_on: {fileID: 2100000, guid: c93e121db0c829d46a18352c5f45d4d3, type: 2}
   mat_off: {fileID: 2100000, guid: 2e7fde5a360d1c04486fc6257be6d7a7, type: 2}
+  buttonValue: 4
+  clicked: 0
 --- !u!23 &8765832425617996404
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -103,7 +105,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8765832425617996406}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
