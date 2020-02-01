@@ -3,29 +3,50 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+// Load scene unloads the current scene and loads the new one.
+
 public class ChangeScene : MonoBehaviour
 {
 
-    public void Scene1()
+    public void LoadMenuScene()
     {
-        ResetGameScene();
-        SceneManager.LoadScene("Scene 1 - Menu");
+        Scene currentScene = SceneManager.GetActiveScene();
+        SceneManager.UnloadSceneAsync(currentScene);
+
+        //ResetGameScene();
+        SceneManager.LoadSceneAsync("Scene 1 - Menu");
     }
 
-    public void Scene2()
+    public void LoadGameScene()
     {
-        SceneManager.LoadScene("Scene 2 - Game");
+        Scene currentScene = SceneManager.GetActiveScene();
+        SceneManager.UnloadSceneAsync(currentScene);
+
+        SceneManager.LoadSceneAsync("Scene 2 - Game");
     }
 
-    public void Scene3()
+    public void LoadEndScene()
     {
+        Scene currentScene = SceneManager.GetActiveScene();
+        SceneManager.UnloadSceneAsync(currentScene);
         ResetGameScene();
-        SceneManager.LoadScene("Scene 3 - End");
+        Cursor.lockState = CursorLockMode.None;
+
+        SceneManager.LoadSceneAsync("Scene 3 - End");
     }
 
     public void QuitGame()
     {
+        Scene currentScene = SceneManager.GetActiveScene();
+        SceneManager.UnloadSceneAsync(currentScene);
+
         Application.Quit();
+    }
+
+    public void ReloadGameScene()
+    {
+        SceneManager.UnloadSceneAsync("Scene 2 - Game");
+        LoadGameScene();
     }
 
     // Resets the pause menu so that when the game restarts it is not paused.
@@ -36,7 +57,6 @@ public class ChangeScene : MonoBehaviour
         if(currentScene == "Scene 2 - Game")
         {
             gameObject.GetComponent<Pause>().ResumeGame();
-            //this.GetComponent<Pause>().ResumeGame();
         }
     }
 }
