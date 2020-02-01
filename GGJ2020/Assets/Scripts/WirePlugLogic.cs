@@ -11,6 +11,7 @@ public class WirePlugLogic : MonoBehaviour
     Transform attachedTransform;
 
     [SerializeField] Collider physicsCollider;
+    [SerializeField] Collider myPlugProngs;
     enum STATE
     { 
     IN_HAND,
@@ -19,6 +20,7 @@ public class WirePlugLogic : MonoBehaviour
     }
     STATE current_state = STATE.FREE;
 
+    WireGameScript.COLOUR_ENUM myColour;
     void Start()
     {
         
@@ -87,12 +89,15 @@ public class WirePlugLogic : MonoBehaviour
                 {
                     GetComponent<Rigidbody>().isKinematic = false;
                     physicsCollider.isTrigger = false;
+                    physicsCollider.enabled = true;
+
                     break;
                 }
             case STATE.PLUGGED:
                 {
                     GetComponent<Rigidbody>().isKinematic = true;
                     physicsCollider.isTrigger = true;
+                    physicsCollider.enabled = true;
                     transform.position = attachedTransform.position;
                     transform.transform.rotation = attachedTransform.rotation;
                     break;
@@ -101,6 +106,7 @@ public class WirePlugLogic : MonoBehaviour
                 {
                     GetComponent<Rigidbody>().isKinematic = true;
                     physicsCollider.isTrigger = true;
+                    physicsCollider.enabled = false;
                     transform.position = attachedTransform.position;
                     transform.transform.rotation = attachedTransform.rotation;
                     break;
@@ -123,7 +129,41 @@ public class WirePlugLogic : MonoBehaviour
         }
 
     }
+    public void SetColour(WireGameScript.COLOUR_ENUM colour)
+    {
+        myColour = colour;
 
+        switch (colour)
+        {
+            case WireGameScript.COLOUR_ENUM.BLUE:
+                {
+                    myPlugProngs.GetComponent<MeshRenderer>().material.color = new Color(0, 0, 1);
+                    break;
+                }
+            case WireGameScript.COLOUR_ENUM.ORANGE:
+                {
+                    myPlugProngs.GetComponent<MeshRenderer>().material.color = new Color(1.0f,0.64f,0);
+                    break;
+                }
+            case WireGameScript.COLOUR_ENUM.CYAN:
+                {
+                    myPlugProngs.GetComponent<MeshRenderer>().material.color = new Color(0, 1, 1);
+                    break;
+                }
+            case WireGameScript.COLOUR_ENUM.PURPLE:
+                {
+                    myPlugProngs.GetComponent<MeshRenderer>().material.color = new Color(0.5f, 0 ,0.5f);
+                    break;
+                }
+
+        }
+
+    }
+
+    public WireGameScript.COLOUR_ENUM GetColour()
+    {
+        return myColour;
+    }
     public void StoppedBeingLookedAt()
     {
         if (current_state == STATE.PLUGGED)
@@ -132,7 +172,7 @@ public class WirePlugLogic : MonoBehaviour
         }
         else
         {
-            GetComponent<MeshRenderer>().material.color = Color.red;
+            GetComponent<MeshRenderer>().material.color = Color.white;
         }
 
     }

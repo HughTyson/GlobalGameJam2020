@@ -10,12 +10,13 @@ public class CharacterInteractivity : MonoBehaviour
     [SerializeField] Camera theCamera;
     [SerializeField] Transform handTransform;
     [SerializeField] float viewingDistance;
+    [SerializeField] LayerMask layermask;
 
 
     RaycastHit raycastObjectHit;
     RaycastHit raycastObjectHitPrevious;
 
-
+    
     class InteractiveObject
     {
         public enum TYPE
@@ -49,7 +50,7 @@ public class CharacterInteractivity : MonoBehaviour
         Ray ray = new Ray(theCamera.transform.position, theCamera.transform.forward);
 
         Debug.DrawRay(ray.origin, ray.direction* viewingDistance);
-        if (Physics.Raycast(ray, out raycastObjectHit, viewingDistance, Physics.AllLayers ,QueryTriggerInteraction.Collide))
+        if (Physics.Raycast(ray, out raycastObjectHit, viewingDistance, layermask, QueryTriggerInteraction.Collide))
         {
             if (raycastObjectHit.transform.gameObject.GetComponent<CustomTagSystem>() != null)
             {
@@ -60,7 +61,11 @@ public class CharacterInteractivity : MonoBehaviour
                     LookedAtNewCurrent();
                 }
             }
-
+            else
+            {
+                LookedAwayFromCurrent();
+                NoNewLookAt();
+            }
         }
         else
         {

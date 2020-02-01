@@ -10,6 +10,7 @@ public class WireSocketLogic : MonoBehaviour
 
     [SerializeField] Transform ConnectionTransform;
 
+    WireGameScript.COLOUR_ENUM myColour;
     void Start()
     {
         if (ConnectedPlug != null)
@@ -47,17 +48,56 @@ public class WireSocketLogic : MonoBehaviour
 
     }
 
+    public void SetColour(WireGameScript.COLOUR_ENUM colour)
+    {
+        myColour = colour;
+
+        switch (colour)
+        {
+            case WireGameScript.COLOUR_ENUM.BLUE:
+                {
+                    ConnectionTransform.GetComponent<MeshRenderer>().material.color = new Color(0, 0, 1);
+                    break;
+                }
+            case WireGameScript.COLOUR_ENUM.ORANGE:
+                {
+                    ConnectionTransform.GetComponent<MeshRenderer>().material.color = new Color(1.0f, 0.64f, 0);
+                    break;
+                }
+            case WireGameScript.COLOUR_ENUM.CYAN:
+                {
+                    ConnectionTransform.GetComponent<MeshRenderer>().material.color = new Color(0, 1, 1);
+                    break;
+                }
+            case WireGameScript.COLOUR_ENUM.PURPLE:
+                {
+                    ConnectionTransform.GetComponent<MeshRenderer>().material.color = new Color(0.5f, 0, 0.5f);
+                    break;
+                }
+
+        }
+
+    }
+
+    public bool IsColourMatched()
+    {
+        if (ConnectedPlug != null)
+        {
+            return (myColour == ConnectedPlug.GetComponent<WirePlugLogic>().GetColour());
+        }
+        return false;
+    }
     public void BeingLookedAt()
     {
         GetComponentInParent<MeshRenderer>().material.color = Color.green;
     }
     public void StoppedBeingLookedAt()
     {
-        GetComponentInParent<MeshRenderer>().material.color = Color.red;
+        GetComponentInParent<MeshRenderer>().material.color = Color.white;
     }
     // Update is called once per frame
     void Update()
     {
-   
+
     }
 }
