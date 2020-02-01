@@ -38,6 +38,9 @@ public class CharacterCtrl : MonoBehaviour
     private GameObject prevLookAt;
 
     public bool imAwake = false;
+    // Change scene
+    public ChangeScene changeScene;
+
 
     bool playingSteps = false;
     void Start()
@@ -148,5 +151,13 @@ public class CharacterCtrl : MonoBehaviour
         GetComponent<Rigidbody>().MovePosition(transform.position + movement);
     }
 
+    // Go to the end scene once collision occurs
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.name == "win")
+        {
+            changeScene.LoadEndScene();
+        }
+    }
 
 }
