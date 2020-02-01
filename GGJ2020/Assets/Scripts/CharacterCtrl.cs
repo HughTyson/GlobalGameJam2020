@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterController : MonoBehaviour
+public class CharacterCtrl : MonoBehaviour
 {
     //First person Look at variables
 
