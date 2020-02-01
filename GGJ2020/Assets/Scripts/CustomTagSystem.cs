@@ -9,12 +9,21 @@ public class CustomTagSystem : MonoBehaviour
     [SerializeField] List<TAG> tags;
     public enum TAG
     { 
-        WIRE_SOCKET
+        WIRE_SOCKET,
+        WIRE_PLUG,
+        INTERACTIVE,
+        BUTTON,
+        LEVER
     }
 
 
     public bool ContainsTag(TAG tag)
     {
         return tags.Contains(tag);
+    }
+
+    public List<TAG> GetTags()
+    {
+        return tags;
     }
 }
