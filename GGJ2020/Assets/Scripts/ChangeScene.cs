@@ -23,6 +23,11 @@ public class ChangeScene : MonoBehaviour
         SceneManager.LoadScene("Scene 3 - End");
     }
 
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
     // Resets the pause menu so that when the game restarts it is not paused.
     public void ResetGameScene()
     {

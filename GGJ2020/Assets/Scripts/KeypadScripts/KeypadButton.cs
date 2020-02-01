@@ -28,6 +28,7 @@ public class KeypadButton : MonoBehaviour
     public void pressButton()
     {
         keypad.addInput(num);
+        keypad.pressButton();
     }
 
     public void setNumber(int number)

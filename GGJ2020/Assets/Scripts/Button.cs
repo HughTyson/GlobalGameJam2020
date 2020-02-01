@@ -15,7 +15,8 @@ public class Button : MonoBehaviour
     public float offsetPos1;
     public float offsetPos2;
     public float originalPos;
-
+    public bool flashing = false;
+    public bool flashingSeq = false;
     public enum ButtonState
     {
         ON,
@@ -32,8 +33,8 @@ public class Button : MonoBehaviour
         GetComponent<MeshRenderer>().sharedMaterial = mat_off;
 
         originalPos = transform.position.x;
-        offsetPos1 = transform.position.x - 5;
-        offsetPos2 = transform.position.x + 5;
+        offsetPos1 = transform.position.x - .1f;
+        offsetPos2 = transform.position.x;
         // Uncomment this to cycle through materials (debug)
         //StartCoroutine(debugFlicker());
     }
@@ -80,16 +81,15 @@ public class Button : MonoBehaviour
 
     public void lookedAt()
     {
-        if (GetComponentInParent<SimonSays>().complete == false)
+        if (GetComponentInParent<SimonSays>().complete == false && !flashing && !flashingSeq)
         {
             GetComponent<MeshRenderer>().sharedMaterial = mat_on;
         }
-
     }
 
     public void notLookedAt()
     {
-        if (GetComponentInParent<SimonSays>().complete == false)
+        if (GetComponentInParent<SimonSays>().complete == false && !flashing && !flashingSeq)
         {
             GetComponent<MeshRenderer>().sharedMaterial = mat_off;
         }
@@ -97,13 +97,24 @@ public class Button : MonoBehaviour
 
     public void isClicked()
     {
-        clicked = true;
-        Debug.Log("Detected");
-        transform.position = new Vector3(Mathf.Lerp(transform.position.x, offsetPos1, 0.5f), transform.position.y, transform.position.z);
+        if (!flashing && !flashingSeq)
+        {
+            clicked = true;
+
+            StartCoroutine(LerpTo(true));
+        }
+    }
+
+    public IEnumerator LerpTo(bool forwrd)
+    {
+        transform.position = new Vector3(offsetPos1, transform.position.y, transform.position.z);
+        yield return new WaitForSeconds(0.5f);
+        transform.position = new Vector3(offsetPos2, transform.position.y, transform.position.z);  
     }
 
     public void itsOver(bool good)
     {
+        flashing = true;
         if (good)
         {
             StartCoroutine(flashGood());
@@ -116,27 +127,61 @@ public class Button : MonoBehaviour
 
     IEnumerator flashGood()
     {
-        for (int i = 0; i < 4; i++)
+        if (!flashingSeq)
         {
-            GetComponent<MeshRenderer>().sharedMaterial = mat_on;
             yield return new WaitForSeconds(0.5f);
+            for (int i = 0; i < 4; i++)
+            {
+                GetComponent<MeshRenderer>().sharedMaterial = mat_on;
+                yield return new WaitForSeconds(0.2f);
 
-            GetComponent<MeshRenderer>().sharedMaterial = default_mat;
-            yield return new WaitForSeconds(0.5f);
+                GetComponent<MeshRenderer>().sharedMaterial = default_mat;
+                yield return new WaitForSeconds(0.2f);
+            }
         }
-        GetComponent<MeshRenderer>().sharedMaterial = default_mat;
+        flashing = false;
+        //GetComponent<MeshRenderer>().sharedMaterial = default_mat;
     }
 
     IEnumerator flashBad()
     {
-        for (int i = 0; i < 4; i++)
+        if (!flashingSeq)
         {
-            GetComponent<MeshRenderer>().sharedMaterial = mat_off;
             yield return new WaitForSeconds(0.5f);
+            for (int i = 0; i < 4; i++)
+            {
+                GetComponent<MeshRenderer>().sharedMaterial = mat_off;
+                yield return new WaitForSeconds(0.2f);
 
-            GetComponent<MeshRenderer>().sharedMaterial = default_mat;
-            yield return new WaitForSeconds(0.5f);
+                GetComponent<MeshRenderer>().sharedMaterial = default_mat;
+                yield return new WaitForSeconds(0.2f);
+            }
         }
-        GetComponent<MeshRenderer>().sharedMaterial = mat_off;
+        flashing = false;
+        //GetComponent<MeshRenderer>().sharedMaterial = mat_off;
+    }
+
+    public IEnumerator ShowSequence()
+    {
+        if (!flashing)
+        {
+            foreach (int s in GetComponentInParent<SimonSays>().sequence)
+            {
+                GetComponent<MeshRenderer>().sharedMaterial = default_mat;
+                yield return new WaitForSeconds(0.4f);
+                if (buttonValue == s)
+                {
+                    GetComponent<MeshRenderer>().sharedMaterial = mat_on;
+                    yield return new WaitForSeconds(0.4f);
+                }
+                else
+                {
+                    GetComponent<MeshRenderer>().sharedMaterial = default_mat;
+                    yield return new WaitForSeconds(0.4f);
+                }
+                //GetComponent<MeshRenderer>().sharedMaterial = mat_off;
+            }
+        }
+        flashingSeq = false;
     }
 }
