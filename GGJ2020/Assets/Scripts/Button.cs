@@ -65,28 +65,29 @@ public class Button : MonoBehaviour
 
             switch (state)
             {
-                case (Button.ButtonState.ON): { Activated(); break; }
-                case (Button.ButtonState.OFF): { Deactivated(); break; }
+                case (Button.ButtonState.ON): { lookedAt(); break; }
+                case (Button.ButtonState.OFF): { notLookedAt(); break; }
                 default: { GetComponent<MeshRenderer>().sharedMaterial = default_mat; Debug.LogError("Something is VERY WRONG"); break; }
             }
         }
     }
 
-    void Activated()
+    public void lookedAt()
     {
         GetComponent<MeshRenderer>().sharedMaterial = mat_on;
-        if (Input.GetMouseButtonDown(0))
-        {
-            Debug.Log("Detected");
-            clicked = true;
-        }
-        // do something when activated
+
     }
 
-    void Deactivated()
+    public void notLookedAt()
     {
         GetComponent<MeshRenderer>().sharedMaterial = mat_off;
-        // do something when deactivated
+
+    }
+
+    public void isClicked()
+    {
+        clicked = true;
+        Debug.Log("Detected");
     }
 
     public void itsOver()
