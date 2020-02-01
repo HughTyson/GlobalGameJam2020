@@ -6,29 +6,39 @@ public class WirePlugLogic : MonoBehaviour
 {
     // Start is called before the first frame update
 
+    GameObject connectedSocket;
 
-    bool isInSocket = false;
     void Start()
     {
         
     }
 
-    public void SetIsInSocket(bool is_inSocket)
+    public void PlugIntoSocket(GameObject socketReference)
     {
-        isInSocket = is_inSocket;
-
-        if (is_inSocket)
-        {
-            GetComponent<Rigidbody>().isKinematic = true;
-        }
-        else
-        {
-            GetComponent<Rigidbody>().isKinematic = false;
-        }
+        connectedSocket = socketReference;
     }
+
+    public void UnplugFromSocket()
+    {
+ //       connectedSocket.GetComponent<WireSocketLogic>().SetConnectedPlug(null);
+        connectedSocket = null;
+    }
+    //public void SetIsInSocket(bool is_inSocket)
+    //{
+    //    isInSocket = is_inSocket;
+
+    //    if (is_inSocket)
+    //    {
+    //        GetComponent<Rigidbody>().isKinematic = true;
+    //    }
+    //    else
+    //    {
+    //        GetComponent<Rigidbody>().isKinematic = false;
+    //    }
+    //}
     public bool IsInSocket()
     {
-        return isInSocket;
+        return (connectedSocket != null);
     }
 
 
