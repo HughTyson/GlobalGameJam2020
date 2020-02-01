@@ -264,7 +264,6 @@ MonoBehaviour:
   - {fileID: 48062658218631497}
   - {fileID: 1152480764342140054}
   Door: {fileID: 0}
-  WireGame: {fileID: 5819658032226710804}
 --- !u!1 &4175886208787851982
 GameObject:
   m_ObjectHideFlags: 0
