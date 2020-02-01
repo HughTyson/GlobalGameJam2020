@@ -7,23 +7,42 @@ public class HughButton : MonoBehaviour
 
     private bool opener = false;
 
+    [SerializeField] float button_speed = 1f;
+
     public Material default_mat;
     public Material mat_on = null;
     public Material mat_off = null;
     CharacterCtrl player;
     public GameObject door;
+
+    Vector3 offset;
+    Vector3 basePos;
+
+    bool clicked = false;
     
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterCtrl>();
         GetComponent<MeshRenderer>().sharedMaterial = mat_off;
 
-        
+        offset.y = transform.position.y - .1f;
+        basePos = transform.position;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
+        if(clicked)
+        {
+            transform.position = Vector3.Lerp(transform.position, basePos, button_speed * Time.deltaTime);
+        }
+
+        if(clicked == true)
+        {
+            if(transform.position == basePos)
+            {
+                clicked = false;
+            }
+        }
     }
 
     public void LookedAt()
@@ -33,6 +52,7 @@ public class HughButton : MonoBehaviour
         //found
         if (opener == true)
         {
+            
             Debug.Log("Found you");
         }
     }
@@ -45,11 +65,13 @@ public class HughButton : MonoBehaviour
 
     public void Clicked()
     {
+
+        transform.position = new Vector3(transform.position.x, offset.y, transform.position.z);
+        clicked = true;
         //check if this is the correct button
         if (opener == true)
         {
-                Debug.Log("clicked");
-                door.SetActive(false);
+            door.GetComponent<DoorOpen>().OpenDoors();
         }
     }
 
