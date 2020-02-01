@@ -30,6 +30,11 @@ public class Keypad : MonoBehaviour
     //Show inputted numbers for player
     public Text showInput;
 
+    //Keypad noises
+    AudioSource source;
+    public AudioClip click;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -37,6 +42,10 @@ public class Keypad : MonoBehaviour
         //Keypad object
         keypad = GameObject.Find("Keypad");
         showInput.text = "";
+
+        source = GetComponent<AudioSource>();
+
+        source.clip = click;
 
         //Create the keypad buttons
         generateKeypadButtons();
@@ -126,6 +135,10 @@ public class Keypad : MonoBehaviour
 
     }
 
+    public void pressButton()
+    {
+        source.Play();
+    }
     public void clearInput()
     {
         input.Clear();
