@@ -329,7 +329,9 @@ MonoBehaviour:
   default_mat: {fileID: 2100000, guid: a128160c5957f0b4b92c5ceb36ab8025, type: 2}
   mat_on: {fileID: 2100000, guid: c93e121db0c829d46a18352c5f45d4d3, type: 2}
   mat_off: {fileID: 2100000, guid: 2e7fde5a360d1c04486fc6257be6d7a7, type: 2}
+  mat_its_here: {fileID: 2100000, guid: edb3d64b46fa4644bb81ad70601b3b65, type: 2}
   door: {fileID: 0}
+  socket: {fileID: 4435531364130455629}
 --- !u!114 &2401347166996458882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -467,7 +469,9 @@ MonoBehaviour:
   default_mat: {fileID: 2100000, guid: a128160c5957f0b4b92c5ceb36ab8025, type: 2}
   mat_on: {fileID: 2100000, guid: c93e121db0c829d46a18352c5f45d4d3, type: 2}
   mat_off: {fileID: 2100000, guid: 2e7fde5a360d1c04486fc6257be6d7a7, type: 2}
+  mat_its_here: {fileID: 2100000, guid: edb3d64b46fa4644bb81ad70601b3b65, type: 2}
   door: {fileID: 0}
+  socket: {fileID: 4435531364130455629}
 --- !u!114 &2401347167001390301
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -605,7 +609,9 @@ MonoBehaviour:
   default_mat: {fileID: 2100000, guid: a128160c5957f0b4b92c5ceb36ab8025, type: 2}
   mat_on: {fileID: 2100000, guid: c93e121db0c829d46a18352c5f45d4d3, type: 2}
   mat_off: {fileID: 2100000, guid: 2e7fde5a360d1c04486fc6257be6d7a7, type: 2}
+  mat_its_here: {fileID: 2100000, guid: edb3d64b46fa4644bb81ad70601b3b65, type: 2}
   door: {fileID: 0}
+  socket: {fileID: 4435531364130455629}
 --- !u!114 &2401347167028958887
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -743,7 +749,9 @@ MonoBehaviour:
   default_mat: {fileID: 2100000, guid: a128160c5957f0b4b92c5ceb36ab8025, type: 2}
   mat_on: {fileID: 2100000, guid: c93e121db0c829d46a18352c5f45d4d3, type: 2}
   mat_off: {fileID: 2100000, guid: 2e7fde5a360d1c04486fc6257be6d7a7, type: 2}
+  mat_its_here: {fileID: 2100000, guid: edb3d64b46fa4644bb81ad70601b3b65, type: 2}
   door: {fileID: 0}
+  socket: {fileID: 4435531364130455629}
 --- !u!114 &2401347167116428472
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -881,7 +889,9 @@ MonoBehaviour:
   default_mat: {fileID: 2100000, guid: a128160c5957f0b4b92c5ceb36ab8025, type: 2}
   mat_on: {fileID: 2100000, guid: c93e121db0c829d46a18352c5f45d4d3, type: 2}
   mat_off: {fileID: 2100000, guid: 2e7fde5a360d1c04486fc6257be6d7a7, type: 2}
+  mat_its_here: {fileID: 2100000, guid: edb3d64b46fa4644bb81ad70601b3b65, type: 2}
   door: {fileID: 0}
+  socket: {fileID: 4435531364130455629}
 --- !u!114 &2401347167155193605
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1111,7 +1121,9 @@ MonoBehaviour:
   default_mat: {fileID: 2100000, guid: a128160c5957f0b4b92c5ceb36ab8025, type: 2}
   mat_on: {fileID: 2100000, guid: c93e121db0c829d46a18352c5f45d4d3, type: 2}
   mat_off: {fileID: 2100000, guid: 2e7fde5a360d1c04486fc6257be6d7a7, type: 2}
+  mat_its_here: {fileID: 2100000, guid: edb3d64b46fa4644bb81ad70601b3b65, type: 2}
   door: {fileID: 0}
+  socket: {fileID: 4435531364130455629}
 --- !u!114 &2401347167249130061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1249,7 +1261,9 @@ MonoBehaviour:
   default_mat: {fileID: 2100000, guid: a128160c5957f0b4b92c5ceb36ab8025, type: 2}
   mat_on: {fileID: 2100000, guid: c93e121db0c829d46a18352c5f45d4d3, type: 2}
   mat_off: {fileID: 2100000, guid: 2e7fde5a360d1c04486fc6257be6d7a7, type: 2}
+  mat_its_here: {fileID: 2100000, guid: edb3d64b46fa4644bb81ad70601b3b65, type: 2}
   door: {fileID: 0}
+  socket: {fileID: 4435531364130455629}
 --- !u!114 &2401347167271719897
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1387,7 +1401,9 @@ MonoBehaviour:
   default_mat: {fileID: 2100000, guid: a128160c5957f0b4b92c5ceb36ab8025, type: 2}
   mat_on: {fileID: 2100000, guid: c93e121db0c829d46a18352c5f45d4d3, type: 2}
   mat_off: {fileID: 2100000, guid: 2e7fde5a360d1c04486fc6257be6d7a7, type: 2}
+  mat_its_here: {fileID: 2100000, guid: edb3d64b46fa4644bb81ad70601b3b65, type: 2}
   door: {fileID: 0}
+  socket: {fileID: 4435531364130455629}
 --- !u!114 &2401347167294829401
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1525,7 +1541,9 @@ MonoBehaviour:
   default_mat: {fileID: 2100000, guid: a128160c5957f0b4b92c5ceb36ab8025, type: 2}
   mat_on: {fileID: 2100000, guid: c93e121db0c829d46a18352c5f45d4d3, type: 2}
   mat_off: {fileID: 2100000, guid: 2e7fde5a360d1c04486fc6257be6d7a7, type: 2}
+  mat_its_here: {fileID: 2100000, guid: edb3d64b46fa4644bb81ad70601b3b65, type: 2}
   door: {fileID: 0}
+  socket: {fileID: 4435531364130455629}
 --- !u!114 &2401347167413364411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1663,7 +1681,9 @@ MonoBehaviour:
   default_mat: {fileID: 2100000, guid: a128160c5957f0b4b92c5ceb36ab8025, type: 2}
   mat_on: {fileID: 2100000, guid: c93e121db0c829d46a18352c5f45d4d3, type: 2}
   mat_off: {fileID: 2100000, guid: 2e7fde5a360d1c04486fc6257be6d7a7, type: 2}
+  mat_its_here: {fileID: 2100000, guid: edb3d64b46fa4644bb81ad70601b3b65, type: 2}
   door: {fileID: 0}
+  socket: {fileID: 4435531364130455629}
 --- !u!114 &2401347167473725546
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1801,7 +1821,9 @@ MonoBehaviour:
   default_mat: {fileID: 2100000, guid: a128160c5957f0b4b92c5ceb36ab8025, type: 2}
   mat_on: {fileID: 2100000, guid: c93e121db0c829d46a18352c5f45d4d3, type: 2}
   mat_off: {fileID: 2100000, guid: 2e7fde5a360d1c04486fc6257be6d7a7, type: 2}
+  mat_its_here: {fileID: 2100000, guid: edb3d64b46fa4644bb81ad70601b3b65, type: 2}
   door: {fileID: 0}
+  socket: {fileID: 4435531364130455629}
 --- !u!114 &2401347167507743563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1939,7 +1961,9 @@ MonoBehaviour:
   default_mat: {fileID: 2100000, guid: a128160c5957f0b4b92c5ceb36ab8025, type: 2}
   mat_on: {fileID: 2100000, guid: c93e121db0c829d46a18352c5f45d4d3, type: 2}
   mat_off: {fileID: 2100000, guid: 2e7fde5a360d1c04486fc6257be6d7a7, type: 2}
+  mat_its_here: {fileID: 2100000, guid: edb3d64b46fa4644bb81ad70601b3b65, type: 2}
   door: {fileID: 0}
+  socket: {fileID: 4435531364130455629}
 --- !u!114 &2401347167528061725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2077,7 +2101,9 @@ MonoBehaviour:
   default_mat: {fileID: 2100000, guid: a128160c5957f0b4b92c5ceb36ab8025, type: 2}
   mat_on: {fileID: 2100000, guid: c93e121db0c829d46a18352c5f45d4d3, type: 2}
   mat_off: {fileID: 2100000, guid: 2e7fde5a360d1c04486fc6257be6d7a7, type: 2}
+  mat_its_here: {fileID: 2100000, guid: edb3d64b46fa4644bb81ad70601b3b65, type: 2}
   door: {fileID: 0}
+  socket: {fileID: 4435531364130455629}
 --- !u!114 &2401347167578823337
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2215,7 +2241,9 @@ MonoBehaviour:
   default_mat: {fileID: 2100000, guid: a128160c5957f0b4b92c5ceb36ab8025, type: 2}
   mat_on: {fileID: 2100000, guid: c93e121db0c829d46a18352c5f45d4d3, type: 2}
   mat_off: {fileID: 2100000, guid: 2e7fde5a360d1c04486fc6257be6d7a7, type: 2}
+  mat_its_here: {fileID: 2100000, guid: edb3d64b46fa4644bb81ad70601b3b65, type: 2}
   door: {fileID: 0}
+  socket: {fileID: 4435531364130455629}
 --- !u!114 &2401347167630147964
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2353,7 +2381,9 @@ MonoBehaviour:
   default_mat: {fileID: 2100000, guid: a128160c5957f0b4b92c5ceb36ab8025, type: 2}
   mat_on: {fileID: 2100000, guid: c93e121db0c829d46a18352c5f45d4d3, type: 2}
   mat_off: {fileID: 2100000, guid: 2e7fde5a360d1c04486fc6257be6d7a7, type: 2}
+  mat_its_here: {fileID: 2100000, guid: edb3d64b46fa4644bb81ad70601b3b65, type: 2}
   door: {fileID: 0}
+  socket: {fileID: 4435531364130455629}
 --- !u!114 &2401347167639803708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2491,7 +2521,9 @@ MonoBehaviour:
   default_mat: {fileID: 2100000, guid: a128160c5957f0b4b92c5ceb36ab8025, type: 2}
   mat_on: {fileID: 2100000, guid: c93e121db0c829d46a18352c5f45d4d3, type: 2}
   mat_off: {fileID: 2100000, guid: 2e7fde5a360d1c04486fc6257be6d7a7, type: 2}
+  mat_its_here: {fileID: 2100000, guid: edb3d64b46fa4644bb81ad70601b3b65, type: 2}
   door: {fileID: 0}
+  socket: {fileID: 4435531364130455629}
 --- !u!114 &2401347167703522435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2629,7 +2661,9 @@ MonoBehaviour:
   default_mat: {fileID: 2100000, guid: a128160c5957f0b4b92c5ceb36ab8025, type: 2}
   mat_on: {fileID: 2100000, guid: c93e121db0c829d46a18352c5f45d4d3, type: 2}
   mat_off: {fileID: 2100000, guid: 2e7fde5a360d1c04486fc6257be6d7a7, type: 2}
+  mat_its_here: {fileID: 2100000, guid: edb3d64b46fa4644bb81ad70601b3b65, type: 2}
   door: {fileID: 0}
+  socket: {fileID: 4435531364130455629}
 --- !u!114 &2401347167732766163
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2767,7 +2801,9 @@ MonoBehaviour:
   default_mat: {fileID: 2100000, guid: a128160c5957f0b4b92c5ceb36ab8025, type: 2}
   mat_on: {fileID: 2100000, guid: c93e121db0c829d46a18352c5f45d4d3, type: 2}
   mat_off: {fileID: 2100000, guid: 2e7fde5a360d1c04486fc6257be6d7a7, type: 2}
+  mat_its_here: {fileID: 2100000, guid: edb3d64b46fa4644bb81ad70601b3b65, type: 2}
   door: {fileID: 0}
+  socket: {fileID: 4435531364130455629}
 --- !u!114 &2401347167745282811
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3032,7 +3068,9 @@ MonoBehaviour:
   default_mat: {fileID: 2100000, guid: a128160c5957f0b4b92c5ceb36ab8025, type: 2}
   mat_on: {fileID: 2100000, guid: c93e121db0c829d46a18352c5f45d4d3, type: 2}
   mat_off: {fileID: 2100000, guid: 2e7fde5a360d1c04486fc6257be6d7a7, type: 2}
+  mat_its_here: {fileID: 2100000, guid: edb3d64b46fa4644bb81ad70601b3b65, type: 2}
   door: {fileID: 0}
+  socket: {fileID: 4435531364130455629}
 --- !u!114 &2401347168065718057
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3170,7 +3208,9 @@ MonoBehaviour:
   default_mat: {fileID: 2100000, guid: a128160c5957f0b4b92c5ceb36ab8025, type: 2}
   mat_on: {fileID: 2100000, guid: c93e121db0c829d46a18352c5f45d4d3, type: 2}
   mat_off: {fileID: 2100000, guid: 2e7fde5a360d1c04486fc6257be6d7a7, type: 2}
+  mat_its_here: {fileID: 2100000, guid: edb3d64b46fa4644bb81ad70601b3b65, type: 2}
   door: {fileID: 0}
+  socket: {fileID: 4435531364130455629}
 --- !u!114 &2401347168084758071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3308,7 +3348,9 @@ MonoBehaviour:
   default_mat: {fileID: 2100000, guid: a128160c5957f0b4b92c5ceb36ab8025, type: 2}
   mat_on: {fileID: 2100000, guid: c93e121db0c829d46a18352c5f45d4d3, type: 2}
   mat_off: {fileID: 2100000, guid: 2e7fde5a360d1c04486fc6257be6d7a7, type: 2}
+  mat_its_here: {fileID: 2100000, guid: edb3d64b46fa4644bb81ad70601b3b65, type: 2}
   door: {fileID: 0}
+  socket: {fileID: 4435531364130455629}
 --- !u!114 &2401347168100940056
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3446,7 +3488,9 @@ MonoBehaviour:
   default_mat: {fileID: 2100000, guid: a128160c5957f0b4b92c5ceb36ab8025, type: 2}
   mat_on: {fileID: 2100000, guid: c93e121db0c829d46a18352c5f45d4d3, type: 2}
   mat_off: {fileID: 2100000, guid: 2e7fde5a360d1c04486fc6257be6d7a7, type: 2}
+  mat_its_here: {fileID: 2100000, guid: edb3d64b46fa4644bb81ad70601b3b65, type: 2}
   door: {fileID: 0}
+  socket: {fileID: 4435531364130455629}
 --- !u!114 &2401347168163126280
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3584,7 +3628,9 @@ MonoBehaviour:
   default_mat: {fileID: 2100000, guid: a128160c5957f0b4b92c5ceb36ab8025, type: 2}
   mat_on: {fileID: 2100000, guid: c93e121db0c829d46a18352c5f45d4d3, type: 2}
   mat_off: {fileID: 2100000, guid: 2e7fde5a360d1c04486fc6257be6d7a7, type: 2}
+  mat_its_here: {fileID: 2100000, guid: edb3d64b46fa4644bb81ad70601b3b65, type: 2}
   door: {fileID: 0}
+  socket: {fileID: 4435531364130455629}
 --- !u!114 &2401347168259336899
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3722,7 +3768,9 @@ MonoBehaviour:
   default_mat: {fileID: 2100000, guid: a128160c5957f0b4b92c5ceb36ab8025, type: 2}
   mat_on: {fileID: 2100000, guid: c93e121db0c829d46a18352c5f45d4d3, type: 2}
   mat_off: {fileID: 2100000, guid: 2e7fde5a360d1c04486fc6257be6d7a7, type: 2}
+  mat_its_here: {fileID: 2100000, guid: edb3d64b46fa4644bb81ad70601b3b65, type: 2}
   door: {fileID: 0}
+  socket: {fileID: 4435531364130455629}
 --- !u!114 &2401347168278879249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3860,7 +3908,9 @@ MonoBehaviour:
   default_mat: {fileID: 2100000, guid: a128160c5957f0b4b92c5ceb36ab8025, type: 2}
   mat_on: {fileID: 2100000, guid: c93e121db0c829d46a18352c5f45d4d3, type: 2}
   mat_off: {fileID: 2100000, guid: 2e7fde5a360d1c04486fc6257be6d7a7, type: 2}
+  mat_its_here: {fileID: 2100000, guid: edb3d64b46fa4644bb81ad70601b3b65, type: 2}
   door: {fileID: 0}
+  socket: {fileID: 4435531364130455629}
 --- !u!114 &2401347168300669834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3998,7 +4048,9 @@ MonoBehaviour:
   default_mat: {fileID: 2100000, guid: a128160c5957f0b4b92c5ceb36ab8025, type: 2}
   mat_on: {fileID: 2100000, guid: c93e121db0c829d46a18352c5f45d4d3, type: 2}
   mat_off: {fileID: 2100000, guid: 2e7fde5a360d1c04486fc6257be6d7a7, type: 2}
+  mat_its_here: {fileID: 2100000, guid: edb3d64b46fa4644bb81ad70601b3b65, type: 2}
   door: {fileID: 0}
+  socket: {fileID: 4435531364130455629}
 --- !u!114 &2401347168387562470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4228,7 +4280,9 @@ MonoBehaviour:
   default_mat: {fileID: 2100000, guid: a128160c5957f0b4b92c5ceb36ab8025, type: 2}
   mat_on: {fileID: 2100000, guid: c93e121db0c829d46a18352c5f45d4d3, type: 2}
   mat_off: {fileID: 2100000, guid: 2e7fde5a360d1c04486fc6257be6d7a7, type: 2}
+  mat_its_here: {fileID: 2100000, guid: edb3d64b46fa4644bb81ad70601b3b65, type: 2}
   door: {fileID: 0}
+  socket: {fileID: 4435531364130455629}
 --- !u!114 &2401347168408115435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4366,7 +4420,9 @@ MonoBehaviour:
   default_mat: {fileID: 2100000, guid: a128160c5957f0b4b92c5ceb36ab8025, type: 2}
   mat_on: {fileID: 2100000, guid: c93e121db0c829d46a18352c5f45d4d3, type: 2}
   mat_off: {fileID: 2100000, guid: 2e7fde5a360d1c04486fc6257be6d7a7, type: 2}
+  mat_its_here: {fileID: 2100000, guid: edb3d64b46fa4644bb81ad70601b3b65, type: 2}
   door: {fileID: 0}
+  socket: {fileID: 4435531364130455629}
 --- !u!114 &2401347168435109287
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4504,7 +4560,9 @@ MonoBehaviour:
   default_mat: {fileID: 2100000, guid: a128160c5957f0b4b92c5ceb36ab8025, type: 2}
   mat_on: {fileID: 2100000, guid: c93e121db0c829d46a18352c5f45d4d3, type: 2}
   mat_off: {fileID: 2100000, guid: 2e7fde5a360d1c04486fc6257be6d7a7, type: 2}
+  mat_its_here: {fileID: 2100000, guid: edb3d64b46fa4644bb81ad70601b3b65, type: 2}
   door: {fileID: 0}
+  socket: {fileID: 4435531364130455629}
 --- !u!114 &2401347168483291523
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4726,7 +4784,9 @@ MonoBehaviour:
   default_mat: {fileID: 2100000, guid: a128160c5957f0b4b92c5ceb36ab8025, type: 2}
   mat_on: {fileID: 2100000, guid: c93e121db0c829d46a18352c5f45d4d3, type: 2}
   mat_off: {fileID: 2100000, guid: 2e7fde5a360d1c04486fc6257be6d7a7, type: 2}
+  mat_its_here: {fileID: 2100000, guid: edb3d64b46fa4644bb81ad70601b3b65, type: 2}
   door: {fileID: 0}
+  socket: {fileID: 4435531364130455629}
 --- !u!114 &2401347168499569483
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4864,7 +4924,9 @@ MonoBehaviour:
   default_mat: {fileID: 2100000, guid: a128160c5957f0b4b92c5ceb36ab8025, type: 2}
   mat_on: {fileID: 2100000, guid: c93e121db0c829d46a18352c5f45d4d3, type: 2}
   mat_off: {fileID: 2100000, guid: 2e7fde5a360d1c04486fc6257be6d7a7, type: 2}
+  mat_its_here: {fileID: 2100000, guid: edb3d64b46fa4644bb81ad70601b3b65, type: 2}
   door: {fileID: 0}
+  socket: {fileID: 4435531364130455629}
 --- !u!114 &2401347168547086407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5002,7 +5064,9 @@ MonoBehaviour:
   default_mat: {fileID: 2100000, guid: a128160c5957f0b4b92c5ceb36ab8025, type: 2}
   mat_on: {fileID: 2100000, guid: c93e121db0c829d46a18352c5f45d4d3, type: 2}
   mat_off: {fileID: 2100000, guid: 2e7fde5a360d1c04486fc6257be6d7a7, type: 2}
+  mat_its_here: {fileID: 2100000, guid: edb3d64b46fa4644bb81ad70601b3b65, type: 2}
   door: {fileID: 0}
+  socket: {fileID: 4435531364130455629}
 --- !u!114 &2401347168613493067
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5140,7 +5204,9 @@ MonoBehaviour:
   default_mat: {fileID: 2100000, guid: a128160c5957f0b4b92c5ceb36ab8025, type: 2}
   mat_on: {fileID: 2100000, guid: c93e121db0c829d46a18352c5f45d4d3, type: 2}
   mat_off: {fileID: 2100000, guid: 2e7fde5a360d1c04486fc6257be6d7a7, type: 2}
+  mat_its_here: {fileID: 2100000, guid: edb3d64b46fa4644bb81ad70601b3b65, type: 2}
   door: {fileID: 0}
+  socket: {fileID: 4435531364130455629}
 --- !u!114 &2401347168730977134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5278,7 +5344,9 @@ MonoBehaviour:
   default_mat: {fileID: 2100000, guid: a128160c5957f0b4b92c5ceb36ab8025, type: 2}
   mat_on: {fileID: 2100000, guid: c93e121db0c829d46a18352c5f45d4d3, type: 2}
   mat_off: {fileID: 2100000, guid: 2e7fde5a360d1c04486fc6257be6d7a7, type: 2}
+  mat_its_here: {fileID: 2100000, guid: edb3d64b46fa4644bb81ad70601b3b65, type: 2}
   door: {fileID: 0}
+  socket: {fileID: 4435531364130455629}
 --- !u!114 &2401347168823960602
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5416,7 +5484,9 @@ MonoBehaviour:
   default_mat: {fileID: 2100000, guid: a128160c5957f0b4b92c5ceb36ab8025, type: 2}
   mat_on: {fileID: 2100000, guid: c93e121db0c829d46a18352c5f45d4d3, type: 2}
   mat_off: {fileID: 2100000, guid: 2e7fde5a360d1c04486fc6257be6d7a7, type: 2}
+  mat_its_here: {fileID: 2100000, guid: edb3d64b46fa4644bb81ad70601b3b65, type: 2}
   door: {fileID: 0}
+  socket: {fileID: 4435531364130455629}
 --- !u!114 &2401347168930286746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5554,7 +5624,9 @@ MonoBehaviour:
   default_mat: {fileID: 2100000, guid: a128160c5957f0b4b92c5ceb36ab8025, type: 2}
   mat_on: {fileID: 2100000, guid: c93e121db0c829d46a18352c5f45d4d3, type: 2}
   mat_off: {fileID: 2100000, guid: 2e7fde5a360d1c04486fc6257be6d7a7, type: 2}
+  mat_its_here: {fileID: 2100000, guid: edb3d64b46fa4644bb81ad70601b3b65, type: 2}
   door: {fileID: 0}
+  socket: {fileID: 4435531364130455629}
 --- !u!114 &2401347168943952205
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5692,7 +5764,9 @@ MonoBehaviour:
   default_mat: {fileID: 2100000, guid: a128160c5957f0b4b92c5ceb36ab8025, type: 2}
   mat_on: {fileID: 2100000, guid: c93e121db0c829d46a18352c5f45d4d3, type: 2}
   mat_off: {fileID: 2100000, guid: 2e7fde5a360d1c04486fc6257be6d7a7, type: 2}
+  mat_its_here: {fileID: 2100000, guid: edb3d64b46fa4644bb81ad70601b3b65, type: 2}
   door: {fileID: 0}
+  socket: {fileID: 4435531364130455629}
 --- !u!114 &2401347168946655986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5830,7 +5904,9 @@ MonoBehaviour:
   default_mat: {fileID: 2100000, guid: a128160c5957f0b4b92c5ceb36ab8025, type: 2}
   mat_on: {fileID: 2100000, guid: c93e121db0c829d46a18352c5f45d4d3, type: 2}
   mat_off: {fileID: 2100000, guid: 2e7fde5a360d1c04486fc6257be6d7a7, type: 2}
+  mat_its_here: {fileID: 2100000, guid: edb3d64b46fa4644bb81ad70601b3b65, type: 2}
   door: {fileID: 0}
+  socket: {fileID: 4435531364130455629}
 --- !u!114 &2401347168966564484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5968,7 +6044,9 @@ MonoBehaviour:
   default_mat: {fileID: 2100000, guid: a128160c5957f0b4b92c5ceb36ab8025, type: 2}
   mat_on: {fileID: 2100000, guid: c93e121db0c829d46a18352c5f45d4d3, type: 2}
   mat_off: {fileID: 2100000, guid: 2e7fde5a360d1c04486fc6257be6d7a7, type: 2}
+  mat_its_here: {fileID: 2100000, guid: edb3d64b46fa4644bb81ad70601b3b65, type: 2}
   door: {fileID: 0}
+  socket: {fileID: 4435531364130455629}
 --- !u!114 &2401347168969729278
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6106,7 +6184,9 @@ MonoBehaviour:
   default_mat: {fileID: 2100000, guid: a128160c5957f0b4b92c5ceb36ab8025, type: 2}
   mat_on: {fileID: 2100000, guid: c93e121db0c829d46a18352c5f45d4d3, type: 2}
   mat_off: {fileID: 2100000, guid: 2e7fde5a360d1c04486fc6257be6d7a7, type: 2}
+  mat_its_here: {fileID: 2100000, guid: edb3d64b46fa4644bb81ad70601b3b65, type: 2}
   door: {fileID: 0}
+  socket: {fileID: 4435531364130455629}
 --- !u!114 &2401347169021112778
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6332,6 +6412,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 60d7aedff2809ee44995db2f161ecca0, type: 3}
+--- !u!1 &4435531364130455629 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1675371202225111881, guid: 60d7aedff2809ee44995db2f161ecca0,
+    type: 3}
+  m_PrefabInstance: {fileID: 3084457208450482948}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4435531364130455626 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1675371202225111886, guid: 60d7aedff2809ee44995db2f161ecca0,
