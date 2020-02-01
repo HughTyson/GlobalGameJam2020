@@ -38,6 +38,8 @@ public class GameLoop : MonoBehaviour
         yield return new WaitForSeconds(2);
         _crossFade.GetComponent<Animator>().enabled = false;
 
+        // Disable the Fade object so it stops appearing
+        _crossFade.SetActive(false);
     }
 
     // Update is called once per frame

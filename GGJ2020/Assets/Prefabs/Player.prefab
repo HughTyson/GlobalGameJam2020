@@ -176,6 +176,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   theCamera: {fileID: 8702584035115287209}
+  handTransform: {fileID: 5051344821250508591}
   viewingDistance: 5
 --- !u!1 &8702584035115287211
 GameObject:

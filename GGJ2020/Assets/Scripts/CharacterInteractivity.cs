@@ -147,7 +147,9 @@ public class CharacterInteractivity : MonoBehaviour
         {
             case InteractiveObject.TYPE.SOCKET:
                 {
+
                     currentlyLookingAt.reference.GetComponent<WireSocketLogic>().BeingLookedAt();
+
                     break;
                 }
             case InteractiveObject.TYPE.PLUG:
@@ -184,7 +186,9 @@ public class CharacterInteractivity : MonoBehaviour
             {
                 case InteractiveObject.TYPE.SOCKET:
                     {
+
                         currentlyLookingAt.reference.GetComponent<WireSocketLogic>().StoppedBeingLookedAt();
+   
                         break;
                     }
                 case InteractiveObject.TYPE.PLUG:
@@ -207,12 +211,12 @@ public class CharacterInteractivity : MonoBehaviour
 
                         break;
                     }
-
-
-
             }
+
         }
 
+        currentlyLookingAt.reference = null;
+        currentlyLookingAt.myType = InteractiveObject.TYPE.NONE;
     }
 
     private void ClickedWhileLookingAtCurrent()
@@ -223,23 +227,26 @@ public class CharacterInteractivity : MonoBehaviour
             {
                 case InteractiveObject.TYPE.SOCKET:
                     {
-                        if (currentlyLookingAt.reference.GetComponent<WireSocketLogic>().IsPlugBeingUsed())
+                        if (currentlyHolding.reference == null)
                         {
-                            currentlyLookingAt.reference = currentlyLookingAt.reference.GetComponent<WireSocketLogic>().GetPlugObject();
-                            currentlyLookingAt.myType = InteractiveObject.TYPE.PLUG;
+                            if (currentlyLookingAt.reference.GetComponent<WireSocketLogic>().IsSocketBeingUsed())
+                            {
+                               currentlyHolding.reference = currentlyLookingAt.reference.GetComponent<WireSocketLogic>().GetPlugObject();
+                               currentlyHolding.myType = InteractiveObject.TYPE.PLUG;
+                               LookedAwayFromCurrent();
+
+                                currentlyHolding.reference.GetComponent<WirePlugLogic>().PlaceIntoHand(handTransform);
+                            }
                         }
+
                         break;
                     }
                 case InteractiveObject.TYPE.PLUG:
                     {
-                        if (currentlyLookingAt.reference.GetComponent<WirePlugLogic>().IsInSocket())
-                        {
-          //                  currentlyLookingAt.reference.GetComponent<>
-                        }
-                        else
-                        {
+                        currentlyHolding.reference = currentlyLookingAt.reference;
+                        currentlyHolding.myType = currentlyLookingAt.myType;
+                        currentlyHolding.reference.GetComponent<WirePlugLogic>().PlaceIntoHand(handTransform);
 
-                        }
                         break;
                     }
                 case InteractiveObject.TYPE.HUGH_BUTTON:
@@ -267,6 +274,38 @@ public class CharacterInteractivity : MonoBehaviour
 
     private void LetGoOfHeldItem()
     {
+        if (currentlyHolding.myType == InteractiveObject.TYPE.PLUG)
+        {
+            switch (currentlyLookingAt.myType)
+            {
+                case InteractiveObject.TYPE.SOCKET:
+                    {
+                        if (currentlyLookingAt.reference.GetComponent<WireSocketLogic>().IsSocketBeingUsed())
+                        {
+                            currentlyHolding.reference.GetComponent<WirePlugLogic>().LetGoFromHand();
+                            currentlyHolding.reference = null;
+                            currentlyHolding.myType = InteractiveObject.TYPE.NONE;
+                        }
+                        else
+                        {
+                            currentlyLookingAt.reference.GetComponent<WireSocketLogic>().ConnectPlug(currentlyHolding.reference);
+                            currentlyHolding.reference = null;
+                            currentlyHolding.myType = InteractiveObject.TYPE.NONE;
+                        }
 
+                        break;
+                    }
+                default:
+                    {
+                        currentlyHolding.reference.GetComponent<WirePlugLogic>().LetGoFromHand();
+                        currentlyHolding.reference = null;
+                        currentlyHolding.myType = InteractiveObject.TYPE.NONE;
+                        break;
+                    }
+
+            }
+        }
+      
     }
+
 }
