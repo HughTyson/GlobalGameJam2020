@@ -265,6 +265,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 992490555890291324}
+  - component: {fileID: 3919316775061523053}
   m_Layer: 0
   m_Name: CryoChamber
   m_TagString: Untagged
@@ -293,6 +294,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3919316775061523053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4284300763873293474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7129d067e4d541c4c8a818e7145d1e43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Screen: {fileID: 8216505905358334976}
+  Plug: {fileID: 224943230470554610}
+  Socket: {fileID: 1786540003107163478}
 --- !u!1 &5784771478976332841
 GameObject:
   m_ObjectHideFlags: 0
