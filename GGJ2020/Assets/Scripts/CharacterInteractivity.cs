@@ -146,7 +146,7 @@ public class CharacterInteractivity : MonoBehaviour
                 }
             case InteractiveObject.TYPE.DAN_BUTTON:
                 {
-
+                    currentlyLookingAt.reference.GetComponent<Button>().lookedAt();
                     break;
                 }
             case InteractiveObject.TYPE.LEVER:
@@ -183,7 +183,7 @@ public class CharacterInteractivity : MonoBehaviour
                     }
                 case InteractiveObject.TYPE.DAN_BUTTON:
                     {
-
+                        currentlyLookingAt.reference.GetComponent<Button>().notLookedAt();
                         break;
                     }
                 case InteractiveObject.TYPE.LEVER:
