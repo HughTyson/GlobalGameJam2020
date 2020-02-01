@@ -157,7 +157,7 @@ public class CharacterInteractivity : MonoBehaviour
                 }
             case InteractiveObject.TYPE.HUGH_BUTTON:
                 {
-
+                    currentlyLookingAt.reference.GetComponent<HughButton>().LookedAt();
                     break;
                 }
             case InteractiveObject.TYPE.DAN_BUTTON:
@@ -194,7 +194,7 @@ public class CharacterInteractivity : MonoBehaviour
                     }
                 case InteractiveObject.TYPE.HUGH_BUTTON:
                     {
-
+                        currentlyLookingAt.reference.GetComponent<HughButton>().NotBeingLookedAt();
                         break;
                     }
                 case InteractiveObject.TYPE.DAN_BUTTON:
@@ -233,7 +233,7 @@ public class CharacterInteractivity : MonoBehaviour
                     }
                 case InteractiveObject.TYPE.HUGH_BUTTON:
                     {
-
+                        currentlyLookingAt.reference.GetComponent<HughButton>().Clicked();
                         break;
                     }
                 case InteractiveObject.TYPE.DAN_BUTTON:
