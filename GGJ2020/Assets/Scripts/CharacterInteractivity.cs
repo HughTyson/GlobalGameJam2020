@@ -66,6 +66,12 @@ public class CharacterInteractivity : MonoBehaviour
             LookedAwayFromCurrent();
             NoNewLookAt();
         }
+
+
+        if (Input.GetButtonDown("Fire1"))
+        {
+            ClickedWhileLookingAtCurrent();
+        }
     }
 
 
@@ -197,5 +203,43 @@ public class CharacterInteractivity : MonoBehaviour
             }
         }
 
+    }
+
+    private void ClickedWhileLookingAtCurrent()
+    {
+        if (currentlyLookingAt.reference != null)
+        {
+            switch (currentlyLookingAt.myType)
+            {
+                case InteractiveObject.TYPE.SOCKET:
+                    {
+                      
+                        break;
+                    }
+                case InteractiveObject.TYPE.PLUG:
+                    {
+
+                        break;
+                    }
+                case InteractiveObject.TYPE.HUGH_BUTTON:
+                    {
+
+                        break;
+                    }
+                case InteractiveObject.TYPE.DAN_BUTTON:
+                    {
+                        currentlyLookingAt.reference.GetComponent<Button>().isClicked();
+                        break;
+                    }
+                case InteractiveObject.TYPE.LEVER:
+                    {
+
+                        break;
+                    }
+
+
+
+            }
+        }
     }
 }
