@@ -13,7 +13,7 @@ public class ChangeScene : MonoBehaviour
         Scene currentScene = SceneManager.GetActiveScene();
         SceneManager.UnloadSceneAsync(currentScene);
 
-        //ResetGameScene();
+        ResetGameScene();
         SceneManager.LoadSceneAsync("Scene 1 - Menu");
     }
 

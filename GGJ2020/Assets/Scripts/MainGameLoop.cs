@@ -7,14 +7,16 @@ public class MainGameLoop : MonoBehaviour
 {
     public Text timerString;
     private float timerFloat;
-    private bool playOnce;
+    private bool playFadeIn, playFadeOut;
+
+    public GameObject character;
 
     // Initialise the text object
     void Start()
     {
         timerFloat = 6.0f;
         timerString.text = timerFloat.ToString();
-        playOnce = true;
+        playFadeIn = true;
     }
 
     void Update()
@@ -23,33 +25,32 @@ public class MainGameLoop : MonoBehaviour
         if (GetComponent<GameLoop>().GetFinishedFadeOut())
             UpdateTimer();
 
-        // Do something at the end of the timer
-        //  Reload the scene at the end of the timer
+        //  Reset everything at the end of the timer
         if (timerFloat <= 0.0f)
         {
-            if (playOnce)
+            if(playFadeIn)
             {
-                gameObject.GetComponent<GameLoop>().PlayFadeIn();
-                playOnce = false;
-            }   
+                GetComponent<GameLoop>().PlayFadeIn();
+                playFadeIn = false;
+                playFadeOut = true;
+            }
 
             if(GetComponent<GameLoop>().GetFinishedFadeIn())
-                gameObject.GetComponent<ChangeScene>().ReloadGameScene();
-        }
+            {
+                ResetFade();
 
-        // Sample code of how the main game loop should go
-        /*
-         * if(Winning condition)
-         * {
-         *  gameObject.GetComponent<ChangeScene>().LoadEndScene();
-         * }
-         * else if (timerFloat <= 0f || Some losing condition)
-         * {
-         *  gameObject.GetComponent<ChangeSccene>().ReloadGameScene();
-         * }
-         * 
-         * 
-         */
+                if(playFadeOut)
+                {
+                    GetComponent<GameLoop>().PlayFadeOut();
+                    playFadeOut = false;
+                }
+
+                ResetCharacter();
+                ResetTimer();
+
+                playFadeIn = true;
+            }
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -64,7 +65,23 @@ public class MainGameLoop : MonoBehaviour
         if(timerFloat > 0.0f)
         {
             timerFloat -= Time.deltaTime;
-            timerString.text = timerFloat.ToString("F5");
+            timerString.text = timerFloat.ToString("F0");
         }
+    }
+
+    // Reset everything
+    private void ResetCharacter()
+    {
+        character.transform.position = new Vector3(0.0f, 1.0f, 0.0f);
+    }
+    private void ResetTimer()
+    {
+        timerFloat = 6.0f;
+        timerString.text = timerFloat.ToString();
+    }
+    private void ResetFade()
+    {
+        gameObject.GetComponent<GameLoop>().SetFinishedFadeIn(false);
+        gameObject.GetComponent<GameLoop>().SetFinishedFadeOut(false);
     }
 }
