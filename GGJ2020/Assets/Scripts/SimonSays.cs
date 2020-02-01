@@ -124,7 +124,7 @@ public class SimonSays : MonoBehaviour
         }
     }
 
-    void resetMinigame()
+    public void resetMinigame()
     {
         number = 0;
         complete = false;

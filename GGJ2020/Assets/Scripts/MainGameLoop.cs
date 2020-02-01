@@ -9,6 +9,10 @@ public class MainGameLoop : MonoBehaviour
     private float timerFloat;
     private bool playFadeIn, playFadeOut;
 
+    public SimonSays simonSays_MG;
+    public ButtonSelector findButton_MG;
+    public EngineRoomScript wires_MG;
+
     public GameObject character;
 
     // Initialise the text object
@@ -48,6 +52,10 @@ public class MainGameLoop : MonoBehaviour
                 ResetCharacter();
                 ResetTimer();
 
+                simonSays_MG.resetMinigame();
+                findButton_MG.resetMiniGame();
+                wires_MG.ResetEngineRoom();
+
                 playFadeIn = true;
             }
         }
@@ -72,7 +80,7 @@ public class MainGameLoop : MonoBehaviour
     // Reset everything
     private void ResetCharacter()
     {
-        character.transform.position = new Vector3(0.0f, 1.0f, 0.0f);
+        character.GetComponent<CharacterCtrl>().ResetChar();
     }
     private void ResetTimer()
     {
