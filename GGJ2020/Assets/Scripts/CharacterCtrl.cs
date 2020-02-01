@@ -61,6 +61,7 @@ public class CharacterCtrl : MonoBehaviour
         }
         else
         {
+            Debug.Log("NOT");
             return null;
         }
     }
