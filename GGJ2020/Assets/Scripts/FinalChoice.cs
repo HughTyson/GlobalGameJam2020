@@ -7,7 +7,8 @@ public class FinalChoice : MonoBehaviour
     public FinalButton button;
     private FinalButton[] buttons = new FinalButton[2];
     private int correctChoice;
-    public bool complete = false;
+    private bool complete = false;
+    public bool WinState = false; // FALSE = you lose, TRUE = you won
     // Start is called before the first frame update
     void Start()
     {
@@ -39,15 +40,37 @@ public class FinalChoice : MonoBehaviour
         {
             for (int i = 0; i < 2; i++)
             {
-                if (buttons[i].buttonValue == correctChoice)
+                if (buttons[i].clicked)
                 {
-                    Debug.Log("YOU WIN!");
-                }
-                else
-                {
-                    Debug.Log("YOU LOSE! OFUCKICANTBELIEVEYOUVEDONETHIS");
+                    if (buttons[i].buttonValue == correctChoice)
+                    {
+                        Debug.Log("YOU WIN!");
+                        WinState = true;
+                        complete = true;
+                    }
+                    else
+                    {
+                        Debug.Log("YOU LOSE! OFUCKICANTBELIEVEYOUVEDONETHIS");
+                        WinState = false;
+                        complete = true;
+                    }
                 }
             }
+        }
+
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            resetMinigame();
+        }
+    }
+
+    void resetMinigame()
+    {
+        complete = false;
+        for (int i = 0; i < 2; i++)
+        {
+            buttons[i].clicked = false;
         }
     }
 }

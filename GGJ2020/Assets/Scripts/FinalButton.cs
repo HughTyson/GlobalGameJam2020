@@ -31,9 +31,9 @@ public class FinalButton : MonoBehaviour
         state = ButtonState.OFF;
         GetComponent<MeshRenderer>().sharedMaterial = mat_off;
 
-        originalPos = transform.position.x;
-        offsetPos1 = transform.position.x - .1f;
-        offsetPos2 = transform.position.x;
+        originalPos = transform.position.y;
+        offsetPos1 = transform.position.y - .1f;
+        offsetPos2 = transform.position.y;
         // Uncomment this to cycle through materials (debug)
         //StartCoroutine(debugFlicker());
     }
@@ -79,8 +79,8 @@ public class FinalButton : MonoBehaviour
 
     public IEnumerator LerpTo(bool forwrd)
     {
-        transform.position = new Vector3(offsetPos1, transform.position.y, transform.position.z);
+        transform.position = new Vector3(transform.position.x, offsetPos1, transform.position.z);
         yield return new WaitForSeconds(0.5f);
-        transform.position = new Vector3(offsetPos2, transform.position.y, transform.position.z);  
+        transform.position = new Vector3(transform.position.x, offsetPos2, transform.position.z);  
     }
 }
