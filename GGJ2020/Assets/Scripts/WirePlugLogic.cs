@@ -10,6 +10,7 @@ public class WirePlugLogic : MonoBehaviour
 
     Transform attachedTransform;
 
+    [SerializeField] Collider physicsCollider;
     enum STATE
     { 
     IN_HAND,
@@ -85,11 +86,13 @@ public class WirePlugLogic : MonoBehaviour
             case STATE.FREE:
                 {
                     GetComponent<Rigidbody>().isKinematic = false;
+                    physicsCollider.isTrigger = false;
                     break;
                 }
             case STATE.PLUGGED:
                 {
                     GetComponent<Rigidbody>().isKinematic = true;
+                    physicsCollider.isTrigger = true;
                     transform.position = attachedTransform.position;
                     transform.transform.rotation = attachedTransform.rotation;
                     break;
@@ -97,6 +100,7 @@ public class WirePlugLogic : MonoBehaviour
             case STATE.IN_HAND:
                 {
                     GetComponent<Rigidbody>().isKinematic = true;
+                    physicsCollider.isTrigger = true;
                     transform.position = attachedTransform.position;
                     transform.transform.rotation = attachedTransform.rotation;
                     break;

@@ -563,7 +563,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Go to scene 3
+  m_Text: QUIT
 --- !u!222 &1224974223
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -642,7 +642,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Go to scene 2
+  m_Text: PLAY GAME
 --- !u!222 &1332903020
 CanvasRenderer:
   m_ObjectHideFlags: 0
