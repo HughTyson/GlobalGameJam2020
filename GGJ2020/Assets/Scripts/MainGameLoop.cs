@@ -18,7 +18,7 @@ public class MainGameLoop : MonoBehaviour
     // Initialise the text object
     void Start()
     {
-        timerFloat = 6.0f;
+        timerFloat = 1000.0f;
         timerString.text = timerFloat.ToString();
         playFadeIn = true;
     }
