@@ -8,6 +8,8 @@ public class EngineRoomScript : MonoBehaviour
     [SerializeField] List<GameObject> CryoChambers;
 
     [SerializeField] GameObject Door;
+
+    [SerializeField] GameObject WireGame;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +30,7 @@ public class EngineRoomScript : MonoBehaviour
             CryoChambers[i].GetComponent<CryoScript>().Reset();
         }
         Door.GetComponent<DoorOpen>().CloseDoor();
+        WireGame.GetComponent<WireGameScript>().Reset();
 
     }
 }
