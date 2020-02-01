@@ -10,6 +10,8 @@ public class SimonSays : MonoBehaviour
     private int number = 0;
     public List<int> sequence = new List<int>();
     public bool complete = false;
+    public GameObject Door;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -70,6 +72,7 @@ public class SimonSays : MonoBehaviour
                 {
                     buttons[i].itsOver(true);
                 }
+                Door.GetComponent<DoorOpen>().OpenDoors();
                 //Debug.Log("Oh lawd you got it!");
             }
         }
