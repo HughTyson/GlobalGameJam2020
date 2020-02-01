@@ -293,7 +293,7 @@ PrefabInstance:
     - target: {fileID: 7967554809557951156, guid: 701cfe4feecbc0b4a8ee3128132bc134,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.94294906
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 7967554809557951156, guid: 701cfe4feecbc0b4a8ee3128132bc134,
         type: 3}
@@ -344,6 +344,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Multi Button Mini Game
+      objectReference: {fileID: 0}
+    - target: {fileID: 4435531364130455626, guid: 701cfe4feecbc0b4a8ee3128132bc134,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 4435531364130455626, guid: 701cfe4feecbc0b4a8ee3128132bc134,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.18
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 701cfe4feecbc0b4a8ee3128132bc134, type: 3}

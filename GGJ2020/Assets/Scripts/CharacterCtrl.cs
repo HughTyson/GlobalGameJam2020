@@ -120,15 +120,16 @@ public class CharacterCtrl : MonoBehaviour
 
             if (Input.GetKey(KeyCode.LeftShift))
             {
-                moveSpeed = 7.5f;
-                bobSpeed = 5.8f;
+                moveSpeed = 5.0f;
+                bobSpeed = 20.0f;
                 GetComponent<PlayerSteps>().setRunning(true);
             }
             else
             {
-                moveSpeed = 5;
-                bobSpeed = 4.8f;
+                moveSpeed = 2.5f;
+                bobSpeed = 10.0f;
                 GetComponent<PlayerSteps>().setRunning(false);
+
             }
         }
     }
