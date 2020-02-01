@@ -26,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8609721053269199721}
-  m_LocalRotation: {x: 0.000000021855694, y: 0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.18682265, y: 0.24, z: 9.604624}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -285,11 +285,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8609721053269199724}
     m_Modifications:
-    - target: {fileID: 512068205224837135, guid: 701cfe4feecbc0b4a8ee3128132bc134,
-        type: 3}
-      propertyPath: m_Name
-      value: Multi Button Mini Game
-      objectReference: {fileID: 0}
     - target: {fileID: 7967554809557951156, guid: 701cfe4feecbc0b4a8ee3128132bc134,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -345,10 +340,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2401347168495436002, guid: 701cfe4feecbc0b4a8ee3128132bc134,
+    - target: {fileID: 512068205224837135, guid: 701cfe4feecbc0b4a8ee3128132bc134,
         type: 3}
-      propertyPath: door
-      value: 
+      propertyPath: m_Name
+      value: Multi Button Mini Game
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 701cfe4feecbc0b4a8ee3128132bc134, type: 3}

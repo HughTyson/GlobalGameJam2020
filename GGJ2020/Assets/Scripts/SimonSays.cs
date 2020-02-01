@@ -73,6 +73,11 @@ public class SimonSays : MonoBehaviour
                 //Debug.Log("Oh lawd you got it!");
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            resetMinigame();
+        }
     }
 
     private void onReset()
@@ -87,15 +92,44 @@ public class SimonSays : MonoBehaviour
 
     void Minigame_SS()
     {
-        sequence.Add(Random.Range(0, 5));
-        sequence.Add(Random.Range(0, 5));
-        sequence.Add(Random.Range(0, 5));
-        sequence.Add(Random.Range(0, 5));
+        int r1, r2, r3, r4;
+
+        int dup = -1;
+
+        r1 = Random.Range(0, 5);
+        r2 = Random.Range(0, 5);
+        if (r1 == r2)
+        {
+            dup = r1;
+        }
+        r3 = dup;
+        while (r3 == dup)
+        {
+            r3 = Random.Range(0, 5);
+        }
+        r4 = Random.Range(0, 5);
+
+
+        sequence.Add(r1);
+        sequence.Add(r2);
+        sequence.Add(r3);
+        sequence.Add(r4);
         string res = "";
         for (int i = 0; i < sequence.Count; i++)
         {
             res += sequence[i];
         }
-        //Debug.Log(res);
+    }
+
+    void resetMinigame()
+    {
+        number = 0;
+        complete = false;
+        for (int i = 0; i < 6; i++)
+        {
+            buttons[i].clicked = false;
+            buttons[i].flashing = false;
+            buttons[i].flashingSeq = false;
+        }
     }
 }
