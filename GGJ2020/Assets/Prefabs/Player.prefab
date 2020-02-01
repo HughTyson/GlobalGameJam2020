@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4943320808041592439
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5051344821250508591}
+  m_Layer: 0
+  m_Name: HandTrasform
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5051344821250508591
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4943320808041592439}
+  m_LocalRotation: {x: 0.13906847, y: -0.02615159, z: 0.18294942, w: 0.9728852}
+  m_LocalPosition: {x: -0.464, y: 0.267, z: 0.806}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8702584034532693051}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 16.27, y: 0, z: 21.3}
 --- !u!1 &8702584034532693030
 GameObject:
   m_ObjectHideFlags: 0
@@ -14,6 +44,7 @@ GameObject:
   - component: {fileID: 8702584034532693028}
   - component: {fileID: 8702584034532693031}
   - component: {fileID: 8702584034532693048}
+  - component: {fileID: 5551057798102710403}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -33,6 +64,7 @@ Transform:
   m_LocalScale: {x: 1, y: 2, z: 1}
   m_Children:
   - {fileID: 8702584035115287214}
+  - {fileID: 5051344821250508591}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -124,13 +156,27 @@ Rigidbody:
   m_GameObject: {fileID: 8702584034532693030}
   serializedVersion: 2
   m_Mass: 1
-  m_Drag: 0
+  m_Drag: 10
   m_AngularDrag: 0.05
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 0
+--- !u!114 &5551057798102710403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8702584034532693030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b6399433093e964c9c0ea03bb3ffefb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  theCamera: {fileID: 8702584035115287209}
+  viewingDistance: 5
 --- !u!1 &8702584035115287211
 GameObject:
   m_ObjectHideFlags: 0

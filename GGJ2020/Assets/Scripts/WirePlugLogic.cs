@@ -37,4 +37,16 @@ public class WirePlugLogic : MonoBehaviour
     {
         
     }
+
+
+    public void BeingLookedAt()
+    {
+        GetComponent<MeshRenderer>().material.color = Color.green;
+    }
+
+    public void StoppedBeingLookedAt()
+    {
+        GetComponent<MeshRenderer>().material.color = Color.red;
+    }
+
 }
