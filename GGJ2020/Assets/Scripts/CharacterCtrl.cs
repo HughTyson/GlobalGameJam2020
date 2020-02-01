@@ -41,10 +41,14 @@ public class CharacterCtrl : MonoBehaviour
     // Change scene
     public ChangeScene changeScene;
 
-
+    //For running or walking
     bool playingSteps = false;
+
+    //Robot commmands
+    public robotOrders robot;
     void Start()
     {
+
         //Initialise the camera bob positions
         restPos = Camera.main.transform.localPosition;
         camPos = Camera.main.transform.localPosition;
@@ -54,6 +58,8 @@ public class CharacterCtrl : MonoBehaviour
 
         //Init mouse lookat rotation to determine starting rotation of player
         mouseLook.x = InitialRotation;
+
+        robot.showMessage();
     }
 
     public GameObject GetInteractable()
@@ -120,13 +126,16 @@ public class CharacterCtrl : MonoBehaviour
 
             if (Input.GetKey(KeyCode.LeftShift))
             {
-                moveSpeed = 7.5f;
-                bobSpeed = 5.8f;
+                moveSpeed = 5.0f;
+                bobSpeed = 20.0f;
+                GetComponent<PlayerSteps>().setRunning(true);
             }
             else
             {
-                moveSpeed = 5;
-                bobSpeed = 4.8f;
+                moveSpeed = 2.5f;
+                bobSpeed = 10.0f;
+                GetComponent<PlayerSteps>().setRunning(false);
+
             }
         }
     }
