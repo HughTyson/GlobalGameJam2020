@@ -25,8 +25,9 @@ public class Button : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterCtrl>();
         state = ButtonState.OFF;
+        GetComponent<MeshRenderer>().sharedMaterial = mat_off;
 
-        
+
         // Uncomment this to cycle through materials (debug)
         //StartCoroutine(debugFlicker());
     }
@@ -62,7 +63,6 @@ public class Button : MonoBehaviour
             {
                 state = ButtonState.OFF;
             }
-
             switch (state)
             {
                 case (Button.ButtonState.ON): { lookedAt(); break; }
@@ -74,14 +74,19 @@ public class Button : MonoBehaviour
 
     public void lookedAt()
     {
-        GetComponent<MeshRenderer>().sharedMaterial = mat_on;
+        if (GetComponentInParent<SimonSays>().complete == false)
+        {
+            GetComponent<MeshRenderer>().sharedMaterial = mat_on;
+        }
 
     }
 
     public void notLookedAt()
     {
-        GetComponent<MeshRenderer>().sharedMaterial = mat_off;
-
+        if (GetComponentInParent<SimonSays>().complete == false)
+        {
+            GetComponent<MeshRenderer>().sharedMaterial = mat_off;
+        }
     }
 
     public void isClicked()
@@ -90,21 +95,41 @@ public class Button : MonoBehaviour
         Debug.Log("Detected");
     }
 
-    public void itsOver()
+    public void itsOver(bool good)
     {
-        StartCoroutine(flash());
+        if (good)
+        {
+            StartCoroutine(flashGood());
+        }
+        else
+        {
+            StartCoroutine(flashBad());
+        }
     }
 
-    IEnumerator flash()
+    IEnumerator flashGood()
+    {
+        for (int i = 0; i < 4; i++)
+        {
+            GetComponent<MeshRenderer>().sharedMaterial = mat_on;
+            yield return new WaitForSeconds(0.5f);
+
+            GetComponent<MeshRenderer>().sharedMaterial = default_mat;
+            yield return new WaitForSeconds(0.5f);
+        }
+        GetComponent<MeshRenderer>().sharedMaterial = default_mat;
+    }
+
+    IEnumerator flashBad()
     {
         for (int i = 0; i < 4; i++)
         {
             GetComponent<MeshRenderer>().sharedMaterial = mat_off;
             yield return new WaitForSeconds(0.5f);
 
-            GetComponent<MeshRenderer>().sharedMaterial = mat_on;
+            GetComponent<MeshRenderer>().sharedMaterial = default_mat;
             yield return new WaitForSeconds(0.5f);
         }
-        GetComponent<MeshRenderer>().sharedMaterial = default_mat;
+        GetComponent<MeshRenderer>().sharedMaterial = mat_off;
     }
 }
