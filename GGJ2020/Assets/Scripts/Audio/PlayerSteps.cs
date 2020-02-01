@@ -25,15 +25,16 @@ public class PlayerSteps : MonoBehaviour
     public void playStep()
     { 
         source.clip = footstep[Random.Range(0, footstep.Count - 1)];
+        source.pitch = 1.5f;
         source.Play();
         if (isRunning)
         {
-            Invoke("playStep", 0.45f);
+            Invoke("playStep", 0.25f);
         }
         else
         {
 
-            Invoke("playStep", 0.65f);
+            Invoke("playStep", 0.35f);
         }
 
     }
