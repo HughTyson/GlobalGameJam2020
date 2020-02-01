@@ -8,6 +8,8 @@ public class PlayerSteps : MonoBehaviour
     public List<AudioClip> footstep = new List<AudioClip>();
 
     AudioSource source;
+
+    bool isRunning = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,18 +19,28 @@ public class PlayerSteps : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            playStep();
-        }
+
     }
 
     public void playStep()
     { 
         source.clip = footstep[Random.Range(0, footstep.Count - 1)];
         source.Play();
-        Invoke("playStep", 0.65f);
+        if (isRunning)
+        {
+            Invoke("playStep", 0.45f);
+        }
+        else
+        {
 
+            Invoke("playStep", 0.65f);
+        }
+
+    }
+
+    public void setRunning(bool set)
+    {
+        isRunning = set;
     }
 
     public void stopSteps()
