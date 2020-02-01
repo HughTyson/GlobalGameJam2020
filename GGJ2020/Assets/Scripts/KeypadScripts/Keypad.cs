@@ -54,7 +54,10 @@ public class Keypad : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            closeKeypad();
+        }
     }
 
     void generateKeypadButtons()
@@ -148,5 +151,10 @@ public class Keypad : MonoBehaviour
     public void clearCode()
     {
         code.Clear();
+    }
+
+    public void closeKeypad()
+    {
+        this.gameObject.SetActive(false);
     }
 }
