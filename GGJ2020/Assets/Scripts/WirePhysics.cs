@@ -36,6 +36,9 @@ public class WirePhysics : MonoBehaviour
             LineParticles[i].position = Vector3.Lerp(StaticWireSide.position, WirePlugAttachementPoint.position,(float)(i)/(float)(particleAmmount));
             LineParticles[i].oldPosition = LineParticles[i].position;
         }
+
+        LineParticles[1].dragPercentage = 0.9f;
+        LineParticles[LineParticles.Count - 2].dragPercentage = 0.9f;
     }
 
     // Update is called once per frame
