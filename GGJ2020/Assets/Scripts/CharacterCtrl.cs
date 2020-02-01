@@ -52,12 +52,12 @@ public class CharacterCtrl : MonoBehaviour
     {
         if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out interactable, 20.0f, interactableMask))
         {
-            Debug.Log("Looking at interactable object");
+            //Debug.Log("Looking at interactable object");
             return interactable.transform.gameObject;
         }
         else
         {
-            Debug.Log("NOT");
+            //Debug.Log("NOT");
             return null;
         }
     }
