@@ -14,11 +14,12 @@ public class MainGameLoop : MonoBehaviour
     public EngineRoomScript wires_MG;
 
     public GameObject character;
+    float maxTime = 60.0f;
 
     // Initialise the text object
     void Start()
     {
-        timerFloat = 1000.0f;
+        timerFloat = maxTime;
         timerString.text = timerFloat.ToString();
         playFadeIn = true;
     }
@@ -84,7 +85,7 @@ public class MainGameLoop : MonoBehaviour
     }
     private void ResetTimer()
     {
-        timerFloat = 6.0f;
+        timerFloat = maxTime;
         timerString.text = timerFloat.ToString();
     }
     private void ResetFade()
