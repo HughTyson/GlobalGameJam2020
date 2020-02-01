@@ -5,8 +5,9 @@ using UnityEngine;
 public class EngineRoomScript : MonoBehaviour
 {
 
-    List<GameObject> CryoChambers;
-    GameObject Door;
+    [SerializeField] List<GameObject> CryoChambers;
+
+    [SerializeField] GameObject Door;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,8 +27,7 @@ public class EngineRoomScript : MonoBehaviour
         {
             CryoChambers[i].GetComponent<CryoScript>().Reset();
         }
-
-        
+        Door.GetComponent<DoorOpen>().CloseDoor();
 
     }
 }
