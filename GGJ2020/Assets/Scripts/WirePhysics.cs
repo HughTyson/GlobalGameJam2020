@@ -68,6 +68,7 @@ public class WirePhysics : MonoBehaviour
         }
 
 
+
         if (!WirePlugAttachementPoint.GetComponentInParent<Rigidbody>().isKinematic)
         {
             WirePlugAttachementPoint.GetComponentInParent<Rigidbody>().AddForceAtPosition((LineParticles[LineParticles.Count - 1].position - WirePlugAttachementPoint.position), WirePlugAttachementPoint.position, ForceMode.VelocityChange);
