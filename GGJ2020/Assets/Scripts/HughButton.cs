@@ -86,6 +86,9 @@ public class HughButton : MonoBehaviour
         transform.position = new Vector3(transform.position.x, offset.y, transform.position.z);
         clicked = true;
         GetComponentInParent<AudioSource>().Play();
+
+        ////Ajjjjjjj
+
         //check if this is the correct button
         if (opener == true)
         {
