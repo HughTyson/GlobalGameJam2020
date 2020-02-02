@@ -15,7 +15,7 @@ public class MainGameLoop : MonoBehaviour
     //public Keypad keypad_MG;
 
     public GameObject character;
-    float maxTime = 1000.0f;
+    float maxTime = 60.0f;
 
 
 

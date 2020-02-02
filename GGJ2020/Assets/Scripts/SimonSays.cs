@@ -72,11 +72,14 @@ public class SimonSays : MonoBehaviour
             {
                 for (int i = 0; i < 5; i++)
                 {
-                    buttons[i].flashingSeq = true;
-                    StartCoroutine(buttons[i].ShowSequence());
+                    if (buttons[i].flashingSeq == false) 
+                    {
+                        buttons[i].flashingSeq = true;
+                        StartCoroutine(buttons[i].ShowSequence());
 
-                    source.clip = buttonClick;
-                    source.Play();
+                        source.clip = buttonClick;
+                        source.Play();
+                    }
                 }
                 buttons[5].clicked = false;
             }
@@ -95,11 +98,6 @@ public class SimonSays : MonoBehaviour
                 Door.GetComponent<DoorOpen>().OpenDoors();
                 //Debug.Log("Oh lawd you got it!");
             }
-        }
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            resetMinigame();
         }
     }
 

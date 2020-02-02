@@ -7,13 +7,7 @@ public class DoorOpen : MonoBehaviour
     [SerializeField] private GameObject Door1;
     [SerializeField] private GameObject Door2;
 
-    void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.V))
-        {
-            OpenDoors();
-        }
-    }
+    
 
     public void OpenDoors()
     {

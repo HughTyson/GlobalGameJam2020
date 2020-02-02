@@ -98,12 +98,6 @@ public class FinalChoice : MonoBehaviour
                 }
             }
         }
-
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            resetMinigame();
-        }
     }
 
     void resetMinigame()

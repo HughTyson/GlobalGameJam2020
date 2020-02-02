@@ -110,12 +110,7 @@ public class CharacterCtrl : MonoBehaviour
 
     void Update()
     {
-        //DEBUG for getting mouse cursor back
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            //turn on cursor
-            Cursor.lockState = CursorLockMode.None;
-        }
+        
     }
     //This function handles physics calculations every cycle such as player movement
     private void FixedUpdate()

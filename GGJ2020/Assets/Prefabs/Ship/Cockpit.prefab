@@ -493,11 +493,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2756227686187166987}
     m_Modifications:
-    - target: {fileID: 2743119268549492554, guid: db989d77eb95cc748a5f4103c05672d0,
-        type: 3}
-      propertyPath: m_Name
-      value: Trigger (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 6258478554836288411, guid: db989d77eb95cc748a5f4103c05672d0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -552,6 +547,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2743119268549492554, guid: db989d77eb95cc748a5f4103c05672d0,
+        type: 3}
+      propertyPath: m_Name
+      value: Trigger (1)
       objectReference: {fileID: 0}
     - target: {fileID: 6730865145362386523, guid: db989d77eb95cc748a5f4103c05672d0,
         type: 3}
@@ -664,11 +664,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2756227686187166987}
     m_Modifications:
-    - target: {fileID: 2743119268549492554, guid: db989d77eb95cc748a5f4103c05672d0,
-        type: 3}
-      propertyPath: m_Name
-      value: Trigger (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 6258478554836288411, guid: db989d77eb95cc748a5f4103c05672d0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -733,6 +728,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1.7527
+      objectReference: {fileID: 0}
+    - target: {fileID: 2743119268549492554, guid: db989d77eb95cc748a5f4103c05672d0,
+        type: 3}
+      propertyPath: m_Name
+      value: Trigger (2)
       objectReference: {fileID: 0}
     - target: {fileID: 6730865145362386523, guid: db989d77eb95cc748a5f4103c05672d0,
         type: 3}
@@ -1174,11 +1174,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2756227686187166987}
     m_Modifications:
-    - target: {fileID: 2743119268549492554, guid: db989d77eb95cc748a5f4103c05672d0,
-        type: 3}
-      propertyPath: m_Name
-      value: Trigger
-      objectReference: {fileID: 0}
     - target: {fileID: 6258478554836288411, guid: db989d77eb95cc748a5f4103c05672d0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1238,6 +1233,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 2.6029
+      objectReference: {fileID: 0}
+    - target: {fileID: 2743119268549492554, guid: db989d77eb95cc748a5f4103c05672d0,
+        type: 3}
+      propertyPath: m_Name
+      value: Trigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 2743119268549492554, guid: db989d77eb95cc748a5f4103c05672d0,
+        type: 3}
+      propertyPath: m_TagString
+      value: Hazard
       objectReference: {fileID: 0}
     - target: {fileID: 6730865145362386523, guid: db989d77eb95cc748a5f4103c05672d0,
         type: 3}

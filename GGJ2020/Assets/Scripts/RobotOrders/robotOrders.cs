@@ -38,10 +38,10 @@ public class robotOrders : MonoBehaviour
         day_text[3] = " HECK";
 
         tutorial_text[0] = "Doors busted, shocking";
-        tutorial_text[1] = "Big heck, that's a lotta buttons, gotta go fast";
+        tutorial_text[1] = "Big heck, that's a lotta buttons, gotta go swift";
         tutorial_text[2] = "OW";
         tutorial_text[3] = "OOOOOOOOO, I LOVE PATTERNS";
-        tutorial_text[4] = "Heck forgot the code, sure wish I wrote it down someplace(or mulitple)";
+        tutorial_text[4] = "Heck forgot the code, sure wish I wrote it down";
         tutorial_text[5] = "More Buttons. Yay!";
         tutorial_text[6] = "One of these is bound to fix the ship!";
 
