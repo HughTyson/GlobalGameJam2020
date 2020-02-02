@@ -20,7 +20,7 @@ public class DoorOpen : MonoBehaviour
         {
             Door1.GetComponent<Animator>().enabled = true;
             Door1.GetComponent<Animator>().Play("DoorAnim");
-            GetComponent<AudioSource>().Play();
+            Door1.GetComponent<AudioSource>().Play();
         }
         else
         {Debug.LogError("Invalid Door 1");
@@ -32,6 +32,8 @@ public class DoorOpen : MonoBehaviour
         {
             Door2.GetComponent<Animator>().enabled = true;
             Door2.GetComponent<Animator>().Play("DoorAnim");
+            Door2.GetComponent<AudioSource>().Play();
+
         }
 
     }
@@ -48,7 +50,6 @@ public class DoorOpen : MonoBehaviour
         {
             Door1.GetComponent<Animator>().enabled = true;
             Door1.GetComponent<Animator>().Play("CloseDoor");
-            GetComponent<AudioSource>().Play();
         }
         else
         {

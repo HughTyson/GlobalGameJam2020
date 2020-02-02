@@ -12,7 +12,6 @@ public class Activator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        button = GetComponent<ButtonKeypad>();
         activateKeypad(false);
     }
 
@@ -28,15 +27,21 @@ public class Activator : MonoBehaviour
     }
     public void activateKeypad(bool set)
     {
-        keypad.SetActive(set);
-        inKeypad = set;
+     //   keypad.SetActive(set);
+     //   inKeypad = set;
+
         if(set == false)
         {
+            keypad.SetActive(false);
+            inKeypad = false;
             Cursor.lockState = CursorLockMode.Locked;
         }
         else
         {
+            keypad.SetActive(true);
+            inKeypad = true;
             Cursor.lockState = CursorLockMode.None;
+           // keypad.GetComponent<Keypad>().generateKeypadButtons();
         }
     }
 

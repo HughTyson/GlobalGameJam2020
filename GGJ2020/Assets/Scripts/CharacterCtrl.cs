@@ -51,7 +51,7 @@ public class CharacterCtrl : MonoBehaviour
 
 
     //Keypad
-    Activator keyPad;
+    public Activator keyPad;
     void Start()
     {
 
@@ -68,7 +68,7 @@ public class CharacterCtrl : MonoBehaviour
         robot = GetComponent<robotOrders>();
         robot.setOrders(false);
 
-        keyPad = GameObject.Find("KeypadHandler").GetComponent<Activator>();
+       // keyPad = GameObject.Find("KeypadHandler").GetComponent<Activator>();
     }
 
     public void ResetChar()
@@ -97,7 +97,7 @@ public class CharacterCtrl : MonoBehaviour
 
     public GameObject GetInteractable()
     {
-        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out interactable, 20.0f, interactableMask))
+        if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out interactable, 5.0f, interactableMask))
         {
             return interactable.transform.gameObject;
         }

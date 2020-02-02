@@ -73,6 +73,7 @@ public class ButtonKeypad : MonoBehaviour
             if (clicked)
             {
                 activator.activateKeypad(true);
+                clicked = false;
             }
         }
     }
@@ -102,7 +103,6 @@ public class ButtonKeypad : MonoBehaviour
 
     public void isClicked()
     {
-
         clicked = true;
 
     }

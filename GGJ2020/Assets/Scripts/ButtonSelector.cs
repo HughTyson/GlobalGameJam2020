@@ -45,7 +45,10 @@ public class ButtonSelector : MonoBehaviour
 
     }
 
-
+    private void Update()
+    {
+        plug.GetComponent<WirePlugLogic>().SetColour(socket.GetComponent<WireSocketLogic>().GetColour());
+    }
 
     public void Initilise()
     {

@@ -6,7 +6,7 @@ public class KeypadButton : MonoBehaviour
 {
 
     //Number assigned to the button
-    int num = 0;
+    public int num = 0;
 
     //Keypad
     public Keypad keypad;

@@ -10,6 +10,7 @@ public class ChangeScene : MonoBehaviour
 
     public void LoadMenuScene()
     {
+        Cursor.lockState = CursorLockMode.None;
         Scene currentScene = SceneManager.GetActiveScene();
         SceneManager.UnloadSceneAsync(currentScene);
 
@@ -19,6 +20,8 @@ public class ChangeScene : MonoBehaviour
 
     public void LoadGameScene()
     {
+        Cursor.lockState = CursorLockMode.Locked;
+
         Scene currentScene = SceneManager.GetActiveScene();
         SceneManager.UnloadSceneAsync(currentScene);
 
@@ -45,6 +48,7 @@ public class ChangeScene : MonoBehaviour
 
     public void ReloadGameScene()
     {
+        Cursor.lockState = CursorLockMode.Locked;
         SceneManager.UnloadSceneAsync("Level");
         LoadGameScene();
     }
@@ -52,6 +56,8 @@ public class ChangeScene : MonoBehaviour
     // Resets the pause menu so that when the game restarts it is not paused.
     public void ResetGameScene()
     {
+        Cursor.lockState = CursorLockMode.Locked;
+
         string currentScene = SceneManager.GetActiveScene().name;
 
         if(currentScene == "Level")

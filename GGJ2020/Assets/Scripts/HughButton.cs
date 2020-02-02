@@ -16,6 +16,7 @@ public class HughButton : MonoBehaviour
     CharacterCtrl player;
     public GameObject door;
     [SerializeField] GameObject socket;
+    [SerializeField] GameObject plug;
 
     bool show_button = false;
 
@@ -38,6 +39,9 @@ public class HughButton : MonoBehaviour
 
     private void Update()
     {
+
+        
+
         if(clicked)
         {
             transform.position = Vector3.Lerp(transform.position, basePos, button_speed * Time.deltaTime);

@@ -41,6 +41,7 @@ public class Keypad : MonoBehaviour
 
     public ButtonKeypad buttonKeypad;
 
+    public Activator act;
     // Start is called before the first frame update
     void Start()
     {
@@ -50,10 +51,8 @@ public class Keypad : MonoBehaviour
 
         source.clip = click;
 
-        //Create the keypad buttons
-        generateKeypadButtons();
-
         closeKeypad();
+        buttonKeypad.setIsClicked(false);
     }
 
     // Update is called once per frame
@@ -62,7 +61,7 @@ public class Keypad : MonoBehaviour
 
     }
 
-    void generateKeypadButtons()
+    public void generateKeypadButtons()
     {
         //Loop and create the buttons in a grid pattern
         for(int i =0; i < 3; i++)
@@ -114,7 +113,7 @@ public class Keypad : MonoBehaviour
                 //Clear the inputted numbers
                 clearInput();
                 errorsMade = 0;
-                activator.GetComponent<Activator>().activateKeypad(false);
+                act.activateKeypad(false);
                 buttonKeypad.setIsClicked(false);
 
             }
@@ -123,7 +122,7 @@ public class Keypad : MonoBehaviour
                 Debug.Log("Right code");
                 clearInput();
                 errorsMade = 0;
-                activator.GetComponent<Activator>().activateKeypad(false);
+                act.activateKeypad(false);
                 door.GetComponent<DoorOpen>().OpenDoors();
                 buttonKeypad.setIsClicked(false);
             }
@@ -170,18 +169,16 @@ public class Keypad : MonoBehaviour
 
     public void resetKeypad()
     {
+        showInput.text = "";
         input.Clear();
-        code.Clear();
 
         offsetX = -30.0f;
         offsetY = 20.0f;
 
-        for (int i = 0; i < keypadButtons.Count; i++)
-        {
-            Destroy(keypadButtons[i]);
-        }
-
         keypadButtons.Clear();
         errorsMade = 0;
+        activator.GetComponent<Activator>().activateKeypad(false);
+
+        door.GetComponent<DoorOpen>().CloseDoor();
     }
 }
