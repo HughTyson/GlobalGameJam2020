@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4642061684394720532}
   - component: {fileID: 4642061684394720533}
   - component: {fileID: 4642061684394720530}
+  - component: {fileID: -3257921781787312805}
   m_Layer: 5
   m_Name: KeypadButton
   m_TagString: Untagged
@@ -147,6 +148,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keypad: {fileID: 0}
+--- !u!114 &-3257921781787312805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4642061684394720528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63b009b8fd4c55944ba5b72f26e649dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tags: 
 --- !u!1 &4642061684452735017
 GameObject:
   m_ObjectHideFlags: 0

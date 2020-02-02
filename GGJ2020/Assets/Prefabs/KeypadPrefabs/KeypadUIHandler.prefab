@@ -134,6 +134,7 @@ MonoBehaviour:
   click: {fileID: 8300000, guid: 8dd61239effbf9d44a3ced319ef0e597, type: 3}
   activator: {fileID: 0}
   door: {fileID: 0}
+  buttonKeypad: {fileID: 0}
 --- !u!82 &175830925849468172
 AudioSource:
   m_ObjectHideFlags: 0
