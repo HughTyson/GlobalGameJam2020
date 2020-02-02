@@ -9,6 +9,7 @@ public class VentDropScript : MonoBehaviour
 
     [SerializeField] GameObject leverObject;
 
+    [SerializeField] List<GameObject> WireSetObjects;
     bool has_dropped = false;
 
     List<Vector3> plugInitPositions = new List<Vector3>();
@@ -24,8 +25,11 @@ public class VentDropScript : MonoBehaviour
         {
             plugInitPositions.Add(plugObjects[i].transform.position);
             plugInitRotations.Add(plugObjects[i].transform.rotation);
+        }
 
-            plugObjects[i].SetActive(false);
+        for (int i = 0; i < WireSetObjects.Count; i++)
+        {
+            WireSetObjects[i].SetActive(false);
         }
 
         for (int i = 0; i < hatchObjects.Count; i++)
@@ -52,9 +56,9 @@ public class VentDropScript : MonoBehaviour
                     hatchObjects[i].GetComponent<Rigidbody>().useGravity = true;
                 }
 
-                for (int i = 0; i < plugObjects.Count; i++)
+                for (int i = 0; i < WireSetObjects.Count; i++)
                 {
-                    plugObjects[i].SetActive(true);
+                    WireSetObjects[i].SetActive(true);
                 }
 
             }
@@ -84,9 +88,14 @@ public class VentDropScript : MonoBehaviour
 
             plugObjects[i].transform.position = hatchInitPositions[i];
             plugObjects[i].transform.rotation = hatchInitRotations[i];
-            plugObjects[i].SetActive(false);
+   
 
         }
+        for (int i = 0; i < WireSetObjects.Count; i++)
+        {
+            WireSetObjects[i].SetActive(false);
+        }
+
         leverObject.GetComponent<LeverLogic>().ResetLever();
 
 
