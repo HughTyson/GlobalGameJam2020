@@ -31,6 +31,7 @@ public class robotOrders : MonoBehaviour
         source = GetComponent<AudioSource>();
         source.clip = typing;
 
+
         day_text[0] = " Ship Crash imminent: R3P-41R";
         day_text[1] = " Ship Crash...huh...deja vu";
         day_text[2] = " Ship C... Ahhh Beans... this is repeating";
@@ -43,6 +44,7 @@ public class robotOrders : MonoBehaviour
         tutorial_text[4] = "Heck forgot the code, sure wish I wrote it down someplace(or mulitple)";
         tutorial_text[5] = "More Buttons. Yay!";
         tutorial_text[6] = "One of these is bound to fix the ship!";
+
     }
 
     public void setOrders(bool tutorial)
@@ -81,6 +83,7 @@ public class robotOrders : MonoBehaviour
 
     public void showMessage(int length)
     {
+
         if(IsInvoking())
         {
             objectiveText.text = null;
@@ -133,7 +136,9 @@ public class robotOrders : MonoBehaviour
 
     void startEffect(int len)
     {
+
         length = len;
+
 
         source = GetComponent<AudioSource>();
         source.clip = typing;
