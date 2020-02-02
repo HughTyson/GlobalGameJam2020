@@ -50,12 +50,14 @@ MonoBehaviour:
   default_mat: {fileID: 2100000, guid: a128160c5957f0b4b92c5ceb36ab8025, type: 2}
   mat_on: {fileID: 2100000, guid: c93e121db0c829d46a18352c5f45d4d3, type: 2}
   mat_off: {fileID: 2100000, guid: 2e7fde5a360d1c04486fc6257be6d7a7, type: 2}
+  mat_start: {fileID: 2100000, guid: edb3d64b46fa4644bb81ad70601b3b65, type: 2}
   buttonValue: 4
   clicked: 0
   offsetPos1: 0
   offsetPos2: 0
   originalPos: 0
   flashing: 0
+  flashingSeq: 0
 --- !u!23 &8765832425617996404
 MeshRenderer:
   m_ObjectHideFlags: 0

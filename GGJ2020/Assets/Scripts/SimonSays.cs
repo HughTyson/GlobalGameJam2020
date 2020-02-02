@@ -22,13 +22,14 @@ public class SimonSays : MonoBehaviour
             buttons[i] = Instantiate(button, this.transform);
             buttons[i].buttonValue = i;
             buttons[i].transform.position = new Vector3(-2.3f, 2, offset) + transform.position;
-
+            buttons[i].type = Button.ButtonType.GAME;
             offset += 1;
         }
         buttons[5] = Instantiate(button, this.transform);
         buttons[5].buttonValue = -1;
-        buttons[5].transform.position = new Vector3(-2.3f, 1, 0) + transform.position;
-        //buttons[5].transform.localScale = new Vector3(0.5f,0.5f,0.5f);
+        buttons[5].transform.position = new Vector3(-2.3f, 1.3f, 0) + transform.position;
+        buttons[5].transform.localScale = new Vector3(0.50f,0.5f,0.5f);
+        buttons[5].type = Button.ButtonType.START;
 
     }
 

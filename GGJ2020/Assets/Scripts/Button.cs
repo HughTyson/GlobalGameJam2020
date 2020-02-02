@@ -7,6 +7,7 @@ public class Button : MonoBehaviour
     public Material default_mat;
     public Material mat_on = null;
     public Material mat_off = null;
+    public Material mat_start = null;
     CharacterCtrl player;
 
     public int buttonValue;
@@ -22,6 +23,14 @@ public class Button : MonoBehaviour
         ON,
         OFF
     }
+
+    public enum ButtonType
+    {
+        START,
+        GAME
+    }
+
+    public ButtonType type { get; set; }
 
     public ButtonState state { get; set; }
 
@@ -91,7 +100,15 @@ public class Button : MonoBehaviour
     {
         if (GetComponentInParent<SimonSays>().complete == false && !flashing && !flashingSeq)
         {
-            GetComponent<MeshRenderer>().sharedMaterial = mat_off;
+            if(type == ButtonType.GAME)
+            {
+                GetComponent<MeshRenderer>().sharedMaterial = mat_off;
+            }
+            else
+            {
+                GetComponent<MeshRenderer>().sharedMaterial = mat_start;
+            }
+            
         }
     }
 
