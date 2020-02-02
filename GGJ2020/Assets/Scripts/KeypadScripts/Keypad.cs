@@ -18,7 +18,7 @@ public class Keypad : MonoBehaviour
     public List<GameObject> keypadButtons = new List<GameObject>();
 
     //Keypad Object
-    public  GameObject keypad;
+    GameObject keypad;
 
     //Starting position for button spawns
     float offsetX = -30.0f;
@@ -34,16 +34,13 @@ public class Keypad : MonoBehaviour
     AudioSource source;
     public AudioClip click;
 
-    //3D object in worldspace
-    public GameObject activator;
-
-    public GameObject door;
 
 
     // Start is called before the first frame update
     void Start()
     {
-
+        //Keypad object
+        keypad = GameObject.Find("Keypad");
         showInput.text = "";
 
         source = GetComponent<AudioSource>();
@@ -93,8 +90,7 @@ public class Keypad : MonoBehaviour
 
     //Returns true or false regarding whether the right code was inputted
     public void checkCode()
-    {
-        if (code.Count == input.Count)
+    {if (code.Count == input.Count)
         {
             //Check each position in the lists 
             for (int i = 0; i < code.Count; i++)
@@ -119,8 +115,6 @@ public class Keypad : MonoBehaviour
                 Debug.Log("Right code");
                 clearInput();
                 errorsMade = 0;
-                activator.GetComponent<Activator>().activateKeypad(false);
-                door.GetComponent<DoorOpen>().OpenDoors();
             }
         }
     }
@@ -161,22 +155,5 @@ public class Keypad : MonoBehaviour
     public void closeKeypad()
     {
         this.gameObject.SetActive(false);
-    }
-
-    public void resetKeypad()
-    {
-        input.Clear();
-        code.Clear();
-
-        offsetX = -30.0f;
-        offsetY = 20.0f;
-
-        for(int i=0; i < keypadButtons.Count; i++)
-        {
-            Destroy(keypadButtons[i]);
-        }
-
-        keypadButtons.Clear();
-        errorsMade = 0;
     }
 }

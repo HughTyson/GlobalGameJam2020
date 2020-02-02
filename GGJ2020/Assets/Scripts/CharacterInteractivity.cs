@@ -334,4 +334,9 @@ public class CharacterInteractivity : MonoBehaviour
       
     }
 
+    private void ResetCharacterInteractivity()
+    {
+        LetGoOfHeldItem();
+    }
+
 }

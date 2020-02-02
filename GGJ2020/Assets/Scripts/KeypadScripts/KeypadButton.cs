@@ -9,12 +9,13 @@ public class KeypadButton : MonoBehaviour
     int num = 0;
 
     //Keypad
-    public Keypad keypad;
+    Keypad keypad;
 
     // Start is called before the first frame update
     void Start()
     {
-        keypad = GameObject.Find("Keypad").GetComponent<Keypad>();
+        //Assign the keypad script
+        keypad = GameObject.Find("KeypadPrefab").GetComponent<Keypad>();
     }
 
     // Update is called once per frame

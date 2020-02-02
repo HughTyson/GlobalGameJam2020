@@ -12,7 +12,7 @@ public class WireSocketLogic : MonoBehaviour
     [SerializeField] List<Material> colourMaterials;
     WireGameScript.COLOUR_ENUM myColour;
 
-    Color initial_colour;
+    public Color initial_colour;
     void Start()
     {
         if (ConnectedPlug != null)
@@ -57,6 +57,11 @@ public class WireSocketLogic : MonoBehaviour
 
         ConnectionTransform.GetComponent<MeshRenderer>().material = colourMaterials[(int)colour];
 
+    }
+
+    public WireGameScript.COLOUR_ENUM GetColour()
+    {
+        return myColour;
     }
 
     public bool IsColourMatched()

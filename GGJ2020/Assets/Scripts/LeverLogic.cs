@@ -2,125 +2,123 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
-
 public class LeverLogic : MonoBehaviour
 {
 
-[SerializeField] bool IsInitiallyOn;
-[SerializeField] Material InitialMaterial;
+    [SerializeField] bool IsInitiallyOn;
+    [SerializeField] Material InitialMaterial;
 
-[SerializeField] float leverTransitionTime = 0.3f;
+    [SerializeField] float leverTransitionTime =  0.3f;
 
-[SerializeField] Transform HandleOrigin;
+    [SerializeField] Transform HandleOrigin;
 
-[SerializeField] List<GameObject> ChangingColourObjects;
-enum STATE
-{
-    SETTLED,
-    TRANSITIONING
-
-}
-
-bool isOn;
-
-
-float RotXMiddle = -90.0f;
-float RotXAmplitude = 45.0f;
-
-STATE current_state = STATE.SETTLED;
-
-float currentTransitionTime = 0.0f;
-// Start is called before the first frame update
-void Start()
-{
-    isOn = IsInitiallyOn;
-
-    if (isOn)
+    [SerializeField] List<GameObject> ChangingColourObjects;
+    enum STATE
     {
-        HandleOrigin.localRotation = Quaternion.Euler(RotXMiddle + RotXAmplitude, 0, 0);
+        SETTLED,
+        TRANSITIONING
+    
     }
-    else
+
+    bool isOn;
+
+
+    float RotXMiddle = -90.0f;
+    float RotXAmplitude = 45.0f;
+
+    STATE current_state = STATE.SETTLED;
+
+    float currentTransitionTime = 0.0f; 
+    // Start is called before the first frame update
+    void Start()
     {
-        HandleOrigin.localRotation = Quaternion.Euler(RotXMiddle - RotXAmplitude, 0, 0);
+        isOn = IsInitiallyOn;
+
+        if (isOn)
+        {
+            HandleOrigin.localRotation = Quaternion.Euler(RotXMiddle + RotXAmplitude, 0, 0);
+        }
+        else
+        {
+            HandleOrigin.localRotation = Quaternion.Euler(RotXMiddle - RotXAmplitude, 0, 0);
+        }
     }
-}
 
-// Update is called once per frame
-void Update()
-{
-
-    switch (current_state)
+    // Update is called once per frame
+    void Update()
     {
-        case STATE.SETTLED:
-            {
 
-                break;
-            }
-        case STATE.TRANSITIONING:
-            {
-                currentTransitionTime += Time.deltaTime;
-                if (isOn)
+        switch (current_state)
+        {
+            case STATE.SETTLED:
                 {
-                    HandleOrigin.localRotation = Quaternion.Euler(Mathf.Lerp(RotXMiddle - RotXAmplitude, RotXMiddle + RotXAmplitude, currentTransitionTime / leverTransitionTime), 0, 0);
+
+                    break;
                 }
-                else
+            case STATE.TRANSITIONING:
                 {
-                    HandleOrigin.localRotation = Quaternion.Euler(Mathf.Lerp(RotXMiddle + RotXAmplitude, RotXMiddle - RotXAmplitude, currentTransitionTime / leverTransitionTime), 0, 0);
+                    currentTransitionTime += Time.deltaTime;
+                    if (isOn)
+                    {
+                        HandleOrigin.localRotation = Quaternion.Euler(Mathf.Lerp(RotXMiddle - RotXAmplitude, RotXMiddle + RotXAmplitude, currentTransitionTime / leverTransitionTime),0,0);
+                    }
+                    else
+                    {
+                        HandleOrigin.localRotation = Quaternion.Euler(Mathf.Lerp(RotXMiddle + RotXAmplitude, RotXMiddle - RotXAmplitude, currentTransitionTime / leverTransitionTime), 0, 0);
+                    }
+
+                    if (currentTransitionTime >= leverTransitionTime)
+                    {
+                        current_state = STATE.SETTLED;
+                    }
+                    break;
                 }
+        }
 
-                if (currentTransitionTime >= leverTransitionTime)
-                {
-                    current_state = STATE.SETTLED;
-                }
-                break;
-            }
     }
 
-}
 
-
-public bool IsLeverSetToOn()
-{
-    return isOn;
-}
-public void BeingLookedAt()
-{
-    for (int i = 0; i < ChangingColourObjects.Count; i++)
+    public bool IsLeverSetToOn()
     {
-        ChangingColourObjects[i].GetComponent<MeshRenderer>().material.color = Color.green;
+        return isOn;
     }
-}
-public void StoppedBeingLookedAt()
-{
-    for (int i = 0; i < ChangingColourObjects.Count; i++)
+    public void BeingLookedAt()
     {
-        ChangingColourObjects[i].GetComponent<MeshRenderer>().material = InitialMaterial;
+        for (int i = 0; i < ChangingColourObjects.Count; i++)
+        {
+            ChangingColourObjects[i].GetComponent<MeshRenderer>().material.color = Color.green;
+        }
+    }
+    public void StoppedBeingLookedAt()
+    {
+        for (int i = 0; i < ChangingColourObjects.Count; i++)
+        {
+            ChangingColourObjects[i].GetComponent<MeshRenderer>().material = InitialMaterial;
+        }
+       
+    }
+    public void WasClicked()
+    {
+
+        if (current_state == STATE.SETTLED)
+        {
+            isOn = !isOn;
+            current_state = STATE.TRANSITIONING;
+            currentTransitionTime = 0;
+        }
     }
 
-}
-public void WasClicked()
-{
-
-    if (current_state == STATE.SETTLED)
+    public void ResetLever()
     {
-        isOn = !isOn;
-        current_state = STATE.TRANSITIONING;
-        currentTransitionTime = 0;
-    }
-}
+        isOn = IsInitiallyOn;
 
-public void ResetLever()
-{
-    isOn = IsInitiallyOn;
-
-    if (isOn)
-    {
-        HandleOrigin.localRotation = Quaternion.Euler(RotXMiddle + RotXAmplitude, 0, 0);
+        if (isOn)
+        {
+            HandleOrigin.localRotation = Quaternion.Euler(RotXMiddle + RotXAmplitude, 0, 0);
+        }
+        else
+        {
+            HandleOrigin.localRotation = Quaternion.Euler(RotXMiddle - RotXAmplitude, 0, 0);
+        }
     }
-    else
-    {
-        HandleOrigin.localRotation = Quaternion.Euler(RotXMiddle - RotXAmplitude, 0, 0);
-    }
-}
 }
