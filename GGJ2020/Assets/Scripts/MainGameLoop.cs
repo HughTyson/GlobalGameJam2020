@@ -12,10 +12,9 @@ public class MainGameLoop : MonoBehaviour
     public SimonSays simonSays_MG;
     public ButtonSelector findButton_MG;
     public EngineRoomScript wires_MG;
-    public Keypad keyPad;
 
     public GameObject character;
-    float maxTime = 1000.0f;
+    float maxTime = 60.0f;
 
     // Initialise the text object
     void Start()
@@ -57,7 +56,6 @@ public class MainGameLoop : MonoBehaviour
                 simonSays_MG.resetMinigame();
                 findButton_MG.resetMiniGame();
                 wires_MG.ResetEngineRoom();
-                keyPad.resetKeypad();
 
                 playFadeIn = true;
             }

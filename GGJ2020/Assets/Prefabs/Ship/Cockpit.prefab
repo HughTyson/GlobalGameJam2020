@@ -1,5 +1,38 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &650178779835708205
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5834789155430498932}
+  m_Layer: 0
+  m_Name: Better Console 2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5834789155430498932
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 650178779835708205}
+  m_LocalRotation: {x: -0, y: -0.9979116, z: -0, w: -0.064594716}
+  m_LocalPosition: {x: -3.533, y: 1.49042, z: -0.273}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 8885119349921704844}
+  - {fileID: 365085859794663435}
+  - {fileID: 3011608121809883898}
+  m_Father: {fileID: 2756227686187166987}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 172.593, z: 0}
 --- !u!1 &1160608889752690456
 GameObject:
   m_ObjectHideFlags: 0
@@ -29,6 +62,13 @@ Transform:
   m_Children:
   - {fileID: 772178685763196261}
   - {fileID: 3408328033375753450}
+  - {fileID: 8165395448620202410}
+  - {fileID: 3608720745122766662}
+  - {fileID: 5834789155430498932}
+  - {fileID: 6781005906937835136}
+  - {fileID: 9155547381140611332}
+  - {fileID: 7139955804126100220}
+  - {fileID: 8551332966851488515}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
@@ -165,7 +205,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4720687164422558760}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: -0, y: 0.05, z: 0}
   m_LocalScale: {x: 2, y: 1, z: 1}
   m_Children:
   - {fileID: 5590659653096611689}
@@ -232,6 +272,7 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 14
   m_Mesh: {fileID: -5495902117074765545, guid: d99157345440d9643b4dd33d7392407b, type: 3}
+--- !u!1 &7329635381699614385
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -442,7 +483,7 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1948818511929205876}
   m_PrefabAsset: {fileID: 0}
-
+--- !u!1001 &2964981515091016827
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
