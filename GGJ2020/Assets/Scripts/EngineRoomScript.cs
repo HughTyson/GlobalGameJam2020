@@ -10,6 +10,8 @@ public class EngineRoomScript : MonoBehaviour
     [SerializeField] GameObject Door;
 
     [SerializeField] GameObject WireGame;
+
+    [SerializeField] GameObject Hatch;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +33,8 @@ public class EngineRoomScript : MonoBehaviour
         }
         Door.GetComponent<DoorOpen>().CloseDoor();
         WireGame.GetComponent<WireGameScript>().Reset();
+
+        Hatch.GetComponent<VentDropScript>().ResetVent();
 
     }
 }
