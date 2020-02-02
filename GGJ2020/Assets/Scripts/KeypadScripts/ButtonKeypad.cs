@@ -7,6 +7,7 @@ public class ButtonKeypad : MonoBehaviour
     public Material default_mat;
     public Material mat_on = null;
     public Material mat_off = null;
+    public Material mat_start = null;
     CharacterCtrl player;
 
     public int buttonValue;
@@ -25,9 +26,14 @@ public class ButtonKeypad : MonoBehaviour
         ON,
         OFF
     }
+    public enum ButtonType
+    {
+        START,
+        GAME
+    }
+    public ButtonType type { get; set; }
 
     public ButtonState state { get; set; }
-
     // Start is called before the first frame update
     void Start()
     {
@@ -64,24 +70,47 @@ public class ButtonKeypad : MonoBehaviour
     {
         if(gameObject == player.GetInteractable())
         {
-            activator.activateKeypad(true);
+            if (clicked)
+            {
+                activator.activateKeypad(true);
+            }
         }
+    }
+
+
+    public void lookedAt()
+    {
+        
+         GetComponent<MeshRenderer>().sharedMaterial = mat_on;
+
+    }
+
+    public void notLookedAt()
+    {
+        
+            if (type == ButtonType.GAME)
+            {
+                GetComponent<MeshRenderer>().sharedMaterial = mat_off;
+            }
+            else
+            {
+                GetComponent<MeshRenderer>().sharedMaterial = mat_start;
+            }
+
+        
     }
 
     public void isClicked()
     {
-        if (!flashing && !flashingSeq)
-        {
-            clicked = true;
 
-            StartCoroutine(LerpTo(true));
-        }
+        clicked = true;
+
     }
 
-    public IEnumerator LerpTo(bool forwrd)
+    public void setIsClicked(bool set)
     {
-        transform.position = new Vector3(offsetPos1, transform.position.y, transform.position.z);
-        yield return new WaitForSeconds(0.5f);
-        transform.position = new Vector3(offsetPos2, transform.position.y, transform.position.z);
+        clicked = set;
     }
+
+ 
 }

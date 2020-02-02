@@ -39,6 +39,8 @@ public class Keypad : MonoBehaviour
 
     public GameObject door;
 
+    public ButtonKeypad buttonKeypad;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -113,6 +115,8 @@ public class Keypad : MonoBehaviour
                 clearInput();
                 errorsMade = 0;
                 activator.GetComponent<Activator>().activateKeypad(false);
+                buttonKeypad.setIsClicked(false);
+
             }
             else
             {
@@ -121,6 +125,7 @@ public class Keypad : MonoBehaviour
                 errorsMade = 0;
                 activator.GetComponent<Activator>().activateKeypad(false);
                 door.GetComponent<DoorOpen>().OpenDoors();
+                buttonKeypad.setIsClicked(false);
             }
         }
     }
