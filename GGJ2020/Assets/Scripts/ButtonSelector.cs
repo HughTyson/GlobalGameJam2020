@@ -8,7 +8,9 @@ public class ButtonSelector : MonoBehaviour
     GameObject[] buttons;
     GameObject opener;
 
-    
+    public GameObject socket;
+    public GameObject plug;
+
     [SerializeField] GameObject door;
     
     int identifier = 0;
