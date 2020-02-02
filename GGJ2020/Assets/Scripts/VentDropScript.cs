@@ -86,9 +86,10 @@ public class VentDropScript : MonoBehaviour
                 plugObjects[i].GetComponent<WirePlugLogic>().UnplugFromSocket();
             }
 
-            plugObjects[i].transform.position = hatchInitPositions[i];
-            plugObjects[i].transform.rotation = hatchInitRotations[i];
-   
+            plugObjects[i].transform.position = plugInitPositions[i];
+            plugObjects[i].transform.rotation = plugInitRotations[i];
+            plugObjects[i].GetComponent<Rigidbody>().velocity = Vector3.zero;
+
 
         }
         for (int i = 0; i < WireSetObjects.Count; i++)

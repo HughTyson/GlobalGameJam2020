@@ -10,8 +10,8 @@ public class ButtonSelector : MonoBehaviour
     
     [SerializeField] GameObject door;
 
-    [SerializeField] GameObject socket;
-    [SerializeField] GameObject plug;
+    [SerializeField] GameObject socket = null;
+    [SerializeField] GameObject plug = null;
 
     int col;
 
