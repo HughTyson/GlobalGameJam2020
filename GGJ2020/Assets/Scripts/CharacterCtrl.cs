@@ -48,6 +48,10 @@ public class CharacterCtrl : MonoBehaviour
     robotOrders robot;
     public int day = 0;
     public int tutNumb = 0;
+
+
+    //Keypad
+    Activator keyPad;
     void Start()
     {
 
@@ -63,6 +67,8 @@ public class CharacterCtrl : MonoBehaviour
 
         robot = GetComponent<robotOrders>();
         robot.setOrders(false);
+
+        keyPad = GameObject.Find("KeypadHandler").GetComponent<Activator>();
     }
 
     public void ResetChar()
@@ -169,28 +175,34 @@ public class CharacterCtrl : MonoBehaviour
     //This function handles the rotation of the camera based on the mouse position for a first person controller
     void Turn()
     {
-        Vector2 md = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y"));
-        md = Vector2.Scale(md, new Vector2(sensitivity * smoothing, sensitivity * smoothing));
+        if (!keyPad.getInKeypad())
+        {
+            Vector2 md = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y"));
+            md = Vector2.Scale(md, new Vector2(sensitivity * smoothing, sensitivity * smoothing));
 
-        smoothV.x = Mathf.Lerp(smoothV.x, md.x, 1.0f / smoothing);
-        smoothV.y = Mathf.Lerp(smoothV.y, md.y, 1.0f / smoothing);
+            smoothV.x = Mathf.Lerp(smoothV.x, md.x, 1.0f / smoothing);
+            smoothV.y = Mathf.Lerp(smoothV.y, md.y, 1.0f / smoothing);
 
-        mouseLook += smoothV;
+            mouseLook += smoothV;
 
-        mouseLook.y = Mathf.Clamp(mouseLook.y, -65.0f, 65.0f);
+            mouseLook.y = Mathf.Clamp(mouseLook.y, -65.0f, 65.0f);
 
-        Camera.main.transform.localRotation = Quaternion.AngleAxis(-mouseLook.y, Vector3.right);
-        GetComponent<Rigidbody>().MoveRotation(Quaternion.AngleAxis(mouseLook.x, transform.up));
+            Camera.main.transform.localRotation = Quaternion.AngleAxis(-mouseLook.y, Vector3.right);
+            GetComponent<Rigidbody>().MoveRotation(Quaternion.AngleAxis(mouseLook.x, transform.up));
+        }
     }
 
     //This function handles the player movement foward/back, and left/right based on input
     void Move(float h, float v)
     {
-        Vector3 movement = new Vector3(h, 0.0f, v);
-        movement = Camera.main.transform.forward * (-movement.x) + Camera.main.transform.right * movement.z;
-        movement.y = 0.0f;
-        movement = movement.normalized * moveSpeed * Time.deltaTime;
-        GetComponent<Rigidbody>().MovePosition(transform.position + movement);
+        if (!keyPad.getInKeypad())
+        {
+            Vector3 movement = new Vector3(h, 0.0f, v);
+            movement = Camera.main.transform.forward * (-movement.x) + Camera.main.transform.right * movement.z;
+            movement.y = 0.0f;
+            movement = movement.normalized * moveSpeed * Time.deltaTime;
+            GetComponent<Rigidbody>().MovePosition(transform.position + movement);
+        }
     }
 
     // Go to the end scene once collision occurs

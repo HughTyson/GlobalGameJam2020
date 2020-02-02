@@ -8,6 +8,7 @@ public class Activator : MonoBehaviour
     ButtonKeypad button;
     public GameObject keypad;
 
+    bool inKeypad = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,10 +22,14 @@ public class Activator : MonoBehaviour
 
     }
 
+    public bool getInKeypad()
+    {
+        return inKeypad;
+    }
     public void activateKeypad(bool set)
     {
         keypad.SetActive(set);
-
+        inKeypad = set;
         if(set == false)
         {
             Cursor.lockState = CursorLockMode.Locked;
