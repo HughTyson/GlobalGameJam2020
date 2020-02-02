@@ -11,6 +11,7 @@ public class KeypadButton : MonoBehaviour
     //Keypad
     public Keypad keypad;
 
+    bool inKeypad = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +30,8 @@ public class KeypadButton : MonoBehaviour
         keypad.addInput(num);
         keypad.pressButton();
     }
+
+ 
 
     public void setNumber(int number)
     {
