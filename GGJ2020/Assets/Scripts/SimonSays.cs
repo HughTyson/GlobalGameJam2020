@@ -135,7 +135,5 @@ public class SimonSays : MonoBehaviour
             buttons[i].flashing = false;
             buttons[i].flashingSeq = false;
         }
-
-        Door.GetComponent<DoorOpen>().CloseDoor();
     }
 }

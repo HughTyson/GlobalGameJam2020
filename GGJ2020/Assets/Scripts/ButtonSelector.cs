@@ -4,17 +4,13 @@ using UnityEngine;
 
 public class ButtonSelector : MonoBehaviour
 {
+
     GameObject[] buttons;
     GameObject opener;
 
     
     [SerializeField] GameObject door;
-
-    [SerializeField] GameObject socket;
-    [SerializeField] GameObject plug;
-
-    int col;
-
+    
     int identifier = 0;
     int prev_ident;
    
@@ -40,8 +36,6 @@ public class ButtonSelector : MonoBehaviour
 
         Debug.Log(identifier);
         Initilise();
-
-
     }
 
     public void Initilise()
@@ -64,10 +58,6 @@ public class ButtonSelector : MonoBehaviour
         buttons[identifier].GetComponent<HughButton>().door = door;
 
         Debug.Log(identifier);
-
-        //set colour of the socket and plug
-
-        
 
     }
 

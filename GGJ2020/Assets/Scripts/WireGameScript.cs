@@ -9,17 +9,17 @@ public class WireGameScript : MonoBehaviour
 
     public enum COLOUR_ENUM
     { 
-    PURPLE,
-    BLUE,
-    ORANGE,
-    CYAN    
+    PURPLE = 0,
+    BLUE = 1,
+    ORANGE = 2,
+    CYAN = 3   
     };
 
     [SerializeField] GameObject DoorObject;
 
     [SerializeField] List<GameObject> WireBoardSockets;
 
-    //[SerializeField] List<GameObject> ceilingPlugs;
+    [SerializeField] List<GameObject> ceilingPlugs;
     [SerializeField] List<GameObject> cryochamberPlugs;
     [SerializeField] List<GameObject> cryochamberSockets;
 
@@ -43,8 +43,8 @@ public class WireGameScript : MonoBehaviour
         List<GameObject> remainingWireBoardSockets = new List<GameObject>();
         remainingWireBoardSockets.AddRange(WireBoardSockets);
 
-      //  List<GameObject> remaininceilingPlugs = new List<GameObject>();
-      //  ceilingPlugs.AddRange(ceilingPlugs);
+        List<GameObject> remaininceilingPlugs = new List<GameObject>();
+        remaininceilingPlugs.AddRange(ceilingPlugs);
 
         List<GameObject> remainingCryoChamberPlugs = new List<GameObject>();
         remainingCryoChamberPlugs.AddRange(cryochamberPlugs);
@@ -61,9 +61,9 @@ public class WireGameScript : MonoBehaviour
             remainingWireBoardSockets[index].GetComponent<WireSocketLogic>().SetColour(colour);
             remainingWireBoardSockets.RemoveAt(index);
 
-       //     index = Random.Range(0, 3 - i);
-       //     remaininceilingPlugs[index].GetComponent<WirePlugLogic>().SetColour(colour);
-       //     remaininceilingPlugs.RemoveAt(index);
+            index = Random.Range(0, 3 - i);
+            remaininceilingPlugs[index].GetComponent<WirePlugLogic>().SetColour(colour);
+            remaininceilingPlugs.RemoveAt(index);
 
             index = Random.Range(0, 3 - i);
             remainingCryoChamberPlugs[index].GetComponent<WirePlugLogic>().SetColour(colour);
