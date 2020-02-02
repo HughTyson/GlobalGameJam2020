@@ -120,17 +120,17 @@ public class Keypad : MonoBehaviour
                 clearInput();
                 errorsMade = 0;
                 activator.GetComponent<Activator>().activateKeypad(false);
-                //door.GetComponent<DoorOpen>().OpenDoors();
+                door.GetComponent<DoorOpen>().OpenDoors();
             }
         }
     }
 
-    public void setKeycode(int y)
+    public void setKeycode(int y,int x, int i, int j)
     {
-        if (code.Count < codeLength)
-        {
-            code.Add(y);
-        }
+        code.Add(y);
+        code.Add(x);
+        code.Add(i);
+        code.Add(j);
     }
 
     public void addInput(int x)
