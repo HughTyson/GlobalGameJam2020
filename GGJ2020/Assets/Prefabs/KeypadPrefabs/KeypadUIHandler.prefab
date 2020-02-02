@@ -104,7 +104,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 175830925849468658}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -128,6 +128,7 @@ MonoBehaviour:
   buttonPrefab: {fileID: 4642061684394720528, guid: 80e83a782260ea741b7998a9b8c26d4d,
     type: 3}
   keypadButtons: []
+  keypad: {fileID: 175830926052922433}
   input: 
   showInput: {fileID: 175830925297613902}
   click: {fileID: 8300000, guid: 8dd61239effbf9d44a3ced319ef0e597, type: 3}
@@ -435,24 +436,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4642061684394720533, guid: 80e83a782260ea741b7998a9b8c26d4d,
         type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 4642061684394720533, guid: 80e83a782260ea741b7998a9b8c26d4d,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: pressButton
-      objectReference: {fileID: 0}
-    - target: {fileID: 4642061684394720533, guid: 80e83a782260ea741b7998a9b8c26d4d,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 4642061684394720533, guid: 80e83a782260ea741b7998a9b8c26d4d,
-        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 175830925849468173}
     - target: {fileID: 4642061684394720533, guid: 80e83a782260ea741b7998a9b8c26d4d,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName

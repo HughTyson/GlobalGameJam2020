@@ -25,6 +25,7 @@ public class robotOrders : MonoBehaviour
 
         source = GetComponent<AudioSource>();
         source.clip = typing;
+
     }
 
     // Update is called once per frame
@@ -35,7 +36,6 @@ public class robotOrders : MonoBehaviour
 
     public void showMessage()
     {
-
         displayNextLetter();
         startEffect();
     }
@@ -79,8 +79,6 @@ public class robotOrders : MonoBehaviour
 
     void startEffect()
     {
-
-        objectiveText.text = "";
         length = objective.Length;
 
         source = GetComponent<AudioSource>();

@@ -91,7 +91,8 @@ public class Keypad : MonoBehaviour
 
     //Returns true or false regarding whether the right code was inputted
     public void checkCode()
-    {if (code.Count == input.Count)
+    {
+        if (code.Count == input.Count)
         {
             //Check each position in the lists 
             for (int i = 0; i < code.Count; i++)
@@ -110,6 +111,8 @@ public class Keypad : MonoBehaviour
                 Debug.Log("Wrong code");
                 //Clear the inputted numbers
                 clearInput();
+                errorsMade = 0;
+                activator.GetComponent<Activator>().activateKeypad(false);
             }
             else
             {
@@ -117,7 +120,7 @@ public class Keypad : MonoBehaviour
                 clearInput();
                 errorsMade = 0;
                 activator.GetComponent<Activator>().activateKeypad(false);
-                door.GetComponent<DoorOpen>().OpenDoors();
+                //door.GetComponent<DoorOpen>().OpenDoors();
             }
         }
     }
