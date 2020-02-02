@@ -157,6 +157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d11daf100bb477a44b4b2ac9aba92c04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keypad: {fileID: 0}
 --- !u!1 &4642061684452735017
 GameObject:
   m_ObjectHideFlags: 0
