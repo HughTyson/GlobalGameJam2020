@@ -733,6 +733,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 992490555890291324}
     m_Modifications:
+    - target: {fileID: 1675371202225111881, guid: 60d7aedff2809ee44995db2f161ecca0,
+        type: 3}
+      propertyPath: m_Name
+      value: WireSocket
+      objectReference: {fileID: 0}
     - target: {fileID: 1675371202225111886, guid: 60d7aedff2809ee44995db2f161ecca0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -813,11 +818,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0.57
       objectReference: {fileID: 0}
-    - target: {fileID: 1675371202225111881, guid: 60d7aedff2809ee44995db2f161ecca0,
-        type: 3}
-      propertyPath: m_Name
-      value: WireSocket
-      objectReference: {fileID: 0}
     - target: {fileID: 367607264516188073, guid: 60d7aedff2809ee44995db2f161ecca0,
         type: 3}
       propertyPath: ConnectedPlug
@@ -844,6 +844,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 992490555890291324}
     m_Modifications:
+    - target: {fileID: 7791250001286628654, guid: 502406a27c500e644ade997d5dbdcc5b,
+        type: 3}
+      propertyPath: m_Name
+      value: WireSet
+      objectReference: {fileID: 0}
     - target: {fileID: 7791250001286628655, guid: 502406a27c500e644ade997d5dbdcc5b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -898,11 +903,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7791250001286628654, guid: 502406a27c500e644ade997d5dbdcc5b,
-        type: 3}
-      propertyPath: m_Name
-      value: WireSet
       objectReference: {fileID: 0}
     - target: {fileID: 7791250001537548449, guid: 502406a27c500e644ade997d5dbdcc5b,
         type: 3}

@@ -2805,7 +2805,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 7862873431505784213}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1951386500}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e2a6a29ad25c37b4d95bef7dc4ab522f, type: 3}
@@ -3060,108 +3060,6 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!1 &1913222712 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 939889597868577301, guid: f31f3b27ae4dd6d4cb51c9b755245c1b,
-    type: 3}
-  m_PrefabInstance: {fileID: 4998119269735286545}
-  m_PrefabAsset: {fileID: 0}
---- !u!82 &1913222717
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1913222712}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: fd5fb486bf2f61c438596d32bec68171, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!1001 &1944261358
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3246,6 +3144,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d201d8284948f8840a6680c35937a5cd, type: 3}
+<<<<<<< HEAD
 --- !u!1 &1951386500 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8606291693840984968, guid: 4a9883d5b1da7f24ab4b88881a2e62c6,
@@ -3254,10 +3153,21 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
 --- !u!82 &1951386502
 AudioSource:
+=======
+--- !u!1 &1994061539 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3148378170861786520, guid: d201d8284948f8840a6680c35937a5cd,
+    type: 3}
+  m_PrefabInstance: {fileID: 872561286}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1994061540
+MeshCollider:
+>>>>>>> parent of ffc1ae7... Merge branch 'master' of https://github.com/HughTyson/GlobalGameJam2020
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 1951386500}
   m_Enabled: 1
   serializedVersion: 4
@@ -3348,6 +3258,16 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+=======
+  m_GameObject: {fileID: 1994061539}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -462981019419857548, guid: 5818d69fe7e2e6f4290e2f519e1c48d3, type: 3}
+>>>>>>> parent of ffc1ae7... Merge branch 'master' of https://github.com/HughTyson/GlobalGameJam2020
 --- !u!1001 &2097203102
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5511,16 +5431,6 @@ PrefabInstance:
       propertyPath: Door
       value: 
       objectReference: {fileID: 100086684}
-    - target: {fileID: 1431468158573945294, guid: f31f3b27ae4dd6d4cb51c9b755245c1b,
-        type: 3}
-      propertyPath: clunk
-      value: 
-      objectReference: {fileID: 8300000, guid: fd5fb486bf2f61c438596d32bec68171, type: 3}
-    - target: {fileID: 4882900026451237355, guid: f31f3b27ae4dd6d4cb51c9b755245c1b,
-        type: 3}
-      propertyPath: m_Name
-      value: Sound
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f31f3b27ae4dd6d4cb51c9b755245c1b, type: 3}
 --- !u!1001 &5028180284340212616
@@ -5904,6 +5814,7 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+<<<<<<< HEAD
     - target: {fileID: 8606291693840984975, guid: 4a9883d5b1da7f24ab4b88881a2e62c6,
         type: 3}
       propertyPath: Door
@@ -5919,6 +5830,8 @@ PrefabInstance:
       propertyPath: lose
       value: 
       objectReference: {fileID: 8300000, guid: ab1b8bdecb8f83b4e878647ba90d5990, type: 3}
+=======
+>>>>>>> parent of ffc1ae7... Merge branch 'master' of https://github.com/HughTyson/GlobalGameJam2020
     - target: {fileID: 8769048206932870480, guid: 4a9883d5b1da7f24ab4b88881a2e62c6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6259,7 +6172,11 @@ PrefabInstance:
     - target: {fileID: 8702584034532693051, guid: 09b86f32ca09f9645af3013179f632b3,
         type: 3}
       propertyPath: m_LocalPosition.z
+<<<<<<< HEAD
       value: -0.21
+=======
+      value: 0
+>>>>>>> parent of ffc1ae7... Merge branch 'master' of https://github.com/HughTyson/GlobalGameJam2020
       objectReference: {fileID: 0}
     - target: {fileID: 8702584034532693051, guid: 09b86f32ca09f9645af3013179f632b3,
         type: 3}
