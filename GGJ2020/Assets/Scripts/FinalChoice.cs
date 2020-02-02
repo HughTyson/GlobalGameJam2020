@@ -54,6 +54,8 @@ public class FinalChoice : MonoBehaviour
                         WinState = false;
                         complete = true;
                     }
+
+                    GetComponent<AudioSource>().Play();
                 }
             }
         }

@@ -112,7 +112,6 @@ public class LeverLogic : MonoBehaviour
             current_state = STATE.TRANSITIONING;
             currentTransitionTime = 0;
             source.Play();
-            Debug.Log("BOOP");
         }
     }
 

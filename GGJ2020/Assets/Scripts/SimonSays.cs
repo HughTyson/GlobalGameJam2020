@@ -13,6 +13,7 @@ public class SimonSays : MonoBehaviour
     public GameObject Door;
 
     AudioSource source;
+    public AudioClip buttonClick;
     public AudioClip win;
     public AudioClip lose;
 
@@ -37,6 +38,7 @@ public class SimonSays : MonoBehaviour
 
 
         source = GetComponent<AudioSource>();
+        source.clip = buttonClick;
     }
 
     // Update is called once per frame
@@ -60,7 +62,9 @@ public class SimonSays : MonoBehaviour
                         source.Play();
                         onReset();
                     }
+
                     buttons[i].clicked = false;
+                    source.Play();
                 }
             }
 
@@ -70,6 +74,9 @@ public class SimonSays : MonoBehaviour
                 {
                     buttons[i].flashingSeq = true;
                     StartCoroutine(buttons[i].ShowSequence());
+
+                    source.clip = buttonClick;
+                    source.Play();
                 }
                 buttons[5].clicked = false;
             }

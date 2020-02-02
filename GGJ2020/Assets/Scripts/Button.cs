@@ -18,6 +18,8 @@ public class Button : MonoBehaviour
     public float originalPos;
     public bool flashing = false;
     public bool flashingSeq = false;
+
+
     public enum ButtonState
     {
         ON,
