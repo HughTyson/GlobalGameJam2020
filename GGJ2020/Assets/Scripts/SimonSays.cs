@@ -28,7 +28,6 @@ public class SimonSays : MonoBehaviour
         buttons[5] = Instantiate(button, this.transform);
         buttons[5].buttonValue = -1;
         buttons[5].transform.position = new Vector3(-2.3f, 1, 0) + transform.position;
-        buttons[5].transform.localScale = new Vector3(.5f, .5f, .5f);
         //buttons[5].transform.localScale = new Vector3(0.5f,0.5f,0.5f);
 
     }

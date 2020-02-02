@@ -105,9 +105,8 @@ public class HughButton : MonoBehaviour
     {
         clicked = false;
         show_button = false;
-        GetComponent<MeshRenderer>().sharedMaterial = mat_off;
 
-        if (socket.GetComponent<WireSocketLogic>().IsSocketBeingUsed())
+        if(socket.GetComponent<WireSocketLogic>().IsSocketBeingUsed())
         {
             socket.GetComponent<WireSocketLogic>().GetPlugObject().GetComponent<WirePlugLogic>().UnplugFromSocket();
         }

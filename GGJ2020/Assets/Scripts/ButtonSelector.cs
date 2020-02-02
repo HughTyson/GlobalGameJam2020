@@ -44,6 +44,8 @@ public class ButtonSelector : MonoBehaviour
 
     }
 
+
+
     public void Initilise()
     {
         prev_ident = identifier;
@@ -67,13 +69,8 @@ public class ButtonSelector : MonoBehaviour
 
         //set colour of the socket and plug
 
-        
-
-    }
-
-    private void Update()
-    {
         plug.GetComponent<WirePlugLogic>().SetColour(socket.GetComponent<WireSocketLogic>().GetColour());
+
     }
 
     public void resetMiniGame()
