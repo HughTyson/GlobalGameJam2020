@@ -16,6 +16,7 @@ public class MainGameLoop : MonoBehaviour
     public GameObject character;
     float maxTime = 60.0f;
 
+
     // Initialise the text object
     void Start()
     {
@@ -82,6 +83,7 @@ public class MainGameLoop : MonoBehaviour
     private void ResetCharacter()
     {
         character.GetComponent<CharacterCtrl>().ResetChar();
+        character.GetComponent<CharacterInteractivity>().ResetCharacterInteractivity();
     }
     private void ResetTimer()
     {
