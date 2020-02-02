@@ -26,4 +26,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main/End Screen Lost.unity
     guid: d62c9867e370bd14ab76f49af1b16387
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/Main/End Screen Winner Genocide.unity
+    guid: 4ac62c1d6cec7f743a8a65ec70ae27f9
+  - enabled: 1
+    path: Assets/Scenes/Main/End Screen Winner Pacifist.unity
+    guid: f6588b255e94b464c839c784969ff108
+  - enabled: 1
+    path: Assets/Scenes/Main/End Screen Winner Partial Killer.unity
+    guid: f84731e74d07c594db9643fb9581772b
   m_configObjects: {}

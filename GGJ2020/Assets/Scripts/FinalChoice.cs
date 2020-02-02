@@ -53,6 +53,34 @@ public class FinalChoice : MonoBehaviour
                         WinState = true;
                         complete = true;
 
+                        switch (altEndingManagerObject.GetComponent<AltEndLogic>().GetEnding())
+                        {
+                            case AltEndLogic.ALT_ENDING.WON_KILLED_ALL:
+                                {
+                                    Scene currentScene = SceneManager.GetActiveScene();
+                                    SceneManager.UnloadSceneAsync(currentScene);
+                                    Cursor.lockState = CursorLockMode.None;
+                                    SceneManager.LoadSceneAsync("End Screen Winner Genocide");
+                                    break;
+                                }
+                            case AltEndLogic.ALT_ENDING.WON_KILLED_FEW:
+                                {
+                                    Scene currentScene = SceneManager.GetActiveScene();
+                                    SceneManager.UnloadSceneAsync(currentScene);
+                                    Cursor.lockState = CursorLockMode.None;
+                                    SceneManager.LoadSceneAsync("End Screen Winner Partial Killer");
+                                    break;
+                                }
+                            case AltEndLogic.ALT_ENDING.WON_PACISFIST:
+                                {
+                                    Scene currentScene = SceneManager.GetActiveScene();
+                                    SceneManager.UnloadSceneAsync(currentScene);
+                                    Cursor.lockState = CursorLockMode.None;
+                                    SceneManager.LoadSceneAsync("End Screen Winner Pacifist");
+                                    break;
+                                }
+                        }
+
 
                     }
                     else
