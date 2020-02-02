@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class FinalChoice : MonoBehaviour
 {
@@ -46,23 +45,12 @@ public class FinalChoice : MonoBehaviour
                     if (buttons[i].buttonValue == correctChoice)
                     {
                         Debug.Log("YOU WIN!");
-                        Scene currentScene = SceneManager.GetActiveScene();
-                        SceneManager.UnloadSceneAsync(currentScene);
-                        Cursor.lockState = CursorLockMode.None;
-
-                        SceneManager.LoadSceneAsync("End Screen");
-
                         WinState = true;
                         complete = true;
                     }
                     else
                     {
-                        Debug.Log("YOU LOSE!");
-                        Scene currentScene = SceneManager.GetActiveScene();
-                        SceneManager.UnloadSceneAsync(currentScene);
-                        Cursor.lockState = CursorLockMode.None;
-
-                        SceneManager.LoadSceneAsync("End Screen");
+                        Debug.Log("YOU LOSE! OFUCKICANTBELIEVEYOUVEDONETHIS");
                         WinState = false;
                         complete = true;
                     }

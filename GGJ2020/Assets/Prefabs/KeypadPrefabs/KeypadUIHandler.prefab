@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96b1fa825532ca842af5368a07bb93fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  code: 
+  code: 01000000020000000300000004000000
   buttonPrefab: {fileID: 4642061684394720528, guid: 80e83a782260ea741b7998a9b8c26d4d,
     type: 3}
   keypadButtons: []

@@ -117,7 +117,6 @@ public class Button : MonoBehaviour
         if (!flashing && !flashingSeq)
         {
             clicked = true;
-            GetComponent<AudioSource>().Play();
 
             StartCoroutine(LerpTo(true));
         }

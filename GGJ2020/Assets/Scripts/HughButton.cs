@@ -81,7 +81,7 @@ public class HughButton : MonoBehaviour
 
     public void Clicked()
     {
-        GetComponentInParent<AudioSource>().Play();
+
         transform.position = new Vector3(transform.position.x, offset.y, transform.position.z);
         clicked = true;
         //check if this is the correct button
@@ -106,9 +106,7 @@ public class HughButton : MonoBehaviour
         clicked = false;
         show_button = false;
 
-        GetComponent<MeshRenderer>().sharedMaterial = mat_off;
-
-        if (socket.GetComponent<WireSocketLogic>().IsSocketBeingUsed())
+        if(socket.GetComponent<WireSocketLogic>().IsSocketBeingUsed())
         {
             socket.GetComponent<WireSocketLogic>().GetPlugObject().GetComponent<WirePlugLogic>().UnplugFromSocket();
         }
