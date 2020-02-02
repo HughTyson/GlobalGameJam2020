@@ -12,6 +12,10 @@ public class SimonSays : MonoBehaviour
     public bool complete = false;
     public GameObject Door;
 
+    AudioSource source;
+    public AudioClip win;
+    public AudioClip lose;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +35,8 @@ public class SimonSays : MonoBehaviour
         buttons[5].transform.localScale = new Vector3(0.50f,0.5f,0.5f);
         buttons[5].type = Button.ButtonType.START;
 
+
+        source = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -50,6 +56,8 @@ public class SimonSays : MonoBehaviour
                     else
                     {
                         //Debug.Log("BIG BAD >:(");
+                        source.clip = lose;
+                        source.Play();
                         onReset();
                     }
                     buttons[i].clicked = false;
@@ -73,6 +81,10 @@ public class SimonSays : MonoBehaviour
                 {
                     buttons[i].itsOver(true);
                 }
+
+                source.clip = win;
+                source.Play();
+
                 Door.GetComponent<DoorOpen>().OpenDoors();
                 //Debug.Log("Oh lawd you got it!");
             }
