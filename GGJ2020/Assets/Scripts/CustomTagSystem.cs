@@ -15,7 +15,8 @@ public class CustomTagSystem : MonoBehaviour
         HUGH_BUTTON,
         DAN_BUTTON,
         LEVER,
-        FINAL_BUTTON
+        FINAL_BUTTON,
+        KEYPAD_BUTTON
     }
 
 

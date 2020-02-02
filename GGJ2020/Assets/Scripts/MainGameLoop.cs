@@ -15,7 +15,7 @@ public class MainGameLoop : MonoBehaviour
     //public Keypad keypad_MG;
 
     public GameObject character;
-    float maxTime = 60.0f;
+    float maxTime = 1000.0f;
 
 
     // Initialise the text object

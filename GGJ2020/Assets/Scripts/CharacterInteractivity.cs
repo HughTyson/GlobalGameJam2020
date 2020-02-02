@@ -27,7 +27,8 @@ public class CharacterInteractivity : MonoBehaviour
             DAN_BUTTON,
             HUGH_BUTTON,
             LEVER,
-            FINAL_BUTTON
+            FINAL_BUTTON,
+            KEYPAD_BUTTON,
         }
 
         public TYPE myType;
@@ -137,6 +138,11 @@ public class CharacterInteractivity : MonoBehaviour
                         currentlyLookingAt.myType = InteractiveObject.TYPE.FINAL_BUTTON;
                         break;
                     }
+                case CustomTagSystem.TAG.KEYPAD_BUTTON:
+                    {
+                        currentlyLookingAt.myType = InteractiveObject.TYPE.KEYPAD_BUTTON;
+                        break;
+                    }
             }
 
             if (found)
@@ -188,6 +194,11 @@ public class CharacterInteractivity : MonoBehaviour
                     currentlyLookingAt.reference.GetComponent<FinalButton>().lookedAt();
                     break;
                 }
+            case InteractiveObject.TYPE.KEYPAD_BUTTON:
+                {
+                    currentlyLookingAt.reference.GetComponent<ButtonKeypad>().lookedAt();
+                    break;
+                }
 
 
 
@@ -230,6 +241,11 @@ public class CharacterInteractivity : MonoBehaviour
                 case InteractiveObject.TYPE.FINAL_BUTTON:
                     {
                         currentlyLookingAt.reference.GetComponent<FinalButton>().notLookedAt();
+                        break;
+                    }
+                case InteractiveObject.TYPE.KEYPAD_BUTTON:
+                    {
+                        currentlyLookingAt.reference.GetComponent<ButtonKeypad>().notLookedAt();
                         break;
                     }
 
@@ -289,6 +305,11 @@ public class CharacterInteractivity : MonoBehaviour
                 case InteractiveObject.TYPE.FINAL_BUTTON:
                     {
                         currentlyLookingAt.reference.GetComponent<FinalButton>().isClicked();
+                        break;
+                    }
+                case InteractiveObject.TYPE.KEYPAD_BUTTON:
+                    {
+                        currentlyLookingAt.reference.GetComponent<ButtonKeypad>().isClicked();
                         break;
                     }
 
