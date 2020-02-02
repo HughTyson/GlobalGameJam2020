@@ -73,7 +73,6 @@ public class FinalButton : MonoBehaviour
 
     public void isClicked()
     {
-        GetComponent<AudioSource>().Play();
         clicked = true;
         StartCoroutine(LerpTo(true));
     }

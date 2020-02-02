@@ -20,6 +20,7 @@ public class ButtonSelector : MonoBehaviour
    
     bool same = false;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +39,8 @@ public class ButtonSelector : MonoBehaviour
 
         Debug.Log(identifier);
         Initilise();
+
+
 
 
     }

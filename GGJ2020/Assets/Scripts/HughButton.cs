@@ -23,7 +23,8 @@ public class HughButton : MonoBehaviour
     Vector3 basePos;
 
     bool clicked = false;
-    
+
+
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterCtrl>();
@@ -81,9 +82,10 @@ public class HughButton : MonoBehaviour
 
     public void Clicked()
     {
-        GetComponentInParent<AudioSource>().Play();
+
         transform.position = new Vector3(transform.position.x, offset.y, transform.position.z);
         clicked = true;
+        GetComponentInParent<AudioSource>().Play();
         //check if this is the correct button
         if (opener == true)
         {
