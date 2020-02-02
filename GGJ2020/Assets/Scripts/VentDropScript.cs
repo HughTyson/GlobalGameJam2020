@@ -24,6 +24,8 @@ public class VentDropScript : MonoBehaviour
         {
             plugInitPositions.Add(plugObjects[i].transform.position);
             plugInitRotations.Add(plugObjects[i].transform.rotation);
+
+            plugObjects[i].SetActive(false);
         }
 
         for (int i = 0; i < hatchObjects.Count; i++)
@@ -31,6 +33,9 @@ public class VentDropScript : MonoBehaviour
             hatchInitPositions.Add(hatchObjects[i].transform.position);
             hatchInitRotations.Add(hatchObjects[i].transform.rotation);
         }
+
+
+
     }
 
     // Update is called once per frame
@@ -45,6 +50,11 @@ public class VentDropScript : MonoBehaviour
                 {
                     hatchObjects[i].GetComponent<Rigidbody>().isKinematic = false;
                     hatchObjects[i].GetComponent<Rigidbody>().useGravity = true;
+                }
+
+                for (int i = 0; i < plugObjects.Count; i++)
+                {
+                    plugObjects[i].SetActive(true);
                 }
 
             }
@@ -74,7 +84,12 @@ public class VentDropScript : MonoBehaviour
 
             plugObjects[i].transform.position = hatchInitPositions[i];
             plugObjects[i].transform.rotation = hatchInitRotations[i];
+            plugObjects[i].SetActive(false);
+
         }
+        leverObject.GetComponent<LeverLogic>().ResetLever();
+
+
 
 
     }

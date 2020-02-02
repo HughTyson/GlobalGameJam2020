@@ -9,10 +9,10 @@ public class WireGameScript : MonoBehaviour
 
     public enum COLOUR_ENUM
     { 
-    PURPLE,
-    BLUE,
-    ORANGE,
-    CYAN    
+    PURPLE = 0,
+    BLUE = 1,
+    ORANGE = 2,
+    CYAN = 3   
     };
 
     [SerializeField] GameObject DoorObject;
@@ -44,7 +44,7 @@ public class WireGameScript : MonoBehaviour
         remainingWireBoardSockets.AddRange(WireBoardSockets);
 
         List<GameObject> remaininceilingPlugs = new List<GameObject>();
-        ceilingPlugs.AddRange(ceilingPlugs);
+        remaininceilingPlugs.AddRange(ceilingPlugs);
 
         List<GameObject> remainingCryoChamberPlugs = new List<GameObject>();
         remainingCryoChamberPlugs.AddRange(cryochamberPlugs);

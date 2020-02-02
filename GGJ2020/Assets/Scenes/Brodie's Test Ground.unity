@@ -195,6 +195,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 116e48c43b44f4f40b7ba938c0981219, type: 3}
+--- !u!1 &84473732 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1553215877108848647, guid: f31f3b27ae4dd6d4cb51c9b755245c1b,
+    type: 3}
+  m_PrefabInstance: {fileID: 4998119269735286545}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &100086684 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4683675826627635100, guid: 116e48c43b44f4f40b7ba938c0981219,
@@ -2704,6 +2710,11 @@ PrefabInstance:
       propertyPath: Door
       value: 
       objectReference: {fileID: 100086684}
+    - target: {fileID: 6360428691373091261, guid: f31f3b27ae4dd6d4cb51c9b755245c1b,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.539
+      objectReference: {fileID: 0}
     - target: {fileID: 7643096790438558276, guid: f31f3b27ae4dd6d4cb51c9b755245c1b,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -2753,6 +2764,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2203149592521871164, guid: f31f3b27ae4dd6d4cb51c9b755245c1b,
+        type: 3}
+      propertyPath: leverObject
+      value: 
+      objectReference: {fileID: 84473732}
+    - target: {fileID: 4212963919687272605, guid: f31f3b27ae4dd6d4cb51c9b755245c1b,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3.89
+      objectReference: {fileID: 0}
+    - target: {fileID: 4212963919687272605, guid: f31f3b27ae4dd6d4cb51c9b755245c1b,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.41
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f31f3b27ae4dd6d4cb51c9b755245c1b, type: 3}
