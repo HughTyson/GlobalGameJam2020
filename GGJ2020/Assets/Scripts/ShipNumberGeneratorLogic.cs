@@ -15,7 +15,7 @@ public class ShipNumberGeneratorLogic : MonoBehaviour
     {
         for (int i = 0; i < NumberObjects.Count; i++)
         {
-            Numbers.Add(Random.Range(0, 9));
+            Numbers.Add(Random.Range(1, 9));
             NumberObjects[i].GetComponent<KeycodeWallNumberLogic>().SetNumber(Numbers[i]);
         }
         Keypad.GetComponent<Keypad>().setKeycode(Numbers[0], Numbers[1], Numbers[2], Numbers[3]);

@@ -54,6 +54,8 @@ public class FinalChoice : MonoBehaviour
 
                         WinState = true;
                         complete = true;
+
+                        
                     }
                     else
                     {
