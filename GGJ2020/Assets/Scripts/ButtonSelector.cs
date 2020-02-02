@@ -36,8 +36,6 @@ public class ButtonSelector : MonoBehaviour
         buttons[identifier].GetComponent<HughButton>().setOpener(true);
         buttons[identifier].GetComponent<HughButton>().door = door;
 
-        
-
         Debug.Log(identifier);
         Initilise();
 
