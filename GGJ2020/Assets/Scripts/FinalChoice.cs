@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+using UnityEngine.SceneManagement;
+
 public class FinalChoice : MonoBehaviour
 {
     public FinalButton button;
@@ -10,6 +12,9 @@ public class FinalChoice : MonoBehaviour
     private bool complete = false;
     public bool WinState = false; // FALSE = you lose, TRUE = you won
     // Start is called before the first frame update
+
+    public GameObject altEndingManagerObject;
+
     void Start()
     {
         correctChoice = Random.Range(0, 1000);
@@ -48,11 +53,15 @@ public class FinalChoice : MonoBehaviour
                         WinState = true;
                         complete = true;
 
-                        
+
                     }
                     else
                     {
-                        Debug.Log("YOU LOSE! OFUCKICANTBELIEVEYOUVEDONETHIS");
+                        Scene currentScene = SceneManager.GetActiveScene();
+                        SceneManager.UnloadSceneAsync(currentScene);
+                        Cursor.lockState = CursorLockMode.None;
+                        SceneManager.LoadSceneAsync("End Screen Lost");
+
                         WinState = false;
                         complete = true;
                     }

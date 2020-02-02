@@ -10,6 +10,10 @@ public class CryoScript : MonoBehaviour
     [SerializeField] GameObject Plug;
     [SerializeField] GameObject Socket;
 
+    public bool IsCryoUserAlive()
+    {
+        return (Screen.GetComponent<CryoScreenScript>().IsAlive());
+    }
     public void Reset()
     {
         Screen.GetComponent<CryoScreenScript>().Reset();

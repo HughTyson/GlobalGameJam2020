@@ -41,7 +41,10 @@ public class CryoScreenScript : MonoBehaviour
         }
     }
 
-
+    public bool IsAlive()
+    {
+        return alive;
+    }
     public void Reset()
     {
         alive = true;
