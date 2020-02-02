@@ -59,11 +59,6 @@ public class WireSocketLogic : MonoBehaviour
 
     }
 
-    public WireGameScript.COLOUR_ENUM GetColour()
-    {
-        return myColour;
-    }
-
     public bool IsColourMatched()
     {
         if (ConnectedPlug != null)
