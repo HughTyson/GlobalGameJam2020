@@ -17,6 +17,7 @@ public class MainGameLoop : MonoBehaviour
     float maxTime = 60.0f;
 
 
+
     // Initialise the text object
     void Start()
     {
@@ -39,6 +40,7 @@ public class MainGameLoop : MonoBehaviour
                 GetComponent<GameLoop>().PlayFadeIn();
                 playFadeIn = false;
                 playFadeOut = true;
+                
             }
 
             if(GetComponent<GameLoop>().GetFinishedFadeIn())
@@ -49,6 +51,7 @@ public class MainGameLoop : MonoBehaviour
                 {
                     GetComponent<GameLoop>().PlayFadeOut();
                     playFadeOut = false;
+                    
                 }
 
                 ResetCharacter();

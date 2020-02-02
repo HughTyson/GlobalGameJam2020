@@ -46,6 +46,8 @@ public class CharacterCtrl : MonoBehaviour
 
     //Robot commmands
     robotOrders robot;
+    public int day = 0;
+    public int tutNumb = 0;
     void Start()
     {
 
@@ -60,11 +62,14 @@ public class CharacterCtrl : MonoBehaviour
         mouseLook.x = InitialRotation;
 
         robot = GetComponent<robotOrders>();
-        robot.showMessage();
+        robot.setOrders(false);
     }
 
     public void ResetChar()
     {
+
+        day++;
+
         //Initialise the camera bob positions
         restPos = Camera.main.transform.localPosition;
         camPos = Camera.main.transform.localPosition;
@@ -79,6 +84,8 @@ public class CharacterCtrl : MonoBehaviour
         Quaternion rote = new Quaternion();
         rote.eulerAngles = new Vector3(0, 0, 0);
         transform.SetPositionAndRotation(new Vector3(0, 1.512f, 0), rote);
+
+        robot.setOrders(false);
 
     }
 
@@ -97,9 +104,6 @@ public class CharacterCtrl : MonoBehaviour
 
     void Update()
     {
-        
-
-
         //DEBUG for getting mouse cursor back
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -182,7 +186,6 @@ public class CharacterCtrl : MonoBehaviour
     //This function handles the player movement foward/back, and left/right based on input
     void Move(float h, float v)
     {
-        Debug.Log("Im moving. Yay!");
         Vector3 movement = new Vector3(h, 0.0f, v);
         movement = Camera.main.transform.forward * (-movement.x) + Camera.main.transform.right * movement.z;
         movement.y = 0.0f;
