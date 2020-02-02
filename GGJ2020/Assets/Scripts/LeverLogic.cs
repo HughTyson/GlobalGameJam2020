@@ -28,7 +28,10 @@ public class LeverLogic : MonoBehaviour
 
     STATE current_state = STATE.SETTLED;
 
-    float currentTransitionTime = 0.0f; 
+    float currentTransitionTime = 0.0f;
+
+    AudioSource source;
+    public AudioClip clunk;
     // Start is called before the first frame update
     void Start()
     {
@@ -42,6 +45,9 @@ public class LeverLogic : MonoBehaviour
         {
             HandleOrigin.localRotation = Quaternion.Euler(RotXMiddle - RotXAmplitude, 0, 0);
         }
+
+        source = GetComponent<AudioSource>();
+        source.clip = clunk;
     }
 
     // Update is called once per frame
@@ -105,6 +111,8 @@ public class LeverLogic : MonoBehaviour
             isOn = !isOn;
             current_state = STATE.TRANSITIONING;
             currentTransitionTime = 0;
+            source.Play();
+            Debug.Log("BOOP");
         }
     }
 
